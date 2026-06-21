@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 30" width="100%" height="30">
+  <defs>
+    <linearGradient id="lineGradLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.25)" />
+    </linearGradient>
+    <linearGradient id="lineGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.25)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Left Fading Line -->
+  <line x1="0" y1="15" x2="410" y2="15" stroke="url(#lineGradLeft)" stroke-width="1" />
+  
+  <!-- Cyber Center Accent ( /// ) -->
+  <g transform="translate(415, 11)">
+    <line x1="4" y1="0" x2="0" y2="8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="12" y1="0" x2="8" y2="8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="20" y1="0" x2="16" y2="8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+  
+  <!-- Right Fading Line -->
+  <line x1="440" y1="15" x2="850" y2="15" stroke="url(#lineGradRight)" stroke-width="1" />
+</svg>

@@ -11,9 +11,9 @@
 </div>
 
 <br />
-
----
-
+<div align="center">
+  <img src="./svg/divider.svg?v=1" alt="divider" width="850" />
+</div>
 <br />
 
 <div align="center">
@@ -27,9 +27,9 @@
 </div>
 
 <br />
-
----
-
+<div align="center">
+  <img src="./svg/divider.svg?v=1" alt="divider" width="850" />
+</div>
 <br />
 
 <div align="center">
