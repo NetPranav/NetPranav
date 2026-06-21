@@ -38,22 +38,6 @@
 
 <br />
 
----
-
-<br />
-
-<div align="center">
-  <img src="./svg/tech-stack.svg" alt="Tech Stack" width="850" />
-</div>
-
-<br />
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=NetPranav&theme=dark&hide_border=true&background=00000000&ring=ffffff&fire=ffffff&currStreakLabel=888888&stroke=ffffff" alt="GitHub Streak" />
-</div>
-
-<br />
-
 <div align="center">
   <img src="https://raw.githubusercontent.com/NetPranav/NetPranav/main/generated/dashboard.svg" style="width:0;height:0;" alt="" />
 </div>
