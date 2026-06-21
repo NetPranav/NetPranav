@@ -51,7 +51,7 @@
 <br />
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=NetPranav&theme=dark&hide_border=true&background=000000&ring=ffffff&fire=ffffff&currStreakLabel=888888&stroke=ffffff" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=NetPranav&theme=dark&hide_border=true&background=00000000&ring=ffffff&fire=ffffff&currStreakLabel=888888&stroke=ffffff" alt="GitHub Streak" />
 </div>
 
 <br />

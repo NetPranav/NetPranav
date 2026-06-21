@@ -2,11 +2,11 @@
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
-      .bg { fill: #000000; stroke: #333333; stroke-width: 1; rx: 8px; }
+      .bg { fill: transparent; stroke: rgba(255,255,255,0.15); stroke-width: 1; rx: 8px; }
       .text { font-family: 'Inter', -apple-system, sans-serif; fill: #ededed; }
       .label { font-size: 13px; font-weight: 500; fill: #888888; text-transform: uppercase; letter-spacing: 1px; }
       .value { font-size: 36px; font-weight: 600; fill: #ffffff; }
-      .divider { stroke: #333333; stroke-width: 1; }
+      .divider { stroke: rgba(255,255,255,0.15); stroke-width: 1; }
       .status-dot { fill: #ffffff; }
       .subtext { font-size: 13px; fill: #888888; }
       .highlight { fill: #ffffff; font-weight: 600; }
