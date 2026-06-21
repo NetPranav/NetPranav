@@ -17,7 +17,13 @@
 <br />
 
 <div align="center">
-  <img src="./svg/terminal.svg" alt="Current Focus" width="850" />
+  <img src="./svg/terminal.svg?v=2" alt="Current Focus" width="850" />
+</div>
+
+<br />
+
+<div align="center">
+  <img src="./svg/tech-stack.svg?v=2" alt="Tech Stack" width="750" />
 </div>
 
 <br />
@@ -27,13 +33,13 @@
 <br />
 
 <div align="center">
-  <img src="./generated/dashboard.svg" alt="GitHub Analytics Dashboard" width="850" />
+  <img src="./generated/dashboard.svg?v=2" alt="GitHub Analytics Dashboard" width="850" />
 </div>
 
 <br />
 
 <div align="center">
-  <img src="./generated/projects.svg" alt="Featured Projects" width="850" />
+  <img src="./generated/projects.svg?v=2" alt="Featured Projects" width="850" />
 </div>
 
 <br />
