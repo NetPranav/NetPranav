@@ -23,33 +23,57 @@
         opacity: 0;
       }
       
-      /* Typing animation sequence (26 chars) */
-      .c1 { animation: type 12s steps(1) 0.0s infinite; }
-      .c2 { animation: type 12s steps(1) 0.1s infinite; }
-      .c3 { animation: type 12s steps(1) 0.2s infinite; }
-      .c4 { animation: type 12s steps(1) 0.3s infinite; }
-      .c5 { animation: type 12s steps(1) 0.4s infinite; }
-      .c6 { animation: type 12s steps(1) 0.5s infinite; }
-      .c7 { animation: type 12s steps(1) 0.6s infinite; }
-      .c8 { animation: type 12s steps(1) 0.7s infinite; }
-      .c9 { animation: type 12s steps(1) 0.8s infinite; }
-      .c10 { animation: type 12s steps(1) 0.9s infinite; }
-      .c11 { animation: type 12s steps(1) 1.0s infinite; }
-      .c12 { animation: type 12s steps(1) 1.1s infinite; }
-      .c13 { animation: type 12s steps(1) 1.2s infinite; }
-      .c14 { animation: type 12s steps(1) 1.3s infinite; }
-      .c15 { animation: type 12s steps(1) 1.4s infinite; }
-      .c16 { animation: type 12s steps(1) 1.5s infinite; }
-      .c17 { animation: type 12s steps(1) 1.6s infinite; }
-      .c18 { animation: type 12s steps(1) 1.7s infinite; }
-      .c19 { animation: type 12s steps(1) 1.8s infinite; }
-      .c20 { animation: type 12s steps(1) 1.9s infinite; }
-      .c21 { animation: type 12s steps(1) 2.0s infinite; }
-      .c22 { animation: type 12s steps(1) 2.1s infinite; }
-      .c23 { animation: type 12s steps(1) 2.2s infinite; }
-      .c24 { animation: type 12s steps(1) 2.3s infinite; }
-      .c25 { animation: type 12s steps(1) 2.4s infinite; }
-      .c26 { animation: type 12s steps(1) 2.5s infinite; }
+      /* Typing animation sequence */
+      .c0 { animation: type 15s steps(1) 0.0s infinite; }
+      .c1 { animation: type 15s steps(1) 0.1s infinite; }
+      .c2 { animation: type 15s steps(1) 0.2s infinite; }
+      .c3 { animation: type 15s steps(1) 0.3s infinite; }
+      .c4 { animation: type 15s steps(1) 0.4s infinite; }
+      .c5 { animation: type 15s steps(1) 0.5s infinite; }
+      .c6 { animation: type 15s steps(1) 0.6s infinite; }
+      .c7 { animation: type 15s steps(1) 0.7s infinite; }
+      .c8 { animation: type 15s steps(1) 0.8s infinite; }
+      .c9 { animation: type 15s steps(1) 0.9s infinite; }
+      .c10 { animation: type 15s steps(1) 1.0s infinite; }
+      .c11 { animation: type 15s steps(1) 1.1s infinite; }
+      .c12 { animation: type 15s steps(1) 1.2s infinite; }
+      .c13 { animation: type 15s steps(1) 1.3s infinite; }
+      .c14 { animation: type 15s steps(1) 1.4s infinite; }
+      .c15 { animation: type 15s steps(1) 1.5s infinite; }
+      .c16 { animation: type 15s steps(1) 1.6s infinite; }
+      .c17 { animation: type 15s steps(1) 1.7s infinite; }
+      .c18 { animation: type 15s steps(1) 1.8s infinite; }
+      .c19 { animation: type 15s steps(1) 1.9s infinite; }
+      .c20 { animation: type 15s steps(1) 2.0s infinite; }
+      .c21 { animation: type 15s steps(1) 2.1s infinite; }
+      .c22 { animation: type 15s steps(1) 2.2s infinite; }
+      .c23 { animation: type 15s steps(1) 2.3s infinite; }
+      .c24 { animation: type 15s steps(1) 2.4s infinite; }
+      .c25 { animation: type 15s steps(1) 2.5s infinite; }
+      .c26 { animation: type 15s steps(1) 2.6s infinite; }
+      .c27 { animation: type 15s steps(1) 2.7s infinite; }
+      .c28 { animation: type 15s steps(1) 2.8s infinite; }
+      .c29 { animation: type 15s steps(1) 2.9s infinite; }
+      .c30 { animation: type 15s steps(1) 3.0s infinite; }
+      .c31 { animation: type 15s steps(1) 3.1s infinite; }
+      .c32 { animation: type 15s steps(1) 3.2s infinite; }
+      .c33 { animation: type 15s steps(1) 3.3s infinite; }
+      .c34 { animation: type 15s steps(1) 3.4s infinite; }
+      .c35 { animation: type 15s steps(1) 3.5s infinite; }
+      .c36 { animation: type 15s steps(1) 3.6s infinite; }
+      .c37 { animation: type 15s steps(1) 3.7s infinite; }
+      .c38 { animation: type 15s steps(1) 3.8s infinite; }
+      .c39 { animation: type 15s steps(1) 3.9s infinite; }
+      .c40 { animation: type 15s steps(1) 4.0s infinite; }
+      .c41 { animation: type 15s steps(1) 4.1s infinite; }
+      .c42 { animation: type 15s steps(1) 4.2s infinite; }
+      .c43 { animation: type 15s steps(1) 4.3s infinite; }
+      .c44 { animation: type 15s steps(1) 4.4s infinite; }
+      .c45 { animation: type 15s steps(1) 4.5s infinite; }
+      .c46 { animation: type 15s steps(1) 4.6s infinite; }
+      .c47 { animation: type 15s steps(1) 4.7s infinite; }
+      .c48 { animation: type 15s steps(1) 4.8s infinite; }
+      .c49 { animation: type 15s steps(1) 4.9s infinite; }
       
       @keyframes type {
         0% { opacity: 0; }
@@ -60,22 +84,22 @@
       }
       
       .cursor-move {
-        animation: cursorSweep 12s linear infinite;
+        animation: cursorSweep 15s linear infinite;
       }
       
       @keyframes cursorSweep {
         0% { transform: translateX(0px); }
-        22% { transform: translateX(250px); } /* 26 chars * 9.6px approx */
-        90% { transform: translateX(250px); }
+        35% { transform: translateX(480px); } /* time to type */
+        90% { transform: translateX(480px); }
         90.1% { transform: translateX(0px); }
         100% { transform: translateX(0px); }
       }
     </style>
   </defs>
   
-  <g transform="translate(275, 35)">
+  <g transform="translate(160, 35)">
     <text class="text">
-      <tspan class="type-group c1">"</tspan><tspan class="type-group c2">D</tspan><tspan class="type-group c3">o</tspan><tspan class="type-group c4">n</tspan><tspan class="type-group c5">'</tspan><tspan class="type-group c6">t</tspan><tspan class="type-group c7"> </tspan><tspan class="type-group c8">b</tspan><tspan class="type-group c9">e</tspan><tspan class="type-group c10"> </tspan><tspan class="type-group c11">s</tspan><tspan class="type-group c12">o</tspan><tspan class="type-group c13">r</tspan><tspan class="type-group c14">r</tspan><tspan class="type-group c15">y</tspan><tspan class="type-group c16">.</tspan><tspan class="type-group c17"> </tspan><tspan class="type-group c18">B</tspan><tspan class="type-group c19">e</tspan><tspan class="type-group c20"> </tspan><tspan class="type-group c21">b</tspan><tspan class="type-group c22">e</tspan><tspan class="type-group c23">t</tspan><tspan class="type-group c24">t</tspan><tspan class="type-group c25">e</tspan><tspan class="type-group c26">r</tspan><tspan class="type-group c26">.</tspan><tspan class="type-group c26">"</tspan>
+      <tspan class="type-group c0">"</tspan><tspan class="type-group c1">G</tspan><tspan class="type-group c2">r</tspan><tspan class="type-group c3">o</tspan><tspan class="type-group c4">w</tspan><tspan class="type-group c5">t</tspan><tspan class="type-group c6">h</tspan><tspan class="type-group c7"> </tspan><tspan class="type-group c8">o</tspan><tspan class="type-group c9">c</tspan><tspan class="type-group c10">c</tspan><tspan class="type-group c11">u</tspan><tspan class="type-group c12">r</tspan><tspan class="type-group c13">s</tspan><tspan class="type-group c14"> </tspan><tspan class="type-group c15">w</tspan><tspan class="type-group c16">h</tspan><tspan class="type-group c17">e</tspan><tspan class="type-group c18">n</tspan><tspan class="type-group c19"> </tspan><tspan class="type-group c20">o</tspan><tspan class="type-group c21">n</tspan><tspan class="type-group c22">e</tspan><tspan class="type-group c23"> </tspan><tspan class="type-group c24">g</tspan><tspan class="type-group c25">o</tspan><tspan class="type-group c26">e</tspan><tspan class="type-group c27">s</tspan><tspan class="type-group c28"> </tspan><tspan class="type-group c29">b</tspan><tspan class="type-group c30">e</tspan><tspan class="type-group c31">y</tspan><tspan class="type-group c32">o</tspan><tspan class="type-group c33">n</tspan><tspan class="type-group c34">d</tspan><tspan class="type-group c35"> </tspan><tspan class="type-group c36">o</tspan><tspan class="type-group c37">n</tspan><tspan class="type-group c38">e</tspan><tspan class="type-group c39">'</tspan><tspan class="type-group c40">s</tspan><tspan class="type-group c41"> </tspan><tspan class="type-group c42">l</tspan><tspan class="type-group c43">i</tspan><tspan class="type-group c44">m</tspan><tspan class="type-group c45">i</tspan><tspan class="type-group c46">t</tspan><tspan class="type-group c47">s</tspan><tspan class="type-group c48">.</tspan><tspan class="type-group c49">"</tspan>
     </text>
     <rect class="cursor cursor-move" x="0" y="-12" width="10" height="15" />
   </g>
