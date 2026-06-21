@@ -23,8 +23,8 @@
         opacity: 0;
       }
       
-      /* Typing animation sequence */
-      .c1 { animation: type 12s steps(1) 0s infinite; }
+      /* Typing animation sequence (26 chars) */
+      .c1 { animation: type 12s steps(1) 0.0s infinite; }
       .c2 { animation: type 12s steps(1) 0.1s infinite; }
       .c3 { animation: type 12s steps(1) 0.2s infinite; }
       .c4 { animation: type 12s steps(1) 0.3s infinite; }
@@ -50,9 +50,6 @@
       .c24 { animation: type 12s steps(1) 2.3s infinite; }
       .c25 { animation: type 12s steps(1) 2.4s infinite; }
       .c26 { animation: type 12s steps(1) 2.5s infinite; }
-      .c27 { animation: type 12s steps(1) 2.6s infinite; }
-      .c28 { animation: type 12s steps(1) 2.7s infinite; }
-      .c29 { animation: type 12s steps(1) 2.8s infinite; }
       
       @keyframes type {
         0% { opacity: 0; }
@@ -68,17 +65,17 @@
       
       @keyframes cursorSweep {
         0% { transform: translateX(0px); }
-        25% { transform: translateX(290px); }
-        90% { transform: translateX(290px); }
+        22% { transform: translateX(250px); } /* 26 chars * 9.6px approx */
+        90% { transform: translateX(250px); }
         90.1% { transform: translateX(0px); }
         100% { transform: translateX(0px); }
       }
     </style>
   </defs>
   
-  <g transform="translate(250, 35)">
+  <g transform="translate(275, 35)">
     <text class="text">
-      <tspan class="type-group c1">A</tspan><tspan class="type-group c2">r</tspan><tspan class="type-group c3">c</tspan><tspan class="type-group c4">h</tspan><tspan class="type-group c5">i</tspan><tspan class="type-group c6">t</tspan><tspan class="type-group c7">e</tspan><tspan class="type-group c8">c</tspan><tspan class="type-group c9">t</tspan><tspan class="type-group c10">u</tspan><tspan class="type-group c11">r</tspan><tspan class="type-group c12">e</tspan><tspan class="type-group c13"> </tspan><tspan class="type-group c14">o</tspan><tspan class="type-group c15">v</tspan><tspan class="type-group c16">e</tspan><tspan class="type-group c17">r</tspan><tspan class="type-group c18"> </tspan><tspan class="type-group c19">h</tspan><tspan class="type-group c20">y</tspan><tspan class="type-group c21">p</tspan><tspan class="type-group c22">e</tspan><tspan class="type-group c23">.</tspan>
+      <tspan class="type-group c1">"</tspan><tspan class="type-group c2">D</tspan><tspan class="type-group c3">o</tspan><tspan class="type-group c4">n</tspan><tspan class="type-group c5">'</tspan><tspan class="type-group c6">t</tspan><tspan class="type-group c7"> </tspan><tspan class="type-group c8">b</tspan><tspan class="type-group c9">e</tspan><tspan class="type-group c10"> </tspan><tspan class="type-group c11">s</tspan><tspan class="type-group c12">o</tspan><tspan class="type-group c13">r</tspan><tspan class="type-group c14">r</tspan><tspan class="type-group c15">y</tspan><tspan class="type-group c16">.</tspan><tspan class="type-group c17"> </tspan><tspan class="type-group c18">B</tspan><tspan class="type-group c19">e</tspan><tspan class="type-group c20"> </tspan><tspan class="type-group c21">b</tspan><tspan class="type-group c22">e</tspan><tspan class="type-group c23">t</tspan><tspan class="type-group c24">t</tspan><tspan class="type-group c25">e</tspan><tspan class="type-group c26">r</tspan><tspan class="type-group c26">.</tspan><tspan class="type-group c26">"</tspan>
     </text>
     <rect class="cursor cursor-move" x="0" y="-12" width="10" height="15" />
   </g>
