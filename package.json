@@ -1,0 +1,24 @@
+{
+  "name": "github-profile",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NetPranav/NetPranav.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/NetPranav/NetPranav/issues"
+  },
+  "homepage": "https://github.com/NetPranav/NetPranav#readme",
+  "dependencies": {
+    "simple-icons": "^16.24.0"
+  }
+}
