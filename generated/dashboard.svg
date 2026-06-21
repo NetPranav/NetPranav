@@ -2,14 +2,14 @@
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
-      .bg { fill: #0d0d0d; stroke: #222222; stroke-width: 1; rx: 8px; }
+      .bg { fill: #000000; stroke: #333333; stroke-width: 1; rx: 8px; }
       .text { font-family: 'Inter', -apple-system, sans-serif; fill: #ededed; }
       .label { font-size: 13px; font-weight: 500; fill: #888888; text-transform: uppercase; letter-spacing: 1px; }
-      .value { font-size: 36px; font-weight: 600; fill: #ffffff; text-shadow: 0 0 10px rgba(224,26,34,0.3); }
-      .divider { stroke: #222222; stroke-width: 1; }
-      .status-dot { fill: #E01A22; }
+      .value { font-size: 36px; font-weight: 600; fill: #ffffff; }
+      .divider { stroke: #333333; stroke-width: 1; }
+      .status-dot { fill: #ffffff; }
       .subtext { font-size: 13px; fill: #888888; }
-      .highlight { fill: #E01A22; font-weight: 600; }
+      .highlight { fill: #ffffff; font-weight: 600; }
     </style>
   </defs>
 
@@ -19,28 +19,28 @@
     <!-- Repositories -->
     <g transform="translate(0, 0)">
       <text class="label" y="0">Repositories</text>
-      <text class="value" y="45">45</text>
+      <text class="value" y="45">28</text>
     </g>
     <line class="divider" x1="190" y1="-10" x2="190" y2="70" />
     
     <!-- Stars -->
     <g transform="translate(230, 0)">
       <text class="label" y="0">Total Stars</text>
-      <text class="value" y="45">1240</text>
+      <text class="value" y="45">N/A</text>
     </g>
     <line class="divider" x1="420" y1="-10" x2="420" y2="70" />
 
     <!-- Commits -->
     <g transform="translate(460, 0)">
       <text class="label" y="0">Commits (YTD)</text>
-      <text class="value" y="45">2350</text>
+      <text class="value" y="45">N/A</text>
     </g>
     <line class="divider" x1="650" y1="-10" x2="650" y2="70" />
 
     <!-- Followers -->
     <g transform="translate(690, 0)">
       <text class="label" y="0">Followers</text>
-      <text class="value" y="45">890</text>
+      <text class="value" y="45">5</text>
     </g>
   </g>
   
@@ -49,7 +49,7 @@
   <!-- Current Focus Footer -->
   <g transform="translate(40, 185)">
     <circle cx="0" cy="-4" r="4" class="status-dot" />
-    <text class="text subtext" x="15" y="0">Currently engineering <tspan class="highlight">Smart Farming AI</tspan></text>
-    <text class="text subtext" x="460" y="0">Latest Commit: <tspan class="highlight">Optimize distributed inference engine</tspan></text>
+    <text class="text subtext" x="15" y="0">Currently engineering <tspan class="highlight">NetPranav</tspan></text>
+    <text class="text subtext" x="460" y="0">Latest Commit: <tspan class="highlight">See profile for latest updates</tspan></text>
   </g>
 </svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&amp;display=swap');
+      
+      .bg { fill: #000000; }
+      
+      .flash {
+        fill: #ffffff;
+        opacity: 0;
+        animation: gunshot 6s infinite;
+      }
+      
+      .text1, .text2 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        fill: #ffffff;
+        opacity: 0;
+      }
+      
+      .text1 {
+        font-size: 64px;
+        letter-spacing: 4px;
+        animation: text1Anim 6s infinite;
+      }
+      
+      .text2 {
+        font-size: 48px;
+        letter-spacing: 2px;
+        fill: #aaaaaa;
+        animation: text2Anim 6s infinite;
+      }
+      
+      @keyframes gunshot {
+        0%, 10% { opacity: 0; }
+        11% { opacity: 1; }
+        13% { opacity: 0; }
+        100% { opacity: 0; }
+      }
+      
+      @keyframes text1Anim {
+        0%, 13% { opacity: 0; transform: translateY(5px); }
+        18% { opacity: 1; transform: translateY(0); }
+        90% { opacity: 1; transform: translateY(0); }
+        95%, 100% { opacity: 0; transform: translateY(0); }
+      }
+      
+      @keyframes text2Anim {
+        0%, 40% { opacity: 0; transform: translateY(5px); }
+        45% { opacity: 1; transform: translateY(0); }
+        90% { opacity: 1; transform: translateY(0); }
+        95%, 100% { opacity: 0; transform: translateY(0); }
+      }
+      
+      .shake {
+        animation: shakeAnim 6s infinite;
+      }
+      
+      @keyframes shakeAnim {
+        0%, 10% { transform: translate(0,0); }
+        11% { transform: translate(8px, -8px); }
+        12% { transform: translate(-8px, 8px); }
+        13% { transform: translate(4px, -4px); }
+        14% { transform: translate(-4px, 4px); }
+        15%, 100% { transform: translate(0,0); }
+      }
+    </style>
+  </defs>
+  
+  <rect class="bg" width="800" height="200" />
+  
+  <g class="shake">
+    <!-- Gunshot Flash -->
+    <rect class="flash" width="800" height="200" />
+    
+    <!-- Text -->
+    <text x="50%" y="48%" text-anchor="middle" class="text1">Hey.</text>
+    <text x="50%" y="78%" text-anchor="middle" class="text2">I am Pranav.</text>
+  </g>
+</svg>

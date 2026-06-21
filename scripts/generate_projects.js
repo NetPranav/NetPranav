@@ -4,15 +4,26 @@ const path = require('path');
 const GITHUB_TOKEN = process.env.PAT_TOKEN || process.env.GITHUB_TOKEN;
 const USERNAME = 'NetPranav';
 
-const fallbackProjects = [
-  { name: 'Smart Farming AI', description: 'AI-driven agriculture optimization platform.', stars: 124, lang: 'Python', color: '#3572A5' },
-  { name: 'Logistics Platform', description: 'Real-time routing and tracking system.', stars: 89, lang: 'TypeScript', color: '#3178C6' },
-  { name: 'MockMate', description: 'Mock interview assistant using LLMs.', stars: 210, lang: 'TypeScript', color: '#3178C6' },
-  { name: 'GSAP Components', description: 'High-performance animation library wrapper.', stars: 156, lang: 'TypeScript', color: '#3178C6' }
-];
-
 async function fetchProjects() {
-  if (!GITHUB_TOKEN) return fallbackProjects;
+  if (!GITHUB_TOKEN) {
+    console.warn('No PAT_TOKEN provided. Fetching recent repos from REST API...');
+    try {
+      const response = await fetch(`https://api.github.com/users/${USERNAME}/repos?sort=pushed&per_page=4`);
+      if (!response.ok) throw new Error(`REST API error ${response.status}`);
+      const repos = await response.json();
+      
+      return repos.map(repo => ({
+        name: repo.name,
+        description: repo.description || 'No description provided.',
+        stars: repo.stargazers_count,
+        lang: repo.language || 'Unknown',
+        color: '#888888' // Default monochrome color
+      }));
+    } catch (e) {
+      console.error('REST API failed', e);
+      return [];
+    }
+  }
 
   const query = `
     query {
@@ -45,7 +56,6 @@ async function fetchProjects() {
     
     const data = await response.json();
     const nodes = data.data.user.pinnedItems.nodes;
-    if (nodes.length === 0) return fallbackProjects;
     
     return nodes.map(repo => ({
       name: repo.name,
@@ -56,7 +66,7 @@ async function fetchProjects() {
     }));
   } catch (error) {
     console.error('Error fetching projects:', error.message);
-    return fallbackProjects;
+    return [];
   }
 }
 
@@ -93,8 +103,8 @@ function generateSVG(projects) {
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
-      .card { fill: #0d0d0d; stroke: #222222; stroke-width: 1; rx: 8px; }
-      .title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; fill: #ffffff; text-shadow: 0 0 5px rgba(224,26,34,0.3); }
+      .card { fill: #000000; stroke: #333333; stroke-width: 1; rx: 8px; }
+      .title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; fill: #ffffff; }
       .desc { font-family: 'Inter', sans-serif; font-size: 14px; fill: #888888; }
       .meta { font-family: 'Inter', sans-serif; font-size: 13px; fill: #888888; }
     </style>

@@ -6,15 +6,31 @@ const USERNAME = 'NetPranav';
 
 async function fetchStats() {
   if (!GITHUB_TOKEN) {
-    console.warn('No PAT_TOKEN provided. Generating mock Vercel-like dashboard.');
-    return {
-      stars: 1240,
-      commits: 2350,
-      repos: 45,
-      followers: 890,
-      currentProject: 'Smart Farming AI',
-      latestCommitMessage: 'Optimize distributed inference engine'
-    };
+    console.warn('No PAT_TOKEN provided. Fetching public data from REST API...');
+    try {
+      const userRes = await fetch(`https://api.github.com/users/${USERNAME}`);
+      const userData = await userRes.json();
+      
+      const reposRes = await fetch(`https://api.github.com/users/${USERNAME}/repos?sort=pushed&per_page=1`);
+      const reposData = await reposRes.json();
+      
+      let currentProject = 'Unknown';
+      if (reposData && reposData.length > 0) {
+        currentProject = reposData[0].name;
+      }
+      
+      return {
+        stars: 'N/A', // Cannot get total stars easily without token/multiple calls
+        commits: 'N/A', // Cannot get contributions without token
+        repos: userData.public_repos || 0,
+        followers: userData.followers || 0,
+        currentProject: currentProject,
+        latestCommitMessage: 'See profile for latest updates'
+      };
+    } catch (e) {
+      console.error('REST API error', e);
+      return { stars: 0, commits: 0, repos: 0, followers: 0, currentProject: 'Unknown', latestCommitMessage: 'No token' };
+    }
   }
 
   const query = `
@@ -73,7 +89,7 @@ async function fetchStats() {
       repos: user.repositories.totalCount,
       followers: user.followers.totalCount,
       currentProject: repos[0] ? repos[0].name : 'Unknown',
-      latestCommitMessage: latestCommit.split('\\n')[0].substring(0, 50)
+      latestCommitMessage: latestCommit.split('\n')[0].substring(0, 50)
     };
   } catch (error) {
     console.error('Error fetching stats:', error.message);
@@ -87,14 +103,14 @@ function generateSVG(stats) {
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
-      .bg { fill: #0d0d0d; stroke: #222222; stroke-width: 1; rx: 8px; }
+      .bg { fill: #000000; stroke: #333333; stroke-width: 1; rx: 8px; }
       .text { font-family: 'Inter', -apple-system, sans-serif; fill: #ededed; }
       .label { font-size: 13px; font-weight: 500; fill: #888888; text-transform: uppercase; letter-spacing: 1px; }
-      .value { font-size: 36px; font-weight: 600; fill: #ffffff; text-shadow: 0 0 10px rgba(224,26,34,0.3); }
-      .divider { stroke: #222222; stroke-width: 1; }
-      .status-dot { fill: #E01A22; }
+      .value { font-size: 36px; font-weight: 600; fill: #ffffff; }
+      .divider { stroke: #333333; stroke-width: 1; }
+      .status-dot { fill: #ffffff; }
       .subtext { font-size: 13px; fill: #888888; }
-      .highlight { fill: #E01A22; font-weight: 600; }
+      .highlight { fill: #ffffff; font-weight: 600; }
     </style>
   </defs>
 

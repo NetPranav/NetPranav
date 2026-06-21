@@ -4,20 +4,20 @@
       @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
       
       .window {
-        fill: #0d0d0d;
+        fill: #000000;
         stroke: #222222;
         stroke-width: 1;
         rx: 10px;
       }
       .header {
-        fill: #1a1a1a;
+        fill: #0d0d0d;
         stroke: #222222;
         stroke-width: 1;
         rx: 10px;
       }
-      .dot-red { fill: #E01A22; }
-      .dot-yellow { fill: #ffbd2e; }
-      .dot-green { fill: #27c93f; }
+      .dot-red { fill: #444444; }
+      .dot-yellow { fill: #666666; }
+      .dot-green { fill: #888888; }
       
       .text {
         font-family: 'Fira Code', monospace;
@@ -25,11 +25,11 @@
         fill: #888888;
       }
       
-      .prompt { fill: #E01A22; font-weight: 500; }
-      .dir { fill: #ffffff; font-weight: 500; }
+      .prompt { fill: #ffffff; font-weight: 500; }
+      .dir { fill: #cccccc; font-weight: 500; }
       .command { fill: #ffffff; }
       .output { fill: #aaaaaa; }
-      .highlight { fill: #E01A22; font-weight: 600; text-shadow: 0 0 5px rgba(224,26,34,0.5); }
+      .highlight { fill: #ffffff; font-weight: 600; text-shadow: 0 0 5px rgba(255,255,255,0.4); }
       
       .line { opacity: 0; }
       

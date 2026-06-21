@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="./svg/deadpool-hero.svg" alt="Maximum Effort" width="850" />
+<img src="./svg/hero-animation.svg" alt="Hey. I am Pranav." width="850" />
 
 <br />
 
-<img src="./assets/deadpool.png" alt="Deadpool" width="850" />
+<img src="./assets/deadpool.png" alt="Black & White Theme" width="850" />
 
 <br />
 
@@ -51,7 +51,7 @@
 <br />
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=NetPranav&theme=dark&hide_border=true&background=0d0d0d&ring=E01A22&fire=E01A22&currStreakLabel=888888&stroke=E01A22" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=NetPranav&theme=dark&hide_border=true&background=000000&ring=ffffff&fire=ffffff&currStreakLabel=888888&stroke=ffffff" alt="GitHub Streak" />
 </div>
 
 <br />
