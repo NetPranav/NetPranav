@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const quote = `"Growth occurs when one goes beyond one's limits."`;
+const quote = `"Those who cannot acknowledge themselves, will eventually fail."`;
 const chars = quote.split('');
 const duration = 15; // 15 seconds loop
 

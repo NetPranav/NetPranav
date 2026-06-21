@@ -74,6 +74,20 @@
       .c47 { animation: type 15s steps(1) 4.7s infinite; }
       .c48 { animation: type 15s steps(1) 4.8s infinite; }
       .c49 { animation: type 15s steps(1) 4.9s infinite; }
+      .c50 { animation: type 15s steps(1) 5.0s infinite; }
+      .c51 { animation: type 15s steps(1) 5.1s infinite; }
+      .c52 { animation: type 15s steps(1) 5.2s infinite; }
+      .c53 { animation: type 15s steps(1) 5.3s infinite; }
+      .c54 { animation: type 15s steps(1) 5.4s infinite; }
+      .c55 { animation: type 15s steps(1) 5.5s infinite; }
+      .c56 { animation: type 15s steps(1) 5.6s infinite; }
+      .c57 { animation: type 15s steps(1) 5.7s infinite; }
+      .c58 { animation: type 15s steps(1) 5.8s infinite; }
+      .c59 { animation: type 15s steps(1) 5.9s infinite; }
+      .c60 { animation: type 15s steps(1) 6.0s infinite; }
+      .c61 { animation: type 15s steps(1) 6.1s infinite; }
+      .c62 { animation: type 15s steps(1) 6.2s infinite; }
+      .c63 { animation: type 15s steps(1) 6.3s infinite; }
       
       @keyframes type {
         0% { opacity: 0; }
@@ -89,17 +103,17 @@
       
       @keyframes cursorSweep {
         0% { transform: translateX(0px); }
-        35% { transform: translateX(480px); } /* time to type */
-        90% { transform: translateX(480px); }
+        35% { transform: translateX(614.4px); } /* time to type */
+        90% { transform: translateX(614.4px); }
         90.1% { transform: translateX(0px); }
         100% { transform: translateX(0px); }
       }
     </style>
   </defs>
   
-  <g transform="translate(160, 35)">
+  <g transform="translate(92.80000000000001, 35)">
     <text class="text">
-      <tspan class="type-group c0">"</tspan><tspan class="type-group c1">G</tspan><tspan class="type-group c2">r</tspan><tspan class="type-group c3">o</tspan><tspan class="type-group c4">w</tspan><tspan class="type-group c5">t</tspan><tspan class="type-group c6">h</tspan><tspan class="type-group c7"> </tspan><tspan class="type-group c8">o</tspan><tspan class="type-group c9">c</tspan><tspan class="type-group c10">c</tspan><tspan class="type-group c11">u</tspan><tspan class="type-group c12">r</tspan><tspan class="type-group c13">s</tspan><tspan class="type-group c14"> </tspan><tspan class="type-group c15">w</tspan><tspan class="type-group c16">h</tspan><tspan class="type-group c17">e</tspan><tspan class="type-group c18">n</tspan><tspan class="type-group c19"> </tspan><tspan class="type-group c20">o</tspan><tspan class="type-group c21">n</tspan><tspan class="type-group c22">e</tspan><tspan class="type-group c23"> </tspan><tspan class="type-group c24">g</tspan><tspan class="type-group c25">o</tspan><tspan class="type-group c26">e</tspan><tspan class="type-group c27">s</tspan><tspan class="type-group c28"> </tspan><tspan class="type-group c29">b</tspan><tspan class="type-group c30">e</tspan><tspan class="type-group c31">y</tspan><tspan class="type-group c32">o</tspan><tspan class="type-group c33">n</tspan><tspan class="type-group c34">d</tspan><tspan class="type-group c35"> </tspan><tspan class="type-group c36">o</tspan><tspan class="type-group c37">n</tspan><tspan class="type-group c38">e</tspan><tspan class="type-group c39">'</tspan><tspan class="type-group c40">s</tspan><tspan class="type-group c41"> </tspan><tspan class="type-group c42">l</tspan><tspan class="type-group c43">i</tspan><tspan class="type-group c44">m</tspan><tspan class="type-group c45">i</tspan><tspan class="type-group c46">t</tspan><tspan class="type-group c47">s</tspan><tspan class="type-group c48">.</tspan><tspan class="type-group c49">"</tspan>
+      <tspan class="type-group c0">"</tspan><tspan class="type-group c1">T</tspan><tspan class="type-group c2">h</tspan><tspan class="type-group c3">o</tspan><tspan class="type-group c4">s</tspan><tspan class="type-group c5">e</tspan><tspan class="type-group c6"> </tspan><tspan class="type-group c7">w</tspan><tspan class="type-group c8">h</tspan><tspan class="type-group c9">o</tspan><tspan class="type-group c10"> </tspan><tspan class="type-group c11">c</tspan><tspan class="type-group c12">a</tspan><tspan class="type-group c13">n</tspan><tspan class="type-group c14">n</tspan><tspan class="type-group c15">o</tspan><tspan class="type-group c16">t</tspan><tspan class="type-group c17"> </tspan><tspan class="type-group c18">a</tspan><tspan class="type-group c19">c</tspan><tspan class="type-group c20">k</tspan><tspan class="type-group c21">n</tspan><tspan class="type-group c22">o</tspan><tspan class="type-group c23">w</tspan><tspan class="type-group c24">l</tspan><tspan class="type-group c25">e</tspan><tspan class="type-group c26">d</tspan><tspan class="type-group c27">g</tspan><tspan class="type-group c28">e</tspan><tspan class="type-group c29"> </tspan><tspan class="type-group c30">t</tspan><tspan class="type-group c31">h</tspan><tspan class="type-group c32">e</tspan><tspan class="type-group c33">m</tspan><tspan class="type-group c34">s</tspan><tspan class="type-group c35">e</tspan><tspan class="type-group c36">l</tspan><tspan class="type-group c37">v</tspan><tspan class="type-group c38">e</tspan><tspan class="type-group c39">s</tspan><tspan class="type-group c40">,</tspan><tspan class="type-group c41"> </tspan><tspan class="type-group c42">w</tspan><tspan class="type-group c43">i</tspan><tspan class="type-group c44">l</tspan><tspan class="type-group c45">l</tspan><tspan class="type-group c46"> </tspan><tspan class="type-group c47">e</tspan><tspan class="type-group c48">v</tspan><tspan class="type-group c49">e</tspan><tspan class="type-group c50">n</tspan><tspan class="type-group c51">t</tspan><tspan class="type-group c52">u</tspan><tspan class="type-group c53">a</tspan><tspan class="type-group c54">l</tspan><tspan class="type-group c55">l</tspan><tspan class="type-group c56">y</tspan><tspan class="type-group c57"> </tspan><tspan class="type-group c58">f</tspan><tspan class="type-group c59">a</tspan><tspan class="type-group c60">i</tspan><tspan class="type-group c61">l</tspan><tspan class="type-group c62">.</tspan><tspan class="type-group c63">"</tspan>
     </text>
     <rect class="cursor cursor-move" x="0" y="-12" width="10" height="15" />
   </g>

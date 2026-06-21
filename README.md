@@ -6,7 +6,7 @@
 
 <br />
 
-<img src="./svg/quote.svg?v=3" alt="Architecture over hype" width="850" />
+<img src="./svg/quote.svg?v=4" alt="Architecture over hype" width="850" />
 
 </div>
 
