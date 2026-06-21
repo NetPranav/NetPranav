@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="./svg/hero-animation.svg" alt="Hey. I am Pranav." width="850" />
-
-<br />
+<img src="./svg/hero-animation.svg" alt="Pranav Dubey" width="850" />
 
 <img src="./assets/deadpool.png" alt="Black & White Theme" width="850" />
 

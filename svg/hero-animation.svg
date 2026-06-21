@@ -1,27 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="100%" height="120">
   <defs>
-    <!-- Maximum Effort 3D Chrome Lighting Filter -->
-    <filter id="chrome" x="-20%" y="-20%" width="140%" height="140%">
-      <!-- 1. Create a bump map from the text's alpha channel -->
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
-      
-      <!-- 2. Apply specular lighting to simulate a shiny 3D metallic surface -->
-      <!-- The light source sweeps across the text continuously -->
-      <feSpecularLighting in="blur" surfaceScale="6" specularConstant="1.5" specularExponent="30" lighting-color="#ffffff" result="specOut">
-        <fePointLight y="100" z="150">
-          <!-- SINGLE CONTINUOUS ANIMATION: The light sweeping left and right -->
-          <animate attributeName="x" values="-200; 1000; -200" dur="4s" repeatCount="indefinite" />
-        </fePointLight>
-      </feSpecularLighting>
-      
-      <!-- 3. Mask the light to only appear on the text -->
-      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOutMasked" />
-      
-      <!-- 4. Add the light reflection to the base text color -->
-      <feComposite in="SourceGraphic" in2="specOutMasked" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litText" />
-      
-      <!-- 5. Add a subtle drop shadow to ground it -->
-      <feDropShadow in="litText" dx="0" dy="15" stdDeviation="10" flood-color="#ffffff" flood-opacity="0.1" />
+    <!-- Continuous Liquid Energy Filter -->
+    <filter id="liquid" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015 0.05" numOctaves="2" result="noise">
+        <animate attributeName="baseFrequency" values="0.015 0.05; 0.03 0.1; 0.015 0.05" dur="4s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale" values="5; 20; 5" dur="4s" repeatCount="indefinite" />
+      </feDisplacementMap>
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
 
     <style>
@@ -29,22 +20,51 @@
       
       .bg { fill: transparent; }
       
-      .text {
+      .text-base {
         font-family: 'Syncopate', sans-serif;
-        font-size: 68px;
+        font-size: 64px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 12px;
         text-anchor: middle;
-        /* Dark base so the sweeping light reflection pops dramatically */
-        fill: #222222; 
-        filter: url(#chrome);
+        fill: #ffffff;
+      }
+      
+      .text-liquid {
+        font-family: 'Syncopate', sans-serif;
+        font-size: 64px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        text-anchor: middle;
+        fill: #ffffff;
+        filter: url(#liquid);
+        opacity: 0.6;
+      }
+      
+      .text-stroke {
+        font-family: 'Syncopate', sans-serif;
+        font-size: 64px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        text-anchor: middle;
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2px;
+        opacity: 0.8;
       }
     </style>
   </defs>
 
-  <rect class="bg" width="800" height="200" />
+  <rect class="bg" width="800" height="120" />
   
-  <!-- The single animated element -->
-  <text x="51%" y="58%" class="text">PRANAV DUBEY</text>
+  <!-- The Liquid Energy Aura -->
+  <text x="51%" y="75%" class="text-liquid">PRANAV DUBEY</text>
+  
+  <!-- The Solid Core Text -->
+  <text x="51%" y="75%" class="text-base">PRANAV DUBEY</text>
+  
+  <!-- Sharp Outline -->
+  <text x="51%" y="75%" class="text-stroke">PRANAV DUBEY</text>
 </svg>
