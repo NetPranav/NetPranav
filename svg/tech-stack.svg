@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 150" width="100%" height="150">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
+      .card {
+        fill: #0d1117;
+        stroke: #30363d;
+        stroke-width: 1;
+        rx: 12px;
+      }
+      .text {
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        fill: #c9d1d9;
+      }
+      .icon {
+        fill: #8b949e;
+      }
+    </style>
+  </defs>
+
+  <g transform="translate(10, 10)">
+    <!-- TypeScript -->
+    <g transform="translate(0, 0)">
+      <rect class="card" width="120" height="40" />
+      <circle cx="25" cy="20" r="10" fill="#3178C6" />
+      <text x="45" y="25" class="text">TypeScript</text>
+    </g>
+
+    <!-- Python -->
+    <g transform="translate(135, 0)">
+      <rect class="card" width="100" height="40" />
+      <circle cx="25" cy="20" r="10" fill="#3776AB" />
+      <text x="45" y="25" class="text">Python</text>
+    </g>
+
+    <!-- React -->
+    <g transform="translate(250, 0)">
+      <rect class="card" width="100" height="40" />
+      <circle cx="25" cy="20" r="10" fill="#61DAFB" />
+      <text x="45" y="25" class="text">React</text>
+    </g>
+
+    <!-- Next.js -->
+    <g transform="translate(365, 0)">
+      <rect class="card" width="100" height="40" />
+      <circle cx="25" cy="20" r="10" fill="#000000" stroke="#30363d" />
+      <text x="45" y="25" class="text">Next.js</text>
+    </g>
+
+    <!-- Tailwind -->
+    <g transform="translate(480, 0)">
+      <rect class="card" width="110" height="40" />
+      <circle cx="25" cy="20" r="10" fill="#06B6D4" />
+      <text x="45" y="25" class="text">Tailwind</text>
+    </g>
+    
+    <!-- Node.js -->
+    <g transform="translate(605, 0)">
+      <rect class="card" width="110" height="40" />
+      <circle cx="25" cy="20" r="10" fill="#339933" />
+      <text x="45" y="25" class="text">Node.js</text>
+    </g>
+
+    <!-- Docker -->
+    <g transform="translate(0, 55)">
+      <rect class="card" width="100" height="40" />
+      <circle cx="25" cy="20" r="10" fill="#2496ED" />
+      <text x="45" y="25" class="text">Docker</text>
+    </g>
+
+    <!-- AWS -->
+    <g transform="translate(115, 55)">
+      <rect class="card" width="90" height="40" />
+      <circle cx="25" cy="20" r="10" fill="#FF9900" />
+      <text x="45" y="25" class="text">AWS</text>
+    </g>
+    
+    <!-- Figma -->
+    <g transform="translate(220, 55)">
+      <rect class="card" width="95" height="40" />
+      <circle cx="25" cy="20" r="10" fill="#F24E1E" />
+      <text x="45" y="25" class="text">Figma</text>
+    </g>
+  </g>
+</svg>

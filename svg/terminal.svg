@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
+      
+      .window {
+        fill: #0d1117;
+        stroke: #30363d;
+        stroke-width: 1;
+        rx: 8px;
+      }
+      .header {
+        fill: #161b22;
+        rx: 8px;
+      }
+      .dot-red { fill: #ff5f56; }
+      .dot-yellow { fill: #ffbd2e; }
+      .dot-green { fill: #27c93f; }
+      
+      .text {
+        font-family: 'Fira Code', monospace;
+        font-size: 14px;
+        fill: #c9d1d9;
+      }
+      
+      .prompt { fill: #79c0ff; font-weight: 500; }
+      .command { fill: #a5d6ff; }
+      .output { fill: #8b949e; }
+      
+      /* Typing animation */
+      .line { opacity: 0; }
+      
+      @keyframes type {
+        0% { opacity: 0; }
+        1% { opacity: 1; }
+        100% { opacity: 1; }
+      }
+      
+      .l1 { animation: type 10s steps(1, end) 0s forwards; }
+      .l2 { animation: type 10s steps(1, end) 0.5s forwards; }
+      
+      .l3 { animation: type 10s steps(1, end) 1.5s forwards; }
+      .l4 { animation: type 10s steps(1, end) 2s forwards; }
+      .l5 { animation: type 10s steps(1, end) 2.2s forwards; }
+      .l6 { animation: type 10s steps(1, end) 2.4s forwards; }
+      .l7 { animation: type 10s steps(1, end) 2.6s forwards; }
+      
+      .l8 { animation: type 10s steps(1, end) 3.5s forwards; }
+      .l9 { animation: type 10s steps(1, end) 4s forwards; }
+      .l10 { animation: type 10s steps(1, end) 4.2s forwards; }
+      
+      .l11 { animation: type 10s steps(1, end) 5s forwards; }
+      .l12 { animation: type 10s steps(1, end) 5.5s forwards; }
+      
+      .l13 { animation: type 10s steps(1, end) 6.5s forwards; }
+      
+      /* Cursor animation */
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .cursor {
+        fill: #c9d1d9;
+        animation: blink 1s step-end infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Window -->
+  <rect class="window" x="10" y="10" width="780" height="380" />
+  
+  <!-- Header -->
+  <path class="header" d="M 10 18 Q 10 10 18 10 L 782 10 Q 790 10 790 18 L 790 40 L 10 40 Z" />
+  <circle class="dot-red" cx="30" cy="25" r="6" />
+  <circle class="dot-yellow" cx="50" cy="25" r="6" />
+  <circle class="dot-green" cx="70" cy="25" r="6" />
+  
+  <!-- Content -->
+  <g class="text" transform="translate(30, 70)">
+    <g class="line l1">
+      <text x="0" y="0"><tspan class="prompt">$</tspan> <tspan class="command">whoami</tspan></text>
+    </g>
+    <g class="line l2">
+      <text x="0" y="25" class="output">Pranav Dubey</text>
+    </g>
+    
+    <g class="line l3">
+      <text x="0" y="65"><tspan class="prompt">$</tspan> <tspan class="command">currently-building</tspan></text>
+    </g>
+    <g class="line l4"><text x="0" y="90" class="output">Smart Farming AI</text></g>
+    <g class="line l5"><text x="0" y="115" class="output">Logistics Platform</text></g>
+    <g class="line l6"><text x="0" y="140" class="output">MockMate</text></g>
+    <g class="line l7"><text x="0" y="165" class="output">GSAP Components</text></g>
+
+    <g class="line l8">
+      <text x="0" y="205"><tspan class="prompt">$</tspan> <tspan class="command">learning</tspan></text>
+    </g>
+    <g class="line l9"><text x="0" y="230" class="output">System Design</text></g>
+    <g class="line l10"><text x="0" y="255" class="output">Computer Vision</text></g>
+
+    <g class="line l11">
+      <text x="0" y="295"><tspan class="prompt">$</tspan> <tspan class="command">mission</tspan></text>
+    </g>
+    <g class="line l12">
+      <text x="0" y="320" class="output">Build technology that creates real-world impact.</text>
+    </g>
+
+    <g class="line l13">
+      <text x="0" y="350"><tspan class="prompt">$</tspan> <tspan class="command">_</tspan></text>
+    </g>
+  </g>
+</svg>
