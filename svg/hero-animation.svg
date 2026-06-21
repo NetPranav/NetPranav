@@ -1,80 +1,142 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
   <defs>
+    <!-- Advanced Glitch Filter using SMIL animations -->
+    <filter id="glitch" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.00001 0.00001" numOctaves="1" result="noise">
+        <animate attributeName="baseFrequency" values="0.00001 0.00001; 0.1 0.00001; 0.00001 0.00001; 0.05 0.05; 0.00001 0.00001" keyTimes="0; 0.05; 0.1; 0.15; 1" dur="5s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale" values="0; 40; 0; 60; 0" keyTimes="0; 0.05; 0.1; 0.15; 1" dur="5s" repeatCount="indefinite" />
+      </feDisplacementMap>
+    </filter>
+
+    <!-- Energy/Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Clip Paths for physical slicing -->
+    <clipPath id="slice1">
+      <rect x="0" y="0" width="800" height="45" />
+    </clipPath>
+    <clipPath id="slice2">
+      <rect x="0" y="50" width="800" height="30" />
+    </clipPath>
+    <clipPath id="slice3">
+      <rect x="0" y="85" width="800" height="60" />
+    </clipPath>
+    <clipPath id="slice4">
+      <rect x="0" y="150" width="800" height="50" />
+    </clipPath>
+
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&amp;display=swap');
       
       .bg { fill: #000000; }
       
-      .flash {
+      .base-text {
+        font-family: 'Syncopate', sans-serif;
+        font-size: 58px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 14px;
+        text-anchor: middle;
+      }
+      
+      /* 1. The stroke drawing effect */
+      .stroke-text {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 1.5px;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: draw 4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      
+      /* 2. The fill fading in with a glow */
+      .fill-text {
         fill: #ffffff;
         opacity: 0;
-        animation: gunshot 6s infinite;
+        filter: url(#glow);
+        animation: fadeIn 3s ease forwards 2s;
       }
       
-      .text1, .text2 {
-        font-family: 'Inter', sans-serif;
-        font-weight: 800;
+      /* 3. The Glitch Layers */
+      .glitch-layer {
         fill: #ffffff;
         opacity: 0;
+        filter: url(#glitch);
       }
       
-      .text1 {
-        font-size: 64px;
-        letter-spacing: 4px;
-        animation: text1Anim 6s infinite;
+      .glitch1 { clip-path: url(#slice1); animation: glitchAnim1 5s infinite 2s; }
+      .glitch2 { clip-path: url(#slice2); animation: glitchAnim2 5s infinite 2s; }
+      .glitch3 { clip-path: url(#slice3); animation: glitchAnim3 5s infinite 2s; }
+      .glitch4 { clip-path: url(#slice4); animation: glitchAnim1 5s infinite 2.5s; }
+      
+      @keyframes draw {
+        to { stroke-dashoffset: 0; }
       }
       
-      .text2 {
-        font-size: 48px;
-        letter-spacing: 2px;
-        fill: #aaaaaa;
-        animation: text2Anim 6s infinite;
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: scale(0.95); }
+        100% { opacity: 1; transform: scale(1); }
       }
       
-      @keyframes gunshot {
-        0%, 10% { opacity: 0; }
-        11% { opacity: 1; }
-        13% { opacity: 0; }
-        100% { opacity: 0; }
+      /* Rapid horizontal shifting for the slices */
+      @keyframes glitchAnim1 {
+        0%, 5% { opacity: 0; transform: translate(0, 0); }
+        5.1% { opacity: 1; transform: translate(-15px, 0); }
+        5.2% { opacity: 1; transform: translate(25px, 0); }
+        5.3% { opacity: 0; transform: translate(0, 0); }
+        100% { opacity: 0; transform: translate(0, 0); }
+      }
+      @keyframes glitchAnim2 {
+        0%, 12% { opacity: 0; transform: translate(0, 0); }
+        12.1% { opacity: 1; transform: translate(30px, 0); }
+        12.2% { opacity: 1; transform: translate(-20px, 0); }
+        12.3% { opacity: 0; transform: translate(0, 0); }
+        100% { opacity: 0; transform: translate(0, 0); }
+      }
+      @keyframes glitchAnim3 {
+        0%, 20% { opacity: 0; transform: translate(0, 0); }
+        20.1% { opacity: 1; transform: translate(-35px, 0); }
+        20.2% { opacity: 1; transform: translate(15px, 0); }
+        20.3% { opacity: 0; transform: translate(0, 0); }
+        100% { opacity: 0; transform: translate(0, 0); }
       }
       
-      @keyframes text1Anim {
-        0%, 13% { opacity: 0; transform: translateY(5px); }
-        18% { opacity: 1; transform: translateY(0); }
-        90% { opacity: 1; transform: translateY(0); }
-        95%, 100% { opacity: 0; transform: translateY(0); }
+      /* 4. Cinematic Zoom Container */
+      .container {
+        transform-origin: 50% 50%;
+        animation: cinematicZoom 15s ease-out infinite alternate;
       }
-      
-      @keyframes text2Anim {
-        0%, 40% { opacity: 0; transform: translateY(5px); }
-        45% { opacity: 1; transform: translateY(0); }
-        90% { opacity: 1; transform: translateY(0); }
-        95%, 100% { opacity: 0; transform: translateY(0); }
-      }
-      
-      .shake {
-        animation: shakeAnim 6s infinite;
-      }
-      
-      @keyframes shakeAnim {
-        0%, 10% { transform: translate(0,0); }
-        11% { transform: translate(8px, -8px); }
-        12% { transform: translate(-8px, 8px); }
-        13% { transform: translate(4px, -4px); }
-        14% { transform: translate(-4px, 4px); }
-        15%, 100% { transform: translate(0,0); }
+      @keyframes cinematicZoom {
+        from { transform: scale(1.05); }
+        to { transform: scale(1); }
       }
     </style>
   </defs>
-  
+
+  <!-- Background -->
   <rect class="bg" width="800" height="200" />
   
-  <g class="shake">
-    <!-- Gunshot Flash -->
-    <rect class="flash" width="800" height="200" />
+  <!-- Content Group with Zoom -->
+  <g class="container">
     
-    <!-- Text -->
-    <text x="50%" y="48%" text-anchor="middle" class="text1">Hey.</text>
-    <text x="50%" y="78%" text-anchor="middle" class="text2">I am Pranav.</text>
+    <!-- Solid base text with glow -->
+    <text x="51%" y="56%" class="base-text fill-text">PRANAV DUBEY</text>
+    
+    <!-- Sliced & Filtered Glitch Layers -->
+    <text x="51%" y="56%" class="base-text glitch-layer glitch1">PRANAV DUBEY</text>
+    <text x="51%" y="56%" class="base-text glitch-layer glitch2">PRANAV DUBEY</text>
+    <text x="51%" y="56%" class="base-text glitch-layer glitch3">PRANAV DUBEY</text>
+    <text x="51%" y="56%" class="base-text glitch-layer glitch4">PRANAV DUBEY</text>
+    
+    <!-- Animating Outline Stroke -->
+    <text x="51%" y="56%" class="base-text stroke-text">PRANAV DUBEY</text>
   </g>
 </svg>
