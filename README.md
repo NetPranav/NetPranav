@@ -1,6 +1,6 @@
 <div align="center">
 
-<video src="./assets/hero.mp4" width="800" controls autoplay loop muted></video>
+<video src="https://github.com/NetPranav/NetPranav/raw/main/assets/hero.mp4" width="800" controls autoplay loop muted></video>
 
 <img src="./svg/signature.svg" alt="Pranav Dubey Signature" width="800" />
 
