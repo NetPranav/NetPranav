@@ -1,13 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="100%" height="120">
   <defs>
-    <!-- Continuous Liquid Energy Filter -->
-    <filter id="liquid" x="-20%" y="-20%" width="140%" height="140%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.015 0.05" numOctaves="2" result="noise">
-        <animate attributeName="baseFrequency" values="0.015 0.05; 0.03 0.1; 0.015 0.05" dur="4s" repeatCount="indefinite" />
-      </feTurbulence>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G">
-        <animate attributeName="scale" values="5; 20; 5" dur="4s" repeatCount="indefinite" />
-      </feDisplacementMap>
+    <!-- Add a subtle matrix-like glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="2" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -16,55 +10,78 @@
     </filter>
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
       
       .bg { fill: transparent; }
       
-      .text-base {
-        font-family: 'Syncopate', sans-serif;
+      .txt {
+        font-family: 'Share Tech Mono', monospace;
         font-size: 64px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 12px;
+        font-weight: 400;
         text-anchor: middle;
         fill: #ffffff;
+        opacity: 0;
+        letter-spacing: 4px;
+        filter: url(#glow);
       }
       
-      .text-liquid {
-        font-family: 'Syncopate', sans-serif;
-        font-size: 64px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 12px;
-        text-anchor: middle;
-        fill: #ffffff;
-        filter: url(#liquid);
-        opacity: 0.6;
+      /* Solid text state */
+      .base { animation: baseAnim 5s infinite; }
+      
+      /* Scramble frame layers */
+      .f1 { animation: frame1 5s infinite; }
+      .f2 { animation: frame2 5s infinite; }
+      .f3 { animation: frame3 5s infinite; }
+      .f4 { animation: frame4 5s infinite; }
+      .f5 { animation: frame5 5s infinite; }
+      .f6 { animation: frame6 5s infinite; }
+      .f7 { animation: frame7 5s infinite; }
+      .f8 { animation: frame8 5s infinite; }
+      
+      /* Animation Timing: 5 seconds total 
+         0 - 60%: Solid (3s)
+         60 - 70%: Scramble (0.5s)
+         70 - 90%: Solid (1s)
+         90 - 100%: Quick Scramble (0.5s)
+      */
+      
+      @keyframes baseAnim {
+        0%, 59.9% { opacity: 1; }
+        60%, 70% { opacity: 0; }
+        70.1%, 89.9% { opacity: 1; }
+        90%, 100% { opacity: 0; }
       }
       
-      .text-stroke {
-        font-family: 'Syncopate', sans-serif;
-        font-size: 64px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 12px;
-        text-anchor: middle;
-        fill: none;
-        stroke: #ffffff;
-        stroke-width: 2px;
-        opacity: 0.8;
-      }
+      /* The main scramble block (60% to 70%) */
+      @keyframes frame1 { 60%, 61.9% { opacity: 1; } 0%, 59.9%, 62%, 100% { opacity: 0; } }
+      @keyframes frame2 { 62%, 63.9% { opacity: 1; } 0%, 61.9%, 64%, 100% { opacity: 0; } }
+      @keyframes frame3 { 64%, 65.9% { opacity: 1; } 0%, 63.9%, 66%, 100% { opacity: 0; } }
+      @keyframes frame4 { 66%, 67.9% { opacity: 1; } 0%, 65.9%, 68%, 100% { opacity: 0; } }
+      @keyframes frame5 { 68%, 69.9% { opacity: 1; } 0%, 67.9%, 70%, 100% { opacity: 0; } }
+      
+      /* The quick glitch block (90% to 100%) */
+      @keyframes frame6 { 90%, 93.9% { opacity: 1; } 0%, 89.9%, 94%, 100% { opacity: 0; } }
+      @keyframes frame7 { 94%, 96.9% { opacity: 1; } 0%, 93.9%, 97%, 100% { opacity: 0; } }
+      @keyframes frame8 { 97%, 99.9% { opacity: 1; } 0%, 96.9%, 100% { opacity: 0; } }
+      
     </style>
   </defs>
 
   <rect class="bg" width="800" height="120" />
   
-  <!-- The Liquid Energy Aura -->
-  <text x="51%" y="75%" class="text-liquid">PRANAV DUBEY</text>
-  
-  <!-- The Solid Core Text -->
-  <text x="51%" y="75%" class="text-base">PRANAV DUBEY</text>
-  
-  <!-- Sharp Outline -->
-  <text x="51%" y="75%" class="text-stroke">PRANAV DUBEY</text>
+  <g transform="translate(400, 75)">
+    <!-- Base solid text -->
+    <text class="txt base">PRANAV DUBEY</text>
+    
+    <!-- Scramble Frames -->
+    <text class="txt f1">P#A&amp;AV DUB!Y</text>
+    <text class="txt f2">&gt;R*N@% D_B^Y</text>
+    <text class="txt f3">P[A/A&gt; DU8?Y</text>
+    <text class="txt f4">#R$N@% D*B!Y</text>
+    <text class="txt f5">010101 10101</text>
+    
+    <text class="txt f6">P#A&amp;AV DUB!Y</text>
+    <text class="txt f7">P R A N A V_</text>
+    <text class="txt f8">_ R _ N _ V_</text>
+  </g>
 </svg>
