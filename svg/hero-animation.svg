@@ -1,24 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="100%" height="120">
   <defs>
+    <!-- Seamless Breathing Glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur">
+        <!-- Breathes seamlessly from 2 to 6 back to 2 -->
+        <animate attributeName="stdDeviation" values="2; 5; 2" dur="4s" repeatCount="indefinite" />
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Seamless Infinite Light Sweep -->
+    <linearGradient id="sweep" x1="0%" y1="0%" x2="200%" y2="0%">
+      <stop offset="0%" stop-color="#444444" />
+      <stop offset="25%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#444444" />
+      <stop offset="75%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#444444" />
+      
+      <!-- Shifts exactly 100% backwards seamlessly linking the 50% stop to the 0% stop -->
+      <animate attributeName="x1" values="0%; -100%" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="200%; 100%" dur="6s" repeatCount="indefinite" />
+    </linearGradient>
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&amp;display=swap');
       
       .bg { fill: transparent; }
       
-      .text-base {
+      .text-fill {
         font-family: 'Syncopate', sans-serif;
         font-size: 64px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 12px;
         text-anchor: middle;
-        fill: #ffffff;
-        opacity: 0;
-        /* Runs exactly ONCE and holds the final solid state */
-        animation: fadeIn 2.5s ease-out forwards 2.5s;
+        fill: url(#sweep);
       }
       
-      .text-stroke {
+      .text-energy {
         font-family: 'Syncopate', sans-serif;
         font-size: 64px;
         font-weight: 700;
@@ -27,29 +49,28 @@
         text-anchor: middle;
         fill: none;
         stroke: #ffffff;
-        stroke-width: 1.5px;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        /* Runs exactly ONCE to draw the outline */
-        animation: draw 3.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        stroke-width: 1px;
+        opacity: 0.9;
+        filter: url(#glow);
+        
+        /* Perfectly seamless flowing dashed line */
+        stroke-dasharray: 20 20;
+        animation: flow 3s linear infinite;
       }
       
-      @keyframes draw {
+      @keyframes flow {
+        /* Animates exactly one cycle (20+20=40) for a flawless invisible loop */
+        from { stroke-dashoffset: 40; }
         to { stroke-dashoffset: 0; }
-      }
-      
-      @keyframes fadeIn {
-        from { filter: blur(5px); transform: scale(0.98); }
-        to { opacity: 1; filter: blur(0px); transform: scale(1); }
       }
     </style>
   </defs>
 
   <rect class="bg" width="800" height="120" />
   
-  <!-- Solid Fill Text -->
-  <text x="51%" y="75%" class="text-base">PRANAV DUBEY</text>
+  <!-- Sweeping Metallic Fill -->
+  <text x="51%" y="75%" class="text-fill">PRANAV DUBEY</text>
   
-  <!-- Animated Stroke Trace -->
-  <text x="51%" y="75%" class="text-stroke">PRANAV DUBEY</text>
+  <!-- Seamless Flowing Energy Outline -->
+  <text x="51%" y="75%" class="text-energy">PRANAV DUBEY</text>
 </svg>
