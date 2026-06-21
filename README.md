@@ -17,7 +17,7 @@
 <br />
 
 <div align="center">
-  <img src="./svg/terminal.svg?v=2" alt="Current Focus" width="850" />
+  <img src="./svg/terminal.svg?v=3" alt="Current Focus" width="850" />
 </div>
 
 <br />
