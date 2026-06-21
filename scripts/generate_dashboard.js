@@ -135,7 +135,7 @@ function generateSVG(stats) {
   });
 
   return `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 220" width="100%" height="220">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 170" width="100%" height="170">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
@@ -152,7 +152,7 @@ function generateSVG(stats) {
     </style>
   </defs>
 
-  <rect class="bg" width="848" height="218" x="1" y="1" />
+  <rect class="bg" width="848" height="168" x="1" y="1" />
   
   <g transform="translate(40, 45)">
     
@@ -177,15 +177,6 @@ function generateSVG(stats) {
         ${bars}
       </g>
     </g>
-  </g>
-  
-  <line class="divider" x1="0" y1="160" x2="850" y2="160" />
-  
-  <!-- Current Focus Footer -->
-  <g transform="translate(40, 190)">
-    <circle cx="0" cy="-4" r="4" class="status-dot" />
-    <text class="text subtext" x="15" y="0">Currently engineering <tspan class="highlight">${stats.currentProject}</tspan></text>
-    <text class="text subtext" x="460" y="0">Latest Commit: <tspan class="highlight">${stats.latestCommitMessage}</tspan></text>
   </g>
 </svg>`;
 }
