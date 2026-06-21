@@ -1,17 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420" width="100%" height="420">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
       
       .window {
-        fill: #0d1117;
-        stroke: #30363d;
+        fill: #000000;
+        stroke: #333333;
         stroke-width: 1;
-        rx: 8px;
+        rx: 10px;
       }
       .header {
-        fill: #161b22;
-        rx: 8px;
+        fill: #111111;
+        stroke: #333333;
+        stroke-width: 1;
+        rx: 10px;
       }
       .dot-red { fill: #ff5f56; }
       .dot-yellow { fill: #ffbd2e; }
@@ -20,14 +22,15 @@
       .text {
         font-family: 'Fira Code', monospace;
         font-size: 14px;
-        fill: #c9d1d9;
+        fill: #888888;
       }
       
-      .prompt { fill: #79c0ff; font-weight: 500; }
-      .command { fill: #a5d6ff; }
-      .output { fill: #8b949e; }
+      .prompt { fill: #2ea043; font-weight: 500; }
+      .dir { fill: #58a6ff; font-weight: 500; }
+      .command { fill: #e6edf3; }
+      .output { fill: #c9d1d9; }
+      .highlight { fill: #f0f6fc; font-weight: 500; }
       
-      /* Typing animation */
       .line { opacity: 0; }
       
       @keyframes type {
@@ -43,70 +46,74 @@
       .l4 { animation: type 10s steps(1, end) 2s forwards; }
       .l5 { animation: type 10s steps(1, end) 2.2s forwards; }
       .l6 { animation: type 10s steps(1, end) 2.4s forwards; }
-      .l7 { animation: type 10s steps(1, end) 2.6s forwards; }
       
-      .l8 { animation: type 10s steps(1, end) 3.5s forwards; }
-      .l9 { animation: type 10s steps(1, end) 4s forwards; }
-      .l10 { animation: type 10s steps(1, end) 4.2s forwards; }
-      
-      .l11 { animation: type 10s steps(1, end) 5s forwards; }
-      .l12 { animation: type 10s steps(1, end) 5.5s forwards; }
-      
+      .l7 { animation: type 10s steps(1, end) 3.5s forwards; }
+      .l8 { animation: type 10s steps(1, end) 4s forwards; }
+      .l9 { animation: type 10s steps(1, end) 4.2s forwards; }
+
+      .l10 { animation: type 10s steps(1, end) 5s forwards; }
+      .l11 { animation: type 10s steps(1, end) 5.5s forwards; }
+      .l12 { animation: type 10s steps(1, end) 5.7s forwards; }
+
       .l13 { animation: type 10s steps(1, end) 6.5s forwards; }
       
-      /* Cursor animation */
       @keyframes blink {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
       }
       .cursor {
-        fill: #c9d1d9;
+        fill: #e6edf3;
         animation: blink 1s step-end infinite;
       }
     </style>
   </defs>
 
   <!-- Window -->
-  <rect class="window" x="10" y="10" width="780" height="380" />
+  <rect class="window" x="10" y="10" width="830" height="400" />
   
   <!-- Header -->
-  <path class="header" d="M 10 18 Q 10 10 18 10 L 782 10 Q 790 10 790 18 L 790 40 L 10 40 Z" />
+  <path class="header" d="M 10 20 Q 10 10 20 10 L 820 10 Q 830 10 830 20 L 830 40 L 10 40 Z" />
+  <line x1="10" y1="40" x2="840" y2="40" stroke="#333333" stroke-width="1" />
+  
   <circle class="dot-red" cx="30" cy="25" r="6" />
   <circle class="dot-yellow" cx="50" cy="25" r="6" />
   <circle class="dot-green" cx="70" cy="25" r="6" />
+  <text x="425" y="29" font-family="-apple-system, sans-serif" font-size="12" fill="#888888" text-anchor="middle">pranav@macbook:~</text>
   
   <!-- Content -->
-  <g class="text" transform="translate(30, 70)">
+  <g class="text" transform="translate(30, 75)">
     <g class="line l1">
-      <text x="0" y="0"><tspan class="prompt">$</tspan> <tspan class="command">whoami</tspan></text>
+      <text x="0" y="0"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command">whoami</tspan></text>
     </g>
     <g class="line l2">
-      <text x="0" y="25" class="output">Pranav Dubey</text>
+      <text x="0" y="25" class="output">Pranav Dubey. Engineer. First-principles thinker.</text>
     </g>
     
     <g class="line l3">
-      <text x="0" y="65"><tspan class="prompt">$</tspan> <tspan class="command">currently-building</tspan></text>
+      <text x="0" y="65"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command">cat focus.md</tspan></text>
     </g>
-    <g class="line l4"><text x="0" y="90" class="output">Smart Farming AI</text></g>
-    <g class="line l5"><text x="0" y="115" class="output">Logistics Platform</text></g>
-    <g class="line l6"><text x="0" y="140" class="output">MockMate</text></g>
-    <g class="line l7"><text x="0" y="165" class="output">GSAP Components</text></g>
+    <g class="line l4"><text x="0" y="90" class="output">- <tspan class="highlight">Smart Farming AI:</tspan> Computer Vision optimization platform.</text></g>
+    <g class="line l5"><text x="0" y="115" class="output">- <tspan class="highlight">Logistics Platform:</tspan> Distributed routing backend.</text></g>
+    <g class="line l6"><text x="0" y="140" class="output">- <tspan class="highlight">MockMate:</tspan> Full-stack LLM interview assistant.</text></g>
 
-    <g class="line l8">
-      <text x="0" y="205"><tspan class="prompt">$</tspan> <tspan class="command">learning</tspan></text>
+    <g class="line l7">
+      <text x="0" y="180"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command">ls -l /learning</tspan></text>
     </g>
-    <g class="line l9"><text x="0" y="230" class="output">System Design</text></g>
-    <g class="line l10"><text x="0" y="255" class="output">Computer Vision</text></g>
+    <g class="line l8"><text x="0" y="205" class="output">drwxr-xr-x  Deep_Learning_Architectures</text></g>
+    <g class="line l9"><text x="0" y="230" class="output">drwxr-xr-x  Distributed_Systems</text></g>
 
+    <g class="line l10">
+      <text x="0" y="270"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command">echo $GOAL</tspan></text>
+    </g>
     <g class="line l11">
-      <text x="0" y="295"><tspan class="prompt">$</tspan> <tspan class="command">mission</tspan></text>
+      <text x="0" y="295" class="output">Build scalable, highly-available systems that matter.</text>
     </g>
     <g class="line l12">
-      <text x="0" y="320" class="output">Build technology that creates real-world impact.</text>
+      <text x="0" y="320" class="output">No shortcuts. Architecture first.</text>
     </g>
 
     <g class="line l13">
-      <text x="0" y="350"><tspan class="prompt">$</tspan> <tspan class="command">_</tspan></text>
+      <text x="0" y="360"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command cursor">_</tspan></text>
     </g>
   </g>
 </svg>

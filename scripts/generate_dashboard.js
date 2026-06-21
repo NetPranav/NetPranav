@@ -6,26 +6,33 @@ const USERNAME = 'NetPranav';
 
 async function fetchStats() {
   if (!GITHUB_TOKEN) {
-    console.warn('No PAT_TOKEN provided. Generating mock dashboard for demonstration.');
+    console.warn('No PAT_TOKEN provided. Generating mock Vercel-like dashboard.');
     return {
       stars: 1240,
       commits: 2350,
       repos: 45,
       followers: 890,
       currentProject: 'Smart Farming AI',
-      streak: 42
+      latestCommitMessage: 'Optimize distributed inference engine'
     };
   }
 
   const query = `
     query {
       user(login: "${USERNAME}") {
-        name
         followers { totalCount }
-        repositories(first: 100, ownerAffiliations: OWNER, isFork: false, orderBy: {field: STARGAZERS, direction: DESC}) {
+        repositories(first: 100, ownerAffiliations: OWNER, isFork: false, orderBy: {field: PUSHED_AT, direction: DESC}) {
           totalCount
           nodes {
+            name
             stargazers { totalCount }
+            defaultBranchRef {
+              target {
+                ... on Commit {
+                  message
+                }
+              }
+            }
           }
         }
         contributionsCollection {
@@ -47,9 +54,7 @@ async function fetchStats() {
       body: JSON.stringify({ query }),
     });
     
-    if (!response.ok) {
-        throw new Error(`GitHub API responded with status ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`GitHub API error ${response.status}`);
     
     const data = await response.json();
     const user = data.data.user;
@@ -57,86 +62,90 @@ async function fetchStats() {
     const repos = user.repositories.nodes;
     const stars = repos.reduce((acc, repo) => acc + repo.stargazers.totalCount, 0);
     
+    let latestCommit = 'Initial commit';
+    if (repos[0] && repos[0].defaultBranchRef && repos[0].defaultBranchRef.target) {
+        latestCommit = repos[0].defaultBranchRef.target.message;
+    }
+    
     return {
       stars: stars,
       commits: user.contributionsCollection.contributionCalendar.totalContributions,
       repos: user.repositories.totalCount,
       followers: user.followers.totalCount,
       currentProject: repos[0] ? repos[0].name : 'Unknown',
-      streak: 'N/A' // Requires more complex query, using placeholder or separate action
+      latestCommitMessage: latestCommit.split('\\n')[0].substring(0, 50)
     };
   } catch (error) {
-    console.error('Error fetching from GitHub:', error.message);
+    console.error('Error fetching stats:', error.message);
     process.exit(1);
   }
 }
 
 function generateSVG(stats) {
   return `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 220" width="100%" height="220">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap');
-      .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; rx: 10px; }
-      .text { font-family: 'Inter', -apple-system, sans-serif; fill: #c9d1d9; }
-      .label { font-size: 14px; fill: #8b949e; }
-      .value { font-size: 28px; font-weight: 600; fill: #58a6ff; }
-      .divider { stroke: #21262d; stroke-width: 1; }
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
+      .bg { fill: #000000; stroke: #333333; stroke-width: 1; rx: 8px; }
+      .text { font-family: 'Inter', -apple-system, sans-serif; fill: #ededed; }
+      .label { font-size: 13px; font-weight: 500; fill: #888888; text-transform: uppercase; letter-spacing: 1px; }
+      .value { font-size: 36px; font-weight: 600; fill: #ffffff; }
+      .divider { stroke: #333333; stroke-width: 1; }
+      .status-dot { fill: #2ea043; }
+      .subtext { font-size: 13px; fill: #888888; }
+      .highlight { fill: #e6edf3; font-weight: 500; }
     </style>
   </defs>
 
-  <rect class="bg" width="798" height="198" x="1" y="1" />
+  <rect class="bg" width="848" height="218" x="1" y="1" />
   
   <g transform="translate(40, 50)">
     <!-- Repositories -->
     <g transform="translate(0, 0)">
-      <text class="label" y="0">Public Repositories</text>
-      <text class="value" y="40">${stats.repos}</text>
+      <text class="label" y="0">Repositories</text>
+      <text class="value" y="45">${stats.repos}</text>
     </g>
-    <line class="divider" x1="180" y1="-10" x2="180" y2="70" />
+    <line class="divider" x1="190" y1="-10" x2="190" y2="70" />
     
     <!-- Stars -->
-    <g transform="translate(220, 0)">
+    <g transform="translate(230, 0)">
       <text class="label" y="0">Total Stars</text>
-      <text class="value" y="40">${stats.stars}</text>
+      <text class="value" y="45">${stats.stars}</text>
     </g>
-    <line class="divider" x1="360" y1="-10" x2="360" y2="70" />
+    <line class="divider" x1="420" y1="-10" x2="420" y2="70" />
 
     <!-- Commits -->
-    <g transform="translate(400, 0)">
-      <text class="label" y="0">Commits (Year)</text>
-      <text class="value" y="40">${stats.commits}</text>
+    <g transform="translate(460, 0)">
+      <text class="label" y="0">Commits (YTD)</text>
+      <text class="value" y="45">${stats.commits}</text>
     </g>
-    <line class="divider" x1="560" y1="-10" x2="560" y2="70" />
+    <line class="divider" x1="650" y1="-10" x2="650" y2="70" />
 
     <!-- Followers -->
-    <g transform="translate(600, 0)">
+    <g transform="translate(690, 0)">
       <text class="label" y="0">Followers</text>
-      <text class="value" y="40">${stats.followers}</text>
+      <text class="value" y="45">${stats.followers}</text>
     </g>
   </g>
   
-  <!-- Current Focus -->
-  <g transform="translate(40, 150)">
-    <circle cx="0" cy="-5" r="5" fill="#2ea043" />
-    <text class="text label" x="15" y="0">Currently hacking on <tspan style="fill: #e6edf3; font-weight: 600;">${stats.currentProject}</tspan></text>
+  <line class="divider" x1="0" y1="150" x2="850" y2="150" />
+  
+  <!-- Current Focus Footer -->
+  <g transform="translate(40, 185)">
+    <circle cx="0" cy="-4" r="4" class="status-dot" />
+    <text class="text subtext" x="15" y="0">Currently engineering <tspan class="highlight">${stats.currentProject}</tspan></text>
+    <text class="text subtext" x="460" y="0">Latest Commit: <tspan class="highlight">${stats.latestCommitMessage}</tspan></text>
   </g>
 </svg>`;
 }
 
 async function main() {
-  console.log('Fetching stats...');
   const stats = await fetchStats();
-  console.log('Generating SVG...');
   const svg = generateSVG(stats);
-  
   const outDir = path.join(__dirname, '..', 'generated');
-  if (!fs.existsSync(outDir)) {
-    fs.mkdirSync(outDir, { recursive: true });
-  }
-  
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'dashboard.svg'), svg.trim());
-  console.log('Dashboard generated successfully!');
 }
 
 main();

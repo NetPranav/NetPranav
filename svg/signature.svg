@@ -1,53 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 150" width="100%" height="150">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&amp;display=swap');
       
-      @keyframes floatIn {
-        0% { opacity: 0; transform: translateY(20px); filter: blur(4px); }
-        100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
-      }
-      @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-      
-      .name {
-        font-family: 'Inter', -apple-system, sans-serif;
-        font-size: 76px;
-        font-weight: 800;
-        letter-spacing: -2px;
-        fill: url(#gradient);
-        opacity: 0;
-        animation: floatIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      .signature {
+        font-family: 'Dancing Script', cursive;
+        font-size: 72px;
+        fill: transparent;
+        stroke: #e6edf3;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-dasharray: 800;
+        stroke-dashoffset: 800;
+        animation: write 4s ease-out forwards;
       }
       
-      .quote {
-        font-family: 'Inter', -apple-system, sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        fill: #8b949e;
-        opacity: 0;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        animation: floatIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.5s;
+      @keyframes write {
+        0% { stroke-dashoffset: 800; }
+        100% { stroke-dashoffset: 0; }
       }
       
-      .accent {
-        fill: #58a6ff;
+      .pencil-group {
+        opacity: 1;
+        animation: movePencil 4s ease-out forwards, hidePencil 0.5s ease-in forwards 4.5s;
       }
+      
+      @keyframes movePencil {
+        0% { transform: translate(250px, 80px) rotate(-45deg); }
+        10% { transform: translate(280px, 60px) rotate(-45deg); }
+        20% { transform: translate(310px, 85px) rotate(-45deg); }
+        30% { transform: translate(340px, 65px) rotate(-45deg); }
+        40% { transform: translate(370px, 80px) rotate(-45deg); }
+        50% { transform: translate(400px, 60px) rotate(-45deg); }
+        60% { transform: translate(430px, 85px) rotate(-45deg); }
+        70% { transform: translate(460px, 65px) rotate(-45deg); }
+        80% { transform: translate(490px, 80px) rotate(-45deg); }
+        90% { transform: translate(520px, 60px) rotate(-45deg); }
+        100% { transform: translate(550px, 80px) rotate(-45deg); }
+      }
+      
+      @keyframes hidePencil {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      
+      /* Loop container to restart animation every 14s */
+      .loop-container {
+        animation: loopReset 14s infinite;
+      }
+      @keyframes loopReset {
+        0%, 100% { opacity: 1; }
+      }
+      
     </style>
-    
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="50%" stop-color="#8b949e" />
-      <stop offset="100%" stop-color="#ffffff" />
-      <animate attributeName="x1" values="-100%;100%" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="0%;200%" dur="5s" repeatCount="indefinite"/>
-    </linearGradient>
   </defs>
   
-  <text x="50%" y="65%" text-anchor="middle" class="name">PRANAV DUBEY</text>
-  <text x="50%" y="90%" text-anchor="middle" class="quote">"Don't be sorry. <tspan class="accent">Be better.</tspan>"</text>
+  <g class="loop-container">
+    <text x="50%" y="60%" text-anchor="middle" class="signature">Pranav Dubey</text>
+    
+    <!-- Pencil Icon -->
+    <g class="pencil-group">
+      <path d="M0,0 L10,-10 L30,10 L20,20 Z" fill="#e6edf3" />
+      <path d="M0,0 L20,20 L15,25 L-5,5 Z" fill="#8b949e" />
+      <polygon points="0,0 -5,5 -15,-5" fill="#f0f6fc" />
+      <polygon points="-15,-5 -18,-18 -5,-15" fill="#30363d" />
+    </g>
+  </g>
 </svg>

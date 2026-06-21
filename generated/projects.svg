@@ -1,70 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="100%" height="300">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap');
-      .card { fill: #0d1117; stroke: #30363d; stroke-width: 1; rx: 8px; }
-      .title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; fill: #58a6ff; }
-      .desc { font-family: 'Inter', sans-serif; font-size: 13px; fill: #8b949e; }
-      .meta { font-family: 'Inter', sans-serif; font-size: 12px; fill: #8b949e; }
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
+      .card { fill: #000000; stroke: #333333; stroke-width: 1; rx: 8px; }
+      .title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; fill: #ffffff; }
+      .desc { font-family: 'Inter', sans-serif; font-size: 14px; fill: #888888; }
+      .meta { font-family: 'Inter', sans-serif; font-size: 13px; fill: #888888; }
     </style>
   </defs>
   
-    <g transform="translate(10, 10)">
-      <rect class="card" width="380" height="120" />
-      <text class="title" x="20" y="35">Smart Farming AI</text>
-      <text class="desc" x="20" y="65">AI-driven agriculture optimization platform.</text>
+    <g transform="translate(5, 5)">
+      <rect class="card" width="410" height="130" />
+      <text class="title" x="25" y="40">Smart Farming AI</text>
+      <text class="desc" x="25" y="70">AI-driven agriculture optimization platform.</text>
       
-      <!-- Footer -->
-      <g transform="translate(20, 100)">
-        <circle cx="5" cy="-4" r="5" fill="#3178C6" />
-        <text class="meta" x="15" y="0">Python</text>
+      <g transform="translate(25, 105)">
+        <circle cx="5" cy="-4" r="5" fill="#3572A5" />
+        <text class="meta" x="18" y="0">Python</text>
         
-        <path fill="#8b949e" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="translate(100, -11) scale(0.9)"/>
+        <path fill="#888888" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="translate(100, -11) scale(0.9)"/>
         <text class="meta" x="120" y="0">124</text>
       </g>
     </g>
     
-    <g transform="translate(410, 10)">
-      <rect class="card" width="380" height="120" />
-      <text class="title" x="20" y="35">Logistics Platform</text>
-      <text class="desc" x="20" y="65">Real-time routing and tracking system.</text>
+    <g transform="translate(435, 5)">
+      <rect class="card" width="410" height="130" />
+      <text class="title" x="25" y="40">Logistics Platform</text>
+      <text class="desc" x="25" y="70">Real-time routing and tracking system.</text>
       
-      <!-- Footer -->
-      <g transform="translate(20, 100)">
+      <g transform="translate(25, 105)">
         <circle cx="5" cy="-4" r="5" fill="#3178C6" />
-        <text class="meta" x="15" y="0">TypeScript</text>
+        <text class="meta" x="18" y="0">TypeScript</text>
         
-        <path fill="#8b949e" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="translate(100, -11) scale(0.9)"/>
+        <path fill="#888888" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="translate(100, -11) scale(0.9)"/>
         <text class="meta" x="120" y="0">89</text>
       </g>
     </g>
     
-    <g transform="translate(10, 150)">
-      <rect class="card" width="380" height="120" />
-      <text class="title" x="20" y="35">MockMate</text>
-      <text class="desc" x="20" y="65">Mock interview assistant using LLMs.</text>
+    <g transform="translate(5, 155)">
+      <rect class="card" width="410" height="130" />
+      <text class="title" x="25" y="40">MockMate</text>
+      <text class="desc" x="25" y="70">Mock interview assistant using LLMs.</text>
       
-      <!-- Footer -->
-      <g transform="translate(20, 100)">
+      <g transform="translate(25, 105)">
         <circle cx="5" cy="-4" r="5" fill="#3178C6" />
-        <text class="meta" x="15" y="0">Next.js</text>
+        <text class="meta" x="18" y="0">TypeScript</text>
         
-        <path fill="#8b949e" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="translate(100, -11) scale(0.9)"/>
+        <path fill="#888888" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="translate(100, -11) scale(0.9)"/>
         <text class="meta" x="120" y="0">210</text>
       </g>
     </g>
     
-    <g transform="translate(410, 150)">
-      <rect class="card" width="380" height="120" />
-      <text class="title" x="20" y="35">GSAP Components</text>
-      <text class="desc" x="20" y="65">High-performance animation library wrapper.</text>
+    <g transform="translate(435, 155)">
+      <rect class="card" width="410" height="130" />
+      <text class="title" x="25" y="40">GSAP Components</text>
+      <text class="desc" x="25" y="70">High-performance animation library wrapper.</text>
       
-      <!-- Footer -->
-      <g transform="translate(20, 100)">
+      <g transform="translate(25, 105)">
         <circle cx="5" cy="-4" r="5" fill="#3178C6" />
-        <text class="meta" x="15" y="0">React</text>
+        <text class="meta" x="18" y="0">TypeScript</text>
         
-        <path fill="#8b949e" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="translate(100, -11) scale(0.9)"/>
+        <path fill="#888888" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="translate(100, -11) scale(0.9)"/>
         <text class="meta" x="120" y="0">156</text>
       </g>
     </g>
