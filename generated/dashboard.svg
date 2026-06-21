@@ -2,14 +2,14 @@
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
-      .bg { fill: #000000; stroke: #1a1a1a; stroke-width: 1; rx: 8px; }
+      .bg { fill: #0d0d0d; stroke: #222222; stroke-width: 1; rx: 8px; }
       .text { font-family: 'Inter', -apple-system, sans-serif; fill: #ededed; }
-      .label { font-size: 13px; font-weight: 500; fill: #00e5ff; text-transform: uppercase; letter-spacing: 1px; }
-      .value { font-size: 36px; font-weight: 600; fill: #ffffff; text-shadow: 0 0 10px rgba(255,102,0,0.5); }
-      .divider { stroke: #1a1a1a; stroke-width: 1; }
-      .status-dot { fill: #ff6600; }
+      .label { font-size: 13px; font-weight: 500; fill: #888888; text-transform: uppercase; letter-spacing: 1px; }
+      .value { font-size: 36px; font-weight: 600; fill: #ffffff; text-shadow: 0 0 10px rgba(224,26,34,0.3); }
+      .divider { stroke: #222222; stroke-width: 1; }
+      .status-dot { fill: #E01A22; }
       .subtext { font-size: 13px; fill: #888888; }
-      .highlight { fill: #ffffff; font-weight: 600; }
+      .highlight { fill: #E01A22; font-weight: 600; }
     </style>
   </defs>
 

@@ -4,18 +4,18 @@
       @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
       
       .window {
-        fill: #000000;
-        stroke: #1a1a1a;
+        fill: #0d0d0d;
+        stroke: #222222;
         stroke-width: 1;
         rx: 10px;
       }
       .header {
-        fill: #080808;
-        stroke: #1a1a1a;
+        fill: #1a1a1a;
+        stroke: #222222;
         stroke-width: 1;
         rx: 10px;
       }
-      .dot-red { fill: #ff5f56; }
+      .dot-red { fill: #E01A22; }
       .dot-yellow { fill: #ffbd2e; }
       .dot-green { fill: #27c93f; }
       
@@ -25,11 +25,11 @@
         fill: #888888;
       }
       
-      .prompt { fill: #ff6600; font-weight: 500; }
-      .dir { fill: #00e5ff; font-weight: 500; }
+      .prompt { fill: #E01A22; font-weight: 500; }
+      .dir { fill: #ffffff; font-weight: 500; }
       .command { fill: #ffffff; }
       .output { fill: #aaaaaa; }
-      .highlight { fill: #ffffff; font-weight: 600; text-shadow: 0 0 5px rgba(0,229,255,0.5); }
+      .highlight { fill: #E01A22; font-weight: 600; text-shadow: 0 0 5px rgba(224,26,34,0.5); }
       
       .line { opacity: 0; }
       

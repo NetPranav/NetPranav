@@ -1,6 +1,10 @@
 <div align="center">
 
-<img src="./svg/blackhole-suck.svg" alt="Engineering Event Horizon" width="850" />
+<img src="./svg/deadpool-hero.svg" alt="Maximum Effort" width="850" />
+
+<br />
+
+<img src="./assets/deadpool.png" alt="Deadpool" width="850" />
 
 <br />
 
@@ -15,16 +19,7 @@
 <br />
 
 <div align="center">
-  <table>
-    <tr>
-      <td align="center" width="300">
-        <img src="assets/blackhole.gif" width="250" style="border-radius:10px" />
-      </td>
-      <td align="center" width="550">
-        <img src="./svg/terminal.svg" alt="Current Focus" width="550" />
-      </td>
-    </tr>
-  </table>
+  <img src="./svg/terminal.svg" alt="Current Focus" width="850" />
 </div>
 
 <br />
@@ -56,7 +51,7 @@
 <br />
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=NetPranav&theme=dark&hide_border=true&background=000000&ring=ff6600&fire=ff6600&currStreakLabel=888888&stroke=00e5ff" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=NetPranav&theme=dark&hide_border=true&background=0d0d0d&ring=E01A22&fire=E01A22&currStreakLabel=888888&stroke=E01A22" alt="GitHub Streak" />
 </div>
 
 <br />
