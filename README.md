@@ -43,7 +43,3 @@
 </div>
 
 <br />
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/NetPranav/NetPranav/main/generated/dashboard.svg" style="width:0;height:0;" alt="" />
-</div>
