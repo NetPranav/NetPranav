@@ -5,13 +5,13 @@
       
       .window {
         fill: #000000;
-        stroke: #333333;
+        stroke: #1a1a1a;
         stroke-width: 1;
         rx: 10px;
       }
       .header {
-        fill: #111111;
-        stroke: #333333;
+        fill: #080808;
+        stroke: #1a1a1a;
         stroke-width: 1;
         rx: 10px;
       }
@@ -25,11 +25,11 @@
         fill: #888888;
       }
       
-      .prompt { fill: #2ea043; font-weight: 500; }
-      .dir { fill: #58a6ff; font-weight: 500; }
-      .command { fill: #e6edf3; }
-      .output { fill: #c9d1d9; }
-      .highlight { fill: #f0f6fc; font-weight: 500; }
+      .prompt { fill: #ff6600; font-weight: 500; }
+      .dir { fill: #00e5ff; font-weight: 500; }
+      .command { fill: #ffffff; }
+      .output { fill: #aaaaaa; }
+      .highlight { fill: #ffffff; font-weight: 600; text-shadow: 0 0 5px rgba(0,229,255,0.5); }
       
       .line { opacity: 0; }
       

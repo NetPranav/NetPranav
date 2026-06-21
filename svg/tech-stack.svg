@@ -7,14 +7,14 @@
         font-family: 'Inter', -apple-system, sans-serif;
         font-size: 13px;
         font-weight: 600;
-        fill: #8b949e;
+        fill: #00e5ff;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
       }
       
       .card {
-        fill: #0d1117;
-        stroke: #30363d;
+        fill: #000000;
+        stroke: #1a1a1a;
         stroke-width: 1;
         rx: 6px;
       }
@@ -23,7 +23,7 @@
         font-family: 'Inter', -apple-system, sans-serif;
         font-size: 13px;
         font-weight: 500;
-        fill: #c9d1d9;
+        fill: #dddddd;
       }
     </style>
   </defs>

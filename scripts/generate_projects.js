@@ -93,8 +93,8 @@ function generateSVG(projects) {
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
-      .card { fill: #000000; stroke: #333333; stroke-width: 1; rx: 8px; }
-      .title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; fill: #ffffff; }
+      .card { fill: #000000; stroke: #1a1a1a; stroke-width: 1; rx: 8px; }
+      .title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; fill: #ffffff; text-shadow: 0 0 5px rgba(0,229,255,0.3); }
       .desc { font-family: 'Inter', sans-serif; font-size: 14px; fill: #888888; }
       .meta { font-family: 'Inter', sans-serif; font-size: 13px; fill: #888888; }
     </style>

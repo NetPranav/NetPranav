@@ -87,14 +87,14 @@ function generateSVG(stats) {
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
-      .bg { fill: #000000; stroke: #333333; stroke-width: 1; rx: 8px; }
+      .bg { fill: #000000; stroke: #1a1a1a; stroke-width: 1; rx: 8px; }
       .text { font-family: 'Inter', -apple-system, sans-serif; fill: #ededed; }
-      .label { font-size: 13px; font-weight: 500; fill: #888888; text-transform: uppercase; letter-spacing: 1px; }
-      .value { font-size: 36px; font-weight: 600; fill: #ffffff; }
-      .divider { stroke: #333333; stroke-width: 1; }
-      .status-dot { fill: #2ea043; }
+      .label { font-size: 13px; font-weight: 500; fill: #00e5ff; text-transform: uppercase; letter-spacing: 1px; }
+      .value { font-size: 36px; font-weight: 600; fill: #ffffff; text-shadow: 0 0 10px rgba(255,102,0,0.5); }
+      .divider { stroke: #1a1a1a; stroke-width: 1; }
+      .status-dot { fill: #ff6600; }
       .subtext { font-size: 13px; fill: #888888; }
-      .highlight { fill: #e6edf3; font-weight: 500; }
+      .highlight { fill: #ffffff; font-weight: 600; }
     </style>
   </defs>
 
