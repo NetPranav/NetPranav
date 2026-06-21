@@ -33,13 +33,13 @@
 <br />
 
 <div align="center">
-  <img src="./generated/dashboard.svg?v=2" alt="GitHub Analytics Dashboard" width="850" />
+  <img src="./generated/dashboard.svg?v=3" alt="GitHub Analytics Dashboard" width="850" />
 </div>
 
 <br />
 
 <div align="center">
-  <img src="./generated/projects.svg?v=2" alt="Featured Projects" width="850" />
+  <img src="./generated/projects.svg?v=3" alt="Featured Projects" width="850" />
 </div>
 
 <br />
