@@ -2,7 +2,7 @@
 
 <img src="./svg/hero-animation.svg" alt="Pranav Dubey" width="850" />
 
-<img src="./assets/deadpool.png" alt="Black & White Theme" width="850" />
+<img src="./assets/itachi.png" alt="Itachi Uchiha" width="850" />
 
 <br />
 
@@ -43,3 +43,5 @@
 </div>
 
 <br />
+
+<!-- Daily update -->
