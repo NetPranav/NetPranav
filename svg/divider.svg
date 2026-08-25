@@ -1,36 +1,202 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 24" width="100%" height="24">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 36" width="100%" height="36">
   <defs>
-    <linearGradient id="divLeft" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="rgba(16, 185, 129, 0)" />
-      <stop offset="70%" stop-color="rgba(16, 185, 129, 0.2)" />
-      <stop offset="100%" stop-color="rgba(100, 255, 218, 0.6)" />
-    </linearGradient>
-    <linearGradient id="divRight" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="rgba(100, 255, 218, 0.6)" />
-      <stop offset="30%" stop-color="rgba(16, 185, 129, 0.2)" />
-      <stop offset="100%" stop-color="rgba(16, 185, 129, 0)" />
-    </linearGradient>
-    <filter id="node-glow" x="-50%" y="-50%" width="200%" height="200%">
+    <!-- Soft Bioluminescent Glow -->
+    <filter id="root-glow" x="-20%" y="-40%" width="140%" height="180%">
       <feGaussianBlur stdDeviation="1.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
+
+    <!-- Root Colors Gradient -->
+    <linearGradient id="rootGradPrimary" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="50%" stop-color="#00F5A0" />
+      <stop offset="100%" stop-color="#64FFDA" />
+    </linearGradient>
+
+    <linearGradient id="rootGradSecondary" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#064E3B" />
+      <stop offset="60%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#00F5A0" />
+    </linearGradient>
+
+    <style>
+      .root-main {
+        fill: none;
+        stroke: url(#rootGradPrimary);
+        stroke-width: 2.2px;
+        stroke-linecap: round;
+        stroke-dasharray: 870 870;
+        filter: url(#root-glow);
+        animation: grootGrowth 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+
+      .root-braid {
+        fill: none;
+        stroke: url(#rootGradSecondary);
+        stroke-width: 1.4px;
+        stroke-linecap: round;
+        stroke-dasharray: 870 870;
+        animation: grootGrowth 7s cubic-bezier(0.4, 0, 0.2, 1) 0.15s infinite;
+      }
+
+      /* Branch 1 */
+      .branch-1 {
+        fill: none;
+        stroke: #00F5A0;
+        stroke-width: 1.2px;
+        stroke-linecap: round;
+        stroke-dasharray: 120 120;
+        animation: branch1 7s ease-in-out infinite;
+      }
+      /* Branch 2 */
+      .branch-2 {
+        fill: none;
+        stroke: #64FFDA;
+        stroke-width: 1.2px;
+        stroke-linecap: round;
+        stroke-dasharray: 120 120;
+        animation: branch2 7s ease-in-out infinite;
+      }
+      /* Branch 3 */
+      .branch-3 {
+        fill: none;
+        stroke: #00F5A0;
+        stroke-width: 1.2px;
+        stroke-linecap: round;
+        stroke-dasharray: 120 120;
+        animation: branch3 7s ease-in-out infinite;
+      }
+      /* Branch 4 */
+      .branch-4 {
+        fill: none;
+        stroke: #64FFDA;
+        stroke-width: 1.2px;
+        stroke-linecap: round;
+        stroke-dasharray: 120 120;
+        animation: branch4 7s ease-in-out infinite;
+      }
+
+      /* Leaf Buds */
+      .bud {
+        fill: #64FFDA;
+        filter: url(#root-glow);
+      }
+      .b1 { animation: budFade1 7s ease-in-out infinite; }
+      .b2 { animation: budFade2 7s ease-in-out infinite; }
+      .b3 { animation: budFade3 7s ease-in-out infinite; }
+      .b4 { animation: budFade4 7s ease-in-out infinite; }
+
+      /* Main Root Growth & Vanishing Cycle */
+      @keyframes grootGrowth {
+        0% {
+          stroke-dashoffset: 870;
+          opacity: 0;
+        }
+        4% {
+          opacity: 1;
+        }
+        44% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        52% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        92% {
+          stroke-dashoffset: -870;
+          opacity: 1;
+        }
+        96% {
+          stroke-dashoffset: -870;
+          opacity: 0;
+        }
+        100% {
+          stroke-dashoffset: 870;
+          opacity: 0;
+        }
+      }
+
+      /* Sprouting & Dissolving for Sub-Branches */
+      @keyframes branch1 {
+        0%, 12% { stroke-dashoffset: 120; opacity: 0; }
+        18% { stroke-dashoffset: 0; opacity: 1; }
+        56% { stroke-dashoffset: 0; opacity: 1; }
+        66% { stroke-dashoffset: -120; opacity: 0; }
+        100% { stroke-dashoffset: -120; opacity: 0; }
+      }
+
+      @keyframes branch2 {
+        0%, 22% { stroke-dashoffset: 120; opacity: 0; }
+        28% { stroke-dashoffset: 0; opacity: 1; }
+        65% { stroke-dashoffset: 0; opacity: 1; }
+        75% { stroke-dashoffset: -120; opacity: 0; }
+        100% { stroke-dashoffset: -120; opacity: 0; }
+      }
+
+      @keyframes branch3 {
+        0%, 32% { stroke-dashoffset: 120; opacity: 0; }
+        38% { stroke-dashoffset: 0; opacity: 1; }
+        73% { stroke-dashoffset: 0; opacity: 1; }
+        83% { stroke-dashoffset: -120; opacity: 0; }
+        100% { stroke-dashoffset: -120; opacity: 0; }
+      }
+
+      @keyframes branch4 {
+        0%, 40% { stroke-dashoffset: 120; opacity: 0; }
+        46% { stroke-dashoffset: 0; opacity: 1; }
+        80% { stroke-dashoffset: 0; opacity: 1; }
+        90% { stroke-dashoffset: -120; opacity: 0; }
+        100% { stroke-dashoffset: -120; opacity: 0; }
+      }
+
+      /* Bud Animations */
+      @keyframes budFade1 {
+        0%, 17% { opacity: 0; transform: scale(0); }
+        22%, 58% { opacity: 1; transform: scale(1); }
+        65%, 100% { opacity: 0; transform: scale(0); }
+      }
+      @keyframes budFade2 {
+        0%, 27% { opacity: 0; transform: scale(0); }
+        32%, 67% { opacity: 1; transform: scale(1); }
+        74%, 100% { opacity: 0; transform: scale(0); }
+      }
+      @keyframes budFade3 {
+        0%, 37% { opacity: 0; transform: scale(0); }
+        42%, 75% { opacity: 1; transform: scale(1); }
+        82%, 100% { opacity: 0; transform: scale(0); }
+      }
+      @keyframes budFade4 {
+        0%, 45% { opacity: 0; transform: scale(0); }
+        50%, 82% { opacity: 1; transform: scale(1); }
+        89%, 100% { opacity: 0; transform: scale(0); }
+      }
+    </style>
   </defs>
-  
-  <!-- Left Fading Line -->
-  <line x1="20" y1="12" x2="400" y2="12" stroke="url(#divLeft)" stroke-width="1" />
-  
-  <!-- Center Biophilic Accent Node -->
-  <g transform="translate(425, 12)">
-    <circle cx="0" cy="0" r="3" fill="#00F5A0" filter="url(#node-glow)" />
-    <circle cx="-14" cy="0" r="1.5" fill="#10B981" opacity="0.6" />
-    <circle cx="14" cy="0" r="1.5" fill="#10B981" opacity="0.6" />
-    <line x1="-8" y1="0" x2="-4" y2="0" stroke="#10B981" stroke-width="1" opacity="0.4" />
-    <line x1="4" y1="0" x2="8" y2="0" stroke="#10B981" stroke-width="1" opacity="0.4" />
-  </g>
-  
-  <!-- Right Fading Line -->
-  <line x1="450" y1="12" x2="830" y2="12" stroke="url(#divRight)" stroke-width="1" />
+
+  <!-- Primary Root Trunk -->
+  <path class="root-main" d="M 0,18 C 100,10 180,26 280,15 C 380,5 470,28 570,16 C 670,6 760,24 850,18" />
+
+  <!-- Braiding Secondary Tendril -->
+  <path class="root-braid" d="M 0,19 C 110,25 200,9 300,21 C 410,31 510,10 610,21 C 700,28 780,12 850,18" />
+
+  <!-- Organic Sprouting Branches -->
+  <!-- Branch 1 (Upper Left) -->
+  <path class="branch-1" d="M 180,21 C 205,11 225,8 245,9" />
+  <circle class="bud b1" cx="245" cy="9" r="2" />
+
+  <!-- Branch 2 (Lower Mid-Left) -->
+  <path class="branch-2" d="M 360,11 C 385,22 410,26 435,22" />
+  <circle class="bud b2" cx="435" cy="22" r="2" />
+
+  <!-- Branch 3 (Upper Mid-Right) -->
+  <path class="branch-3" d="M 540,21 C 565,10 590,7 615,10" />
+  <circle class="bud b3" cx="615" cy="10" r="2" />
+
+  <!-- Branch 4 (Lower Right) -->
+  <path class="branch-4" d="M 710,12 C 735,23 760,26 785,22" />
+  <circle class="bud b4" cx="785" cy="22" r="2" />
 </svg>
