@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520" width="100%" height="520">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 360" width="100%" height="360">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&amp;display=swap');
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
       
       .window {
         fill: #060B08;
@@ -20,7 +20,7 @@
       
       .text {
         font-family: 'Fira Code', monospace;
-        font-size: 13.5px;
+        font-size: 13px;
         fill: #94A3B8;
       }
       
@@ -30,7 +30,6 @@
       .command { fill: #FFFFFF; font-weight: 500; }
       .output { fill: #CBD5E1; }
       .tag { fill: #00F5A0; font-weight: 600; text-shadow: 0 0 6px rgba(0, 245, 160, 0.4); }
-      .subtag { fill: #64FFDA; }
       .dim { fill: #64748B; }
       
       .line { opacity: 0; }
@@ -41,25 +40,18 @@
         100% { opacity: 1; }
       }
       
-      .l1 { animation: type 10s steps(1, end) 0s forwards; }
-      .l2 { animation: type 10s steps(1, end) 0.5s forwards; }
+      .l1 { animation: type 8s steps(1, end) 0s forwards; }
+      .l2 { animation: type 8s steps(1, end) 0.4s forwards; }
       
-      .l3 { animation: type 10s steps(1, end) 1.4s forwards; }
-      .l4 { animation: type 10s steps(1, end) 1.9s forwards; }
-      .l5 { animation: type 10s steps(1, end) 2.1s forwards; }
-      .l6 { animation: type 10s steps(1, end) 2.3s forwards; }
+      .l3 { animation: type 8s steps(1, end) 1.2s forwards; }
+      .l4 { animation: type 8s steps(1, end) 1.6s forwards; }
+      .l5 { animation: type 8s steps(1, end) 1.8s forwards; }
+      .l6 { animation: type 8s steps(1, end) 2.0s forwards; }
       
-      .l7 { animation: type 10s steps(1, end) 3.3s forwards; }
-      .l8 { animation: type 10s steps(1, end) 3.8s forwards; }
-      .l9 { animation: type 10s steps(1, end) 4.0s forwards; }
-      .l10 { animation: type 10s steps(1, end) 4.2s forwards; }
-
-      .l11 { animation: type 10s steps(1, end) 5.2s forwards; }
-      .l12 { animation: type 10s steps(1, end) 5.7s forwards; }
-      .l13 { animation: type 10s steps(1, end) 6.0s forwards; }
-      .l14 { animation: type 10s steps(1, end) 6.3s forwards; }
-
-      .l15 { animation: type 10s steps(1, end) 7.2s forwards; }
+      .l7 { animation: type 8s steps(1, end) 2.8s forwards; }
+      .l8 { animation: type 8s steps(1, end) 3.2s forwards; }
+      
+      .l9 { animation: type 8s steps(1, end) 4.0s forwards; }
       
       @keyframes blink {
         0%, 100% { opacity: 1; }
@@ -69,67 +61,53 @@
         fill: #00F5A0;
         animation: blink 1s step-end infinite;
       }
-    </style>
+    ]]></style>
   </defs>
 
   <!-- Terminal Window Background -->
-  <rect class="window" x="10" y="10" width="830" height="500" rx="10" />
+  <rect class="window" x="10" y="10" width="830" height="340" rx="10" />
   
   <!-- Window Header Bar -->
-  <path class="header" d="M 10 20 Q 10 10 20 10 L 830 10 Q 840 10 840 20 L 840 40 L 10 40 Z" />
-  <line x1="10" y1="40" x2="840" y2="40" stroke="rgba(16, 185, 129, 0.2)" stroke-width="1" />
+  <path class="header" d="M 10 20 Q 10 10 20 10 L 830 10 Q 840 10 840 20 L 840 38 L 10 38 Z" />
+  <line x1="10" y1="38" x2="840" y2="38" stroke="rgba(16, 185, 129, 0.2)" stroke-width="1" />
   
   <!-- Window Controls -->
-  <circle class="dot-1" cx="32" cy="25" r="5.5" />
-  <circle class="dot-2" cx="50" cy="25" r="5.5" />
-  <circle class="dot-3" cx="68" cy="25" r="5.5" />
+  <circle class="dot-1" cx="30" cy="24" r="5" />
+  <circle class="dot-2" cx="46" cy="24" r="5" />
+  <circle class="dot-3" cx="62" cy="24" r="5" />
   
-  <text x="425" y="29" font-family="'Fira Code', monospace" font-size="12" fill="#64748B" text-anchor="middle">pranav@terra-node: ~/workspace</text>
+  <text x="425" y="27" font-family="'Fira Code', monospace" font-size="11.5" fill="#64748B" text-anchor="middle">pranav@terra-node: ~/workspace</text>
   
   <!-- Terminal Content Stream -->
-  <g class="text" transform="translate(32, 72)">
+  <g class="text" transform="translate(30, 68)">
     
     <!-- Block 1: Identity -->
     <g class="line l1">
       <text x="0" y="0"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">whoami</tspan></text>
     </g>
     <g class="line l2">
-      <text x="0" y="24" class="output">Pranav Dubey <tspan class="dim">—</tspan> <tspan class="tag">Systems Architect &amp; AI Engineer</tspan></text>
+      <text x="0" y="22" class="output">Pranav Dubey <tspan class="dim">—</tspan> <tspan class="tag">Systems Architect &amp; AI Engineer</tspan></text>
     </g>
     
     <!-- Block 2: Focus Initiatives -->
     <g class="line l3">
-      <text x="0" y="60"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~/ecosystem</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">cat active-initiatives.md</tspan></text>
+      <text x="0" y="56"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~/ecosystem</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">cat focus.md</tspan></text>
     </g>
-    <g class="line l4"><text x="0" y="84" class="output">◆ <tspan class="tag">Smart Farming AI:</tspan> Edge Computer Vision pipeline for agricultural telemetry.</text></g>
-    <g class="line l5"><text x="0" y="108" class="output">◆ <tspan class="tag">Distributed Routing:</tspan> Fault-tolerant, high-throughput backend architecture.</text></g>
-    <g class="line l6"><text x="0" y="132" class="output">◆ <tspan class="tag">MockMate:</tspan> Full-stack multimodal AI interview simulator.</text></g>
+    <g class="line l4"><text x="0" y="78" class="output">◆ <tspan class="tag">Smart Farming AI:</tspan> Edge Computer Vision &amp; crop telemetry.</text></g>
+    <g class="line l5"><text x="0" y="100" class="output">◆ <tspan class="tag">Distributed Core:</tspan> Fault-tolerant, high-throughput routing engine.</text></g>
+    <g class="line l6"><text x="0" y="122" class="output">◆ <tspan class="tag">MockMate:</tspan> Real-time multimodal AI interview simulator.</text></g>
 
-    <!-- Block 3: Core Disciplines -->
+    <!-- Block 3: Directive -->
     <g class="line l7">
-      <text x="0" y="168"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~/disciplines</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">ls -l</tspan></text>
+      <text x="0" y="156"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">echo $DIRECTIVE</tspan></text>
     </g>
-    <g class="line l8"><text x="0" y="192" class="dim">drwxr-xr-x  <tspan class="output">Distributed_Systems_&amp;_Consensus</tspan></text></g>
-    <g class="line l9"><text x="0" y="216" class="dim">drwxr-xr-x  <tspan class="output">Deep_Learning_&amp;_Computer_Vision</tspan></text></g>
-    <g class="line l10"><text x="0" y="240" class="dim">drwxr-xr-x  <tspan class="output">High_Availability_Cloud_Infrastructure</tspan></text></g>
-
-    <!-- Block 4: Philosophy / Mission -->
-    <g class="line l11">
-      <text x="0" y="276"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">cat mission.env</tspan></text>
-    </g>
-    <g class="line l12">
-      <text x="0" y="300" class="tag">[CORE DIRECTIVE]</text>
-    </g>
-    <g class="line l13">
-      <text x="0" y="324" class="output">Engineering software systems with the resilience and elegance of natural ecosystems.</text>
-    </g>
-    <g class="line l14">
-      <text x="0" y="348" class="output"><tspan class="subtag">First principles first.</tspan> Scalable, uncompromised craft.</text>
+    <g class="line l8">
+      <text x="0" y="178" class="output">Architecting resilient, high-throughput systems with biological elegance.</text>
     </g>
 
-    <!-- Block 5: Active Prompt -->
-    <g class="line l15">
-      <text x="0" y="394"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command cursor">█</tspan></text>
+    <!-- Block 4: Active Prompt -->
+    <g class="line l9">
+      <text x="0" y="212"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command cursor">█</tspan></text>
     </g>
   </g>
 </svg>
