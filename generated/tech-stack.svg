@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 307" width="100%" height="307">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Fira+Code:wght@500&amp;display=swap');
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Fira+Code:wght@500&display=swap');
       
       .bg { fill: transparent; }
       
@@ -28,7 +28,7 @@
         fill: #E2E8F0;
         letter-spacing: 0.2px;
       }
-    </style>
+    ]]></style>
   </defs>
 
   <rect class="bg" width="850" height="307" />
@@ -37,7 +37,7 @@
       <!-- Category Header -->
       <g transform="translate(10, 31)">
         <circle cx="4" cy="-4" r="3.5" fill="#00F5A0" />
-        <text class="category-title" x="16" y="0">LANGUAGES & RUNTIMES</text>
+        <text class="category-title" x="16" y="0">LANGUAGES &amp; RUNTIMES</text>
       </g>
     
         <g transform="translate(10, 47)">
@@ -91,7 +91,7 @@
       <!-- Category Header -->
       <g transform="translate(10, 125)">
         <circle cx="4" cy="-4" r="3.5" fill="#00F5A0" />
-        <text class="category-title" x="16" y="0">AI, VISION & DATA</text>
+        <text class="category-title" x="16" y="0">AI, VISION &amp; DATA</text>
       </g>
     
         <g transform="translate(10, 141)">
@@ -145,7 +145,7 @@
       <!-- Category Header -->
       <g transform="translate(10, 219)">
         <circle cx="4" cy="-4" r="3.5" fill="#00F5A0" />
-        <text class="category-title" x="16" y="0">SYSTEMS & CLOUD INFRASTRUCTURE</text>
+        <text class="category-title" x="16" y="0">SYSTEMS &amp; CLOUD INFRASTRUCTURE</text>
       </g>
     
         <g transform="translate(10, 235)">

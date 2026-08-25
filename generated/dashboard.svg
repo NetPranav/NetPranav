@@ -10,8 +10,8 @@
       <stop offset="100%" stop-color="#E2E8F0" />
     </linearGradient>
 
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Fira+Code:wght@500;600&amp;display=swap');
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Fira+Code:wght@500;600&display=swap');
       
       .bg { fill: #060B08; stroke: rgba(16, 185, 129, 0.25); stroke-width: 1; rx: 10px; }
       .header-bar { fill: #0B140F; stroke: rgba(16, 185, 129, 0.2); stroke-width: 1; }
@@ -36,7 +36,7 @@
         0% { opacity: 0.4; }
         100% { opacity: 1; }
       }
-    </style>
+    ]]></style>
   </defs>
 
   <!-- Frame Background -->
@@ -64,7 +64,7 @@
     <!-- Repositories -->
     <g transform="translate(0, 0)">
       <text class="metric-label" y="0">Repositories</text>
-      <text class="metric-val" y="44">49</text>
+      <text class="metric-val" y="44">32</text>
       <text class="metric-label" y="70" fill="#10B981">● PUBLIC REPOS</text>
     </g>
     
@@ -85,23 +85,23 @@
         
       <g transform="translate(0, 0)">
         <text class="lang-name" x="0" y="12">TypeScript</text>
-        <text class="lang-pct" x="220" y="12" text-anchor="end">52%</text>
+        <text class="lang-pct" x="220" y="12" text-anchor="end">41%</text>
         <rect class="bar-bg" x="0" y="18" width="220" height="5" rx="2.5" />
-        <rect class="bar-fill" x="0" y="18" width="104" height="5" rx="2.5" />
+        <rect class="bar-fill" x="0" y="18" width="82" height="5" rx="2.5" />
       </g>
     
       <g transform="translate(0, 36)">
         <text class="lang-name" x="0" y="12">Python</text>
-        <text class="lang-pct" x="220" y="12" text-anchor="end">26%</text>
+        <text class="lang-pct" x="220" y="12" text-anchor="end">33%</text>
         <rect class="bar-bg" x="0" y="18" width="220" height="5" rx="2.5" />
-        <rect class="bar-fill" x="0" y="18" width="52" height="5" rx="2.5" />
+        <rect class="bar-fill" x="0" y="18" width="66" height="5" rx="2.5" />
       </g>
     
       <g transform="translate(0, 72)">
         <text class="lang-name" x="0" y="12">JavaScript</text>
-        <text class="lang-pct" x="220" y="12" text-anchor="end">5%</text>
+        <text class="lang-pct" x="220" y="12" text-anchor="end">7%</text>
         <rect class="bar-bg" x="0" y="18" width="220" height="5" rx="2.5" />
-        <rect class="bar-fill" x="0" y="18" width="10" height="5" rx="2.5" />
+        <rect class="bar-fill" x="0" y="18" width="14" height="5" rx="2.5" />
       </g>
     
       </g>

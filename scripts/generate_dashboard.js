@@ -4,6 +4,16 @@ const path = require('path');
 const GITHUB_TOKEN = process.env.PAT_TOKEN || process.env.GITHUB_TOKEN;
 const USERNAME = 'NetPranav';
 
+function escapeXml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 async function fetchStats() {
   if (!GITHUB_TOKEN) {
     console.warn('No PAT_TOKEN provided. Fetching public data from REST API...');
@@ -128,7 +138,7 @@ function generateSVG(stats) {
     const barWidth = Math.max(lang.percent * 2, 8); // 200px max width for 100%
     bars += `
       <g transform="translate(0, ${yOffset})">
-        <text class="lang-name" x="0" y="12">${lang.name}</text>
+        <text class="lang-name" x="0" y="12">${escapeXml(lang.name)}</text>
         <text class="lang-pct" x="220" y="12" text-anchor="end">${lang.percent}%</text>
         <rect class="bar-bg" x="0" y="18" width="220" height="5" rx="2.5" />
         <rect class="bar-fill" x="0" y="18" width="${barWidth}" height="5" rx="2.5" />
@@ -149,8 +159,8 @@ function generateSVG(stats) {
       <stop offset="100%" stop-color="#E2E8F0" />
     </linearGradient>
 
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Fira+Code:wght@500;600&amp;display=swap');
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Fira+Code:wght@500;600&display=swap');
       
       .bg { fill: #060B08; stroke: rgba(16, 185, 129, 0.25); stroke-width: 1; rx: 10px; }
       .header-bar { fill: #0B140F; stroke: rgba(16, 185, 129, 0.2); stroke-width: 1; }
@@ -175,7 +185,7 @@ function generateSVG(stats) {
         0% { opacity: 0.4; }
         100% { opacity: 1; }
       }
-    </style>
+    ]]></style>
   </defs>
 
   <!-- Frame Background -->
