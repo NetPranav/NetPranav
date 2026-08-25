@@ -1,35 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 540" width="100%" height="540">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520" width="100%" height="520">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&amp;display=swap');
       
       .window {
-        fill: transparent;
-        stroke: rgba(255,255,255,0.15);
+        fill: #060B08;
+        stroke: rgba(16, 185, 129, 0.25);
         stroke-width: 1;
         rx: 10px;
       }
       .header {
-        fill: transparent;
-        stroke: rgba(255,255,255,0.15);
+        fill: #0B140F;
+        stroke: rgba(16, 185, 129, 0.2);
         stroke-width: 1;
-        rx: 10px;
       }
-      .dot-red { fill: #444444; }
-      .dot-yellow { fill: #666666; }
-      .dot-green { fill: #888888; }
+      .dot-1 { fill: #EF4444; opacity: 0.85; }
+      .dot-2 { fill: #F59E0B; opacity: 0.85; }
+      .dot-3 { fill: #10B981; opacity: 0.85; }
       
       .text {
         font-family: 'Fira Code', monospace;
-        font-size: 14px;
-        fill: #888888;
+        font-size: 13.5px;
+        fill: #94A3B8;
       }
       
-      .prompt { fill: #ffffff; font-weight: 500; }
-      .dir { fill: #cccccc; font-weight: 500; }
-      .command { fill: #ffffff; }
-      .output { fill: #aaaaaa; }
-      .highlight { fill: #ffffff; font-weight: 600; text-shadow: 0 0 5px rgba(255,255,255,0.4); }
+      .prompt-user { fill: #10B981; font-weight: 600; }
+      .prompt-symbol { fill: #00F5A0; font-weight: 600; }
+      .dir { fill: #64FFDA; font-weight: 500; }
+      .command { fill: #FFFFFF; font-weight: 500; }
+      .output { fill: #CBD5E1; }
+      .tag { fill: #00F5A0; font-weight: 600; text-shadow: 0 0 6px rgba(0, 245, 160, 0.4); }
+      .subtag { fill: #64FFDA; }
+      .dim { fill: #64748B; }
       
       .line { opacity: 0; }
       
@@ -42,96 +44,92 @@
       .l1 { animation: type 10s steps(1, end) 0s forwards; }
       .l2 { animation: type 10s steps(1, end) 0.5s forwards; }
       
-      .l3 { animation: type 10s steps(1, end) 1.5s forwards; }
-      .l4 { animation: type 10s steps(1, end) 2s forwards; }
-      .l5 { animation: type 10s steps(1, end) 2.2s forwards; }
-      .l6 { animation: type 10s steps(1, end) 2.4s forwards; }
+      .l3 { animation: type 10s steps(1, end) 1.4s forwards; }
+      .l4 { animation: type 10s steps(1, end) 1.9s forwards; }
+      .l5 { animation: type 10s steps(1, end) 2.1s forwards; }
+      .l6 { animation: type 10s steps(1, end) 2.3s forwards; }
       
-      .l7 { animation: type 10s steps(1, end) 3.5s forwards; }
-      .l8 { animation: type 10s steps(1, end) 4s forwards; }
-      .l9 { animation: type 10s steps(1, end) 4.2s forwards; }
+      .l7 { animation: type 10s steps(1, end) 3.3s forwards; }
+      .l8 { animation: type 10s steps(1, end) 3.8s forwards; }
+      .l9 { animation: type 10s steps(1, end) 4.0s forwards; }
+      .l10 { animation: type 10s steps(1, end) 4.2s forwards; }
 
-      .l10 { animation: type 10s steps(1, end) 5s forwards; }
-      .l11 { animation: type 10s steps(1, end) 5.5s forwards; }
+      .l11 { animation: type 10s steps(1, end) 5.2s forwards; }
       .l12 { animation: type 10s steps(1, end) 5.7s forwards; }
+      .l13 { animation: type 10s steps(1, end) 6.0s forwards; }
+      .l14 { animation: type 10s steps(1, end) 6.3s forwards; }
 
-      .l13 { animation: type 10s steps(1, end) 6.5s forwards; }
-      .l14 { animation: type 10s steps(1, end) 7s forwards; }
       .l15 { animation: type 10s steps(1, end) 7.2s forwards; }
-      .l16 { animation: type 10s steps(1, end) 7.4s forwards; }
-
-      .l17 { animation: type 10s steps(1, end) 8.5s forwards; }
       
       @keyframes blink {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
       }
       .cursor {
-        fill: #e6edf3;
+        fill: #00F5A0;
         animation: blink 1s step-end infinite;
       }
     </style>
   </defs>
 
-  <!-- Window -->
-  <rect class="window" x="10" y="10" width="830" height="520" />
+  <!-- Terminal Window Background -->
+  <rect class="window" x="10" y="10" width="830" height="500" rx="10" />
   
-  <!-- Header -->
-  <path class="header" d="M 10 20 Q 10 10 20 10 L 820 10 Q 830 10 830 20 L 830 40 L 10 40 Z" />
-  <line x1="10" y1="40" x2="840" y2="40" stroke="#333333" stroke-width="1" />
+  <!-- Window Header Bar -->
+  <path class="header" d="M 10 20 Q 10 10 20 10 L 830 10 Q 840 10 840 20 L 840 40 L 10 40 Z" />
+  <line x1="10" y1="40" x2="840" y2="40" stroke="rgba(16, 185, 129, 0.2)" stroke-width="1" />
   
-  <circle class="dot-red" cx="30" cy="25" r="6" />
-  <circle class="dot-yellow" cx="50" cy="25" r="6" />
-  <circle class="dot-green" cx="70" cy="25" r="6" />
-  <text x="425" y="29" font-family="-apple-system, sans-serif" font-size="12" fill="#888888" text-anchor="middle">pranav@macbook:~</text>
+  <!-- Window Controls -->
+  <circle class="dot-1" cx="32" cy="25" r="5.5" />
+  <circle class="dot-2" cx="50" cy="25" r="5.5" />
+  <circle class="dot-3" cx="68" cy="25" r="5.5" />
   
-  <!-- Content -->
-  <g class="text" transform="translate(30, 75)">
+  <text x="425" y="29" font-family="'Fira Code', monospace" font-size="12" fill="#64748B" text-anchor="middle">pranav@terra-node: ~/workspace</text>
+  
+  <!-- Terminal Content Stream -->
+  <g class="text" transform="translate(32, 72)">
+    
+    <!-- Block 1: Identity -->
     <g class="line l1">
-      <text x="0" y="0"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command">whoami</tspan></text>
+      <text x="0" y="0"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">whoami</tspan></text>
     </g>
     <g class="line l2">
-      <text x="0" y="25" class="output">Pranav Dubey. Engineer. First-principles thinker.</text>
+      <text x="0" y="24" class="output">Pranav Dubey <tspan class="dim">—</tspan> <tspan class="tag">Systems Architect &amp; AI Engineer</tspan></text>
     </g>
     
+    <!-- Block 2: Focus Initiatives -->
     <g class="line l3">
-      <text x="0" y="65"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command">cat focus.md</tspan></text>
+      <text x="0" y="60"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~/ecosystem</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">cat active-initiatives.md</tspan></text>
     </g>
-    <g class="line l4"><text x="0" y="90" class="output">- <tspan class="highlight">Smart Farming AI:</tspan> Computer Vision optimization platform.</text></g>
-    <g class="line l5"><text x="0" y="115" class="output">- <tspan class="highlight">Logistics Platform:</tspan> Distributed routing backend.</text></g>
-    <g class="line l6"><text x="0" y="140" class="output">- <tspan class="highlight">MockMate:</tspan> Full-stack LLM interview assistant.</text></g>
+    <g class="line l4"><text x="0" y="84" class="output">◆ <tspan class="tag">Smart Farming AI:</tspan> Edge Computer Vision pipeline for agricultural telemetry.</text></g>
+    <g class="line l5"><text x="0" y="108" class="output">◆ <tspan class="tag">Distributed Routing:</tspan> Fault-tolerant, high-throughput backend architecture.</text></g>
+    <g class="line l6"><text x="0" y="132" class="output">◆ <tspan class="tag">MockMate:</tspan> Full-stack multimodal AI interview simulator.</text></g>
 
+    <!-- Block 3: Core Disciplines -->
     <g class="line l7">
-      <text x="0" y="180"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command">ls -l /learning</tspan></text>
+      <text x="0" y="168"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~/disciplines</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">ls -l</tspan></text>
     </g>
-    <g class="line l8"><text x="0" y="205" class="output">drwxr-xr-x  Deep_Learning_Architectures</text></g>
-    <g class="line l9"><text x="0" y="230" class="output">drwxr-xr-x  Distributed_Systems</text></g>
+    <g class="line l8"><text x="0" y="192" class="dim">drwxr-xr-x  <tspan class="output">Distributed_Systems_&amp;_Consensus</tspan></text></g>
+    <g class="line l9"><text x="0" y="216" class="dim">drwxr-xr-x  <tspan class="output">Deep_Learning_&amp;_Computer_Vision</tspan></text></g>
+    <g class="line l10"><text x="0" y="240" class="dim">drwxr-xr-x  <tspan class="output">High_Availability_Cloud_Infrastructure</tspan></text></g>
 
-    <g class="line l10">
-      <text x="0" y="270"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command">echo $GOAL</tspan></text>
-    </g>
+    <!-- Block 4: Philosophy / Mission -->
     <g class="line l11">
-      <text x="0" y="295" class="output">Build scalable, highly-available systems that matter.</text>
+      <text x="0" y="276"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command">cat mission.env</tspan></text>
     </g>
     <g class="line l12">
-      <text x="0" y="320" class="output">No shortcuts. Architecture first.</text>
+      <text x="0" y="300" class="tag">[CORE DIRECTIVE]</text>
     </g>
-
     <g class="line l13">
-      <text x="0" y="360"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command">cat mission.md</tspan></text>
+      <text x="0" y="324" class="output">Engineering software systems with the resilience and elegance of natural ecosystems.</text>
     </g>
     <g class="line l14">
-      <text x="0" y="385" class="output highlight">CURRENT MISSION:</text>
-    </g>
-    <g class="line l15">
-      <text x="0" y="410" class="output">Building AI systems that solve real-world problems</text>
-    </g>
-    <g class="line l16">
-      <text x="0" y="435" class="output">through first-principles engineering.</text>
+      <text x="0" y="348" class="output"><tspan class="subtag">First principles first.</tspan> Scalable, uncompromised craft.</text>
     </g>
 
-    <g class="line l17">
-      <text x="0" y="485"><tspan class="dir">~/workspace</tspan> <tspan class="prompt">❯</tspan> <tspan class="command cursor">_</tspan></text>
+    <!-- Block 5: Active Prompt -->
+    <g class="line l15">
+      <text x="0" y="394"><tspan class="prompt-user">pranav@terra</tspan><tspan class="dim">:</tspan><tspan class="dir">~</tspan> <tspan class="prompt-symbol">❯</tspan> <tspan class="command cursor">█</tspan></text>
     </g>
   </g>
 </svg>

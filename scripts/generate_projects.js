@@ -14,10 +14,10 @@ async function fetchProjects() {
       
       return repos.map(repo => ({
         name: repo.name,
-        description: repo.description || 'No description provided.',
+        description: repo.description || 'Production-grade engineering & systems project.',
         stars: repo.stargazers_count,
-        lang: repo.language || 'Unknown',
-        color: '#888888' // Default monochrome color
+        lang: repo.language || 'TypeScript',
+        color: '#10B981'
       }));
     } catch (e) {
       console.error('REST API failed', e);
@@ -57,12 +57,25 @@ async function fetchProjects() {
     const data = await response.json();
     const nodes = data.data.user.pinnedItems.nodes;
     
-    return nodes.map(repo => ({
+    if (nodes && nodes.length > 0) {
+      return nodes.map(repo => ({
+        name: repo.name,
+        description: repo.description || 'Production-grade engineering & systems project.',
+        stars: repo.stargazerCount,
+        lang: repo.primaryLanguage ? repo.primaryLanguage.name : 'TypeScript',
+        color: repo.primaryLanguage ? repo.primaryLanguage.color : '#10B981'
+      }));
+    }
+    
+    // Fallback if no pinned items
+    const fallbackRes = await fetch(`https://api.github.com/users/${USERNAME}/repos?sort=pushed&per_page=4`);
+    const fallbackRepos = await fallbackRes.json();
+    return fallbackRepos.map(repo => ({
       name: repo.name,
-      description: repo.description || 'No description provided.',
-      stars: repo.stargazerCount,
-      lang: repo.primaryLanguage ? repo.primaryLanguage.name : 'Unknown',
-      color: repo.primaryLanguage ? repo.primaryLanguage.color : '#888888'
+      description: repo.description || 'Production-grade engineering & systems project.',
+      stars: repo.stargazers_count,
+      lang: repo.language || 'TypeScript',
+      color: '#10B981'
     }));
   } catch (error) {
     console.error('Error fetching projects:', error.message);
@@ -71,44 +84,79 @@ async function fetchProjects() {
 }
 
 function generateSVG(projects) {
-  const cardWidth = 410;
-  const cardHeight = 130;
-  const gap = 20;
+  const cardWidth = 412;
+  const cardHeight = 125;
+  const gapX = 16;
+  const gapY = 16;
+  const startX = 5;
+  const startY = 40;
   
   let cards = '';
   
   projects.forEach((proj, i) => {
-    const x = (i % 2) * (cardWidth + gap) + 5;
-    const y = Math.floor(i / 2) * (cardHeight + gap) + 5;
+    const x = startX + (i % 2) * (cardWidth + gapX);
+    const y = startY + Math.floor(i / 2) * (cardHeight + gapY);
     
+    const safeDesc = (proj.description || '').substring(0, 62) + (proj.description && proj.description.length > 62 ? '...' : '');
+
     cards += `
     <g transform="translate(${x}, ${y})">
-      <rect class="card" width="${cardWidth}" height="${cardHeight}" />
-      <text class="title" x="25" y="40">${proj.name}</text>
-      <text class="desc" x="25" y="70">${proj.description.substring(0, 55)}${proj.description.length > 55 ? '...' : ''}</text>
+      <!-- Card Container -->
+      <rect class="card" width="${cardWidth}" height="${cardHeight}" rx="8" />
       
-      <g transform="translate(25, 105)">
-        <circle cx="5" cy="-4" r="5" fill="${proj.color}" />
-        <text class="meta" x="18" y="0">${proj.lang}</text>
+      <!-- Top Accent Line -->
+      <line x1="0" y1="0" x2="35" y2="0" stroke="#00F5A0" stroke-width="2" />
+
+      <!-- Project Title -->
+      <text class="title" x="22" y="36">${proj.name}</text>
+      
+      <!-- Project Description -->
+      <text class="desc" x="22" y="65">${safeDesc}</text>
+      
+      <!-- Project Metadata Bar -->
+      <g transform="translate(22, 98)">
+        <circle cx="5" cy="-4" r="4.5" fill="${proj.color || '#10B981'}" />
+        <text class="meta" x="16" y="0">${proj.lang}</text>
         
-        <path fill="#888888" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="translate(100, -11) scale(0.9)"/>
-        <text class="meta" x="120" y="0">${proj.stars}</text>
+        <!-- Star Icon -->
+        <g transform="translate(130, -11)">
+          <path fill="#F59E0B" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="scale(0.85)"/>
+          <text class="meta" x="18" y="11">${proj.stars}</text>
+        </g>
+
+        <!-- Status Tag -->
+        <g transform="translate(290, -12)">
+          <rect fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.3)" width="65" height="18" rx="4" />
+          <text class="tag-text" x="32" y="12" text-anchor="middle">ACTIVE</text>
+        </g>
       </g>
     </g>
     `;
   });
 
+  const totalHeight = startY + Math.ceil(Math.max(projects.length, 1) / 2) * (cardHeight + gapY) + 5;
+
   return `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 300" width="100%" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 ${totalHeight}" width="100%" height="${totalHeight}">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
-      .card { fill: transparent; stroke: rgba(255,255,255,0.15); stroke-width: 1; rx: 8px; }
-      .title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; fill: #ffffff; }
-      .desc { font-family: 'Inter', sans-serif; font-size: 14px; fill: #888888; }
-      .meta { font-family: 'Inter', sans-serif; font-size: 13px; fill: #888888; }
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Fira+Code:wght@500;600&amp;display=swap');
+      
+      .header-title { font-family: 'Fira Code', monospace; font-size: 11.5px; font-weight: 600; fill: #00F5A0; letter-spacing: 2px; text-transform: uppercase; }
+      .card { fill: #08100C; stroke: rgba(16, 185, 129, 0.22); stroke-width: 1; }
+      .title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; fill: #FFFFFF; letter-spacing: 0.3px; }
+      .desc { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12.5px; fill: #94A3B8; }
+      .meta { font-family: 'Fira Code', monospace; font-size: 12px; fill: #CBD5E1; }
+      .tag-text { font-family: 'Fira Code', monospace; font-size: 9.5px; font-weight: 600; fill: #00F5A0; letter-spacing: 1px; }
     </style>
   </defs>
+
+  <!-- Section Header -->
+  <g transform="translate(10, 20)">
+    <circle cx="4" cy="-4" r="3.5" fill="#00F5A0" />
+    <text class="header-title" x="16" y="0">ECOSYSTEM_DEPLOYMENTS // FEATURED ARCHITECTURES</text>
+  </g>
+
   ${cards}
 </svg>`;
 }
@@ -119,6 +167,7 @@ async function main() {
   const outDir = path.join(__dirname, '..', 'generated');
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'projects.svg'), svg.trim());
+  console.log('Generated generated/projects.svg successfully.');
 }
 
 main();

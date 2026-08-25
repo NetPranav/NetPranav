@@ -25,6 +25,15 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Generate Quote SVG
+        run: node scripts/generate_quote.js
+
+      - name: Generate Tech Stack SVG
+        run: node scripts/generate_tech_stack.js
+
       - name: Generate Dashboard SVG
         run: node scripts/generate_dashboard.js
         env:
@@ -39,6 +48,5 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add generated/
-          git diff --staged --quiet || (git commit -m "Auto-update profile SVGs" && git push)
-
+          git add generated/ svg/
+          git diff --staged --quiet || (git commit -m "Auto-update profile SVGs [skip ci]" && git push)
