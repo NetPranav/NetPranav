@@ -27,20 +27,20 @@
       <line x1="0" y1="0" x2="35" y2="0" stroke="#00F5A0" stroke-width="2" />
 
       <!-- Project Title -->
-      <text class="title" x="22" y="36">NetPranav</text>
+      <text class="title" x="22" y="36">Gsap-Components</text>
       
       <!-- Project Description -->
-      <text class="desc" x="22" y="65">This is Personal Portfolio Designed with Love and Care </text>
+      <text class="desc" x="22" y="65">A modern open-source UI component library focused on simplicit...</text>
       
       <!-- Project Metadata Bar -->
       <g transform="translate(22, 98)">
-        <circle cx="5" cy="-4" r="4.5" fill="#10B981" />
-        <text class="meta" x="16" y="0">JavaScript</text>
+        <circle cx="5" cy="-4" r="4.5" fill="#3178c6" />
+        <text class="meta" x="16" y="0">TypeScript</text>
         
         <!-- Star Icon -->
         <g transform="translate(130, -11)">
           <path fill="#F59E0B" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="scale(0.85)"/>
-          <text class="meta" x="18" y="11">0</text>
+          <text class="meta" x="18" y="11">1</text>
         </g>
 
         <!-- Status Tag -->
@@ -59,20 +59,20 @@
       <line x1="0" y1="0" x2="35" y2="0" stroke="#00F5A0" stroke-width="2" />
 
       <!-- Project Title -->
-      <text class="title" x="22" y="36">Python-scrapper</text>
+      <text class="title" x="22" y="36">Automatic-Linkedin-Bot-</text>
       
       <!-- Project Description -->
-      <text class="desc" x="22" y="65">College </text>
+      <text class="desc" x="22" y="65">This is the linkdin bot where user explain in short and it upl...</text>
       
       <!-- Project Metadata Bar -->
       <g transform="translate(22, 98)">
-        <circle cx="5" cy="-4" r="4.5" fill="#10B981" />
-        <text class="meta" x="16" y="0">Python</text>
+        <circle cx="5" cy="-4" r="4.5" fill="#e34c26" />
+        <text class="meta" x="16" y="0">HTML</text>
         
         <!-- Star Icon -->
         <g transform="translate(130, -11)">
           <path fill="#F59E0B" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="scale(0.85)"/>
-          <text class="meta" x="18" y="11">0</text>
+          <text class="meta" x="18" y="11">1</text>
         </g>
 
         <!-- Status Tag -->
@@ -91,20 +91,20 @@
       <line x1="0" y1="0" x2="35" y2="0" stroke="#00F5A0" stroke-width="2" />
 
       <!-- Project Title -->
-      <text class="title" x="22" y="36">Magnm-Documentation</text>
+      <text class="title" x="22" y="36">Auto-Youtbe-App</text>
       
       <!-- Project Description -->
-      <text class="desc" x="22" y="65">This is the web application with the easiest version of docume...</text>
+      <text class="desc" x="22" y="65">Production-grade engineering and systems architecture.</text>
       
       <!-- Project Metadata Bar -->
       <g transform="translate(22, 98)">
-        <circle cx="5" cy="-4" r="4.5" fill="#10B981" />
+        <circle cx="5" cy="-4" r="4.5" fill="#3572A5" />
         <text class="meta" x="16" y="0">Python</text>
         
         <!-- Star Icon -->
         <g transform="translate(130, -11)">
           <path fill="#F59E0B" d="M8 0.25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" transform="scale(0.85)"/>
-          <text class="meta" x="18" y="11">1</text>
+          <text class="meta" x="18" y="11">0</text>
         </g>
 
         <!-- Status Tag -->
@@ -123,14 +123,14 @@
       <line x1="0" y1="0" x2="35" y2="0" stroke="#00F5A0" stroke-width="2" />
 
       <!-- Project Title -->
-      <text class="title" x="22" y="36">Sentinal-Terminal</text>
+      <text class="title" x="22" y="36">Marg-Application</text>
       
       <!-- Project Description -->
-      <text class="desc" x="22" y="65">Hey there this is the interactive terminal I made since I went...</text>
+      <text class="desc" x="22" y="65">Logistics truck driver and user application </text>
       
       <!-- Project Metadata Bar -->
       <g transform="translate(22, 98)">
-        <circle cx="5" cy="-4" r="4.5" fill="#10B981" />
+        <circle cx="5" cy="-4" r="4.5" fill="#3178c6" />
         <text class="meta" x="16" y="0">TypeScript</text>
         
         <!-- Star Icon -->
