@@ -66,8 +66,8 @@
       
       <!-- Project Metadata Bar -->
       <g transform="translate(22, 98)">
-        <circle cx="5" cy="-4" r="4.5" fill="#e34c26" />
-        <text class="meta" x="16" y="0">HTML</text>
+        <circle cx="5" cy="-4" r="4.5" fill="#3178c6" />
+        <text class="meta" x="16" y="0">TypeScript</text>
         
         <!-- Star Icon -->
         <g transform="translate(130, -11)">
