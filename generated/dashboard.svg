@@ -64,7 +64,7 @@
     <!-- Repositories -->
     <g transform="translate(0, 0)">
       <text class="metric-label" y="0">Repositories</text>
-      <text class="metric-val" y="44">53</text>
+      <text class="metric-val" y="44">54</text>
       <text class="metric-label" y="70" fill="#10B981">● PUBLIC REPOS</text>
     </g>
     
@@ -85,9 +85,9 @@
         
       <g transform="translate(0, 0)">
         <text class="lang-name" x="0" y="12">TypeScript</text>
-        <text class="lang-pct" x="220" y="12" text-anchor="end">50%</text>
+        <text class="lang-pct" x="220" y="12" text-anchor="end">51%</text>
         <rect class="bar-bg" x="0" y="18" width="220" height="5" rx="2.5" />
-        <rect class="bar-fill" x="0" y="18" width="100" height="5" rx="2.5" />
+        <rect class="bar-fill" x="0" y="18" width="102" height="5" rx="2.5" />
       </g>
     
       <g transform="translate(0, 36)">
