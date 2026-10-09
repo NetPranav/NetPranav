@@ -85,9 +85,9 @@
         
       <g transform="translate(0, 0)">
         <text class="lang-name" x="0" y="12">TypeScript</text>
-        <text class="lang-pct" x="220" y="12" text-anchor="end">50%</text>
+        <text class="lang-pct" x="220" y="12" text-anchor="end">49%</text>
         <rect class="bar-bg" x="0" y="18" width="220" height="5" rx="2.5" />
-        <rect class="bar-fill" x="0" y="18" width="100" height="5" rx="2.5" />
+        <rect class="bar-fill" x="0" y="18" width="98" height="5" rx="2.5" />
       </g>
     
       <g transform="translate(0, 36)">
@@ -98,7 +98,7 @@
       </g>
     
       <g transform="translate(0, 72)">
-        <text class="lang-name" x="0" y="12">JavaScript</text>
+        <text class="lang-name" x="0" y="12">C++</text>
         <text class="lang-pct" x="220" y="12" text-anchor="end">6%</text>
         <rect class="bar-bg" x="0" y="18" width="220" height="5" rx="2.5" />
         <rect class="bar-fill" x="0" y="18" width="12" height="5" rx="2.5" />
