@@ -1,0 +1,34 @@
+{
+  "publicRepos": 42,
+  "languages": [
+    {
+      "name": "TypeScript",
+      "percent": 42
+    },
+    {
+      "name": "Python",
+      "percent": 33
+    },
+    {
+      "name": "JavaScript",
+      "percent": 11
+    },
+    {
+      "name": "C++",
+      "percent": 6
+    },
+    {
+      "name": "Jupyter Notebook",
+      "percent": 6
+    },
+    {
+      "name": "C",
+      "percent": 3
+    }
+  ],
+  "latest": {
+    "name": "WebGen",
+    "blurb": "Generate Templates easily",
+    "url": "https://github.com/NetPranav/WebGen"
+  }
+}
