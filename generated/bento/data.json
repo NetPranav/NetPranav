@@ -27,8 +27,8 @@
     }
   ],
   "latest": {
-    "name": "WebGen",
-    "blurb": "Generate Templates easily",
-    "url": "https://github.com/NetPranav/WebGen"
+    "name": "Auto-Navigator",
+    "blurb": "Autonomous desktop and web navigator combining Astra Computer Use, macOS accessibility, perception, and dynamic AI planning.",
+    "url": "https://github.com/NetPranav/Auto-Navigator"
   }
 }
