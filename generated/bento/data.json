@@ -3,11 +3,11 @@
   "languages": [
     {
       "name": "TypeScript",
-      "percent": 42
+      "percent": 44
     },
     {
       "name": "Python",
-      "percent": 33
+      "percent": 31
     },
     {
       "name": "JavaScript",
@@ -27,8 +27,8 @@
     }
   ],
   "latest": {
-    "name": "Magnm-Pitch",
-    "blurb": "This is the quotation site",
-    "url": "https://github.com/NetPranav/Magnm-Pitch"
+    "name": "Cero-Terminal",
+    "blurb": "A terminal that takes requests in plain language and runs .flow setup files on macOS, Windows and Linux. Built-in local AI model, Ollama or a cloud key.",
+    "url": "https://github.com/NetPranav/Cero-Terminal"
   }
 }
