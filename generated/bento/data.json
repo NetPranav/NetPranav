@@ -27,8 +27,8 @@
     }
   ],
   "latest": {
-    "name": "Cero-Terminal",
-    "blurb": "A terminal that takes requests in plain language and runs .flow setup files on macOS, Windows and Linux. Built-in local AI model, Ollama or a cloud key.",
-    "url": "https://github.com/NetPranav/Cero-Terminal"
+    "name": "WebGen",
+    "blurb": "Generate Templates easily",
+    "url": "https://github.com/NetPranav/WebGen"
   }
 }
