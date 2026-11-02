@@ -1,10 +1,12 @@
 {
   "name": "github-profile",
   "version": "1.0.0",
-  "description": "<div align=\"center\">",
+  "description": "Daily-changing GitHub profile: seven designs, rotated by date and rendered in headless Chromium.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node scripts/daily/schedule.test.js",
+    "daily": "node scripts/daily/render.js",
+    "plan": "node scripts/daily/render.js --plan 7"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
     "@fontsource/ibm-plex-mono": "^5.3.0",
     "@fontsource/inter-tight": "^5.3.0",
     "fontkit": "^2.0.4",
+    "playwright": "^1.64.1",
+    "sharp": "^0.35.5",
     "simple-icons": "^16.24.0",
     "subset-font": "^2.9.0"
   }

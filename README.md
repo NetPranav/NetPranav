@@ -1,8 +1,30 @@
 <div align="center">
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/hero-dark.svg"><img alt="Pranav Dubey: Full-stack &amp; AI engineer, Indore, India, First principles, Motion tools · 3D vision" src="./generated/bento/hero-light.svg" width="99.9%"></picture></a><br>
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/showcase-mahaurja-dark.svg"><img alt="Today&apos;s UI: Mahaurja. Plant operating system: a live dashboard and API for running a plant." src="./generated/bento/showcase-mahaurja-light.svg" width="99.9%"></picture></a><br>
-<a href="https://github.com/NetPranav/WebGen"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/now-dark.svg"><img alt="Now building: LazyLayout. AI-native motion design studio. Edit visually, export clean GSAP and Framer Motion code." src="./generated/bento/now-light.svg" width="33.3%"></picture></a><a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/freelance-dark.svg"><img alt="Open for freelance work. Websites, mobile apps and backends. Shipped for SkyRiseFPV, Mahaurja, Magnm." src="./generated/bento/freelance-light.svg" width="49.95%"></picture></a><a href="https://github.com/NetPranav?tab=repositories"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/repos-dark.svg"><img alt="42 public repositories" src="./generated/bento/repos-light.svg" width="16.65%"></picture></a><br>
-<a href="https://github.com/NetPranav?tab=repositories"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/work-dark.svg"><img alt="Selected work: LazyLayout, AI motion design studio; Humanoid-Face-3D, Research: photo to 3D head mesh; Cero-Terminal, Plain-language terminal for .flow files" src="./generated/bento/work-light.svg" width="66.6%"></picture></a><a href="https://github.com/NetPranav/AGNITIA-TERRA06"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/hackathons-dark.svg"><img alt="Hackathons: 1st Runner-up, Agnitia; 1st Runner-up, BGI Hackathon; Best Design Award, Kriyeta" src="./generated/bento/hackathons-light.svg" width="33.3%"></picture></a><br>
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/stack-dark.svg"><img alt="Stack: TypeScript, Python, Next.js, GSAP, PyTorch, Docker. Also C++, Go, Rust, TensorFlow, React, Node.js, Kubernetes, AWS, PostgreSQL, Redis, MongoDB" src="./generated/bento/stack-light.svg" width="66.6%"></picture></a><a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/education-dark.svg"><img alt="Education: CSE, Acropolis (Yr 2); Diploma, CSE (2025)" src="./generated/bento/education-light.svg" width="33.3%"></picture></a><br>
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/bento/contact-dark.svg"><img alt="Say hello on GitHub" src="./generated/bento/contact-light.svg" width="99.9%"></picture></a>
+<a href="https://github.com/NetPranav"><img alt="Pranav Dubey's profile in the Material 3 Expressive design. Today's UI: SkyRiseFPV. Also today: LazyLayout." src="./generated/daily/2026-11-02-material3.webp" width="100%"></a>
 </div>
+
+<div align="center">
+
+**Today** SkyRiseFPV · **Also today** [LazyLayout](https://github.com/NetPranav/WebGen) · **Design** Material 3 Expressive · [All repositories](https://github.com/NetPranav?tab=repositories)
+
+</div>
+
+<details>
+<summary>Projects, as text</summary>
+
+- [Humanoid-Face-3D](https://github.com/NetPranav/Humanoid-Face-3D): Photo in, game-ready head out.
+- [OncoPattern](https://github.com/NetPranav/Cancer-classification-): Explainable cancer image analysis.
+- Smart Cursor: Pixel-accurate UI grounding.
+- [TERRA](https://github.com/NetPranav/AGNITIA-TERRA06): Solar and wind forecasting with battery dispatch for a 90 MW plant near Indore.
+- [Robot Rumble](https://github.com/NetPranav/Game-Development-): Unreal Engine 5 action combat game with Sui blockchain gear NFTs.
+- NewOS: A desktop OS on the Linux kernel that runs Linux, Android and Windows apps.
+- [Smriti-NER](https://github.com/NetPranav/SIH003): Dementia care and reminiscence platform for North East India.
+- Bus Tracker: Real-time college bus tracking and fleet intelligence for students.
+- [LinkedIn AI Studio](https://github.com/NetPranav/Automatic-Linkedin-Bot-): Write, preview and auto-publish LinkedIn posts from your phone.
+- Robocon 2027 Tracker: 100 work packages across three departments, with approval-based sign-in.
+- ProtfoliQ: AI reviewer that audits your GitHub repos and project presentation.
+- [Magnm Marketing](https://github.com/NetPranav/Magnm-Marketing): A team of agents that plans and schedules posts for Magnm.
+- [Marg](https://github.com/NetPranav/Marg-Application): Logistics apps for drivers, warehouses and factories.
+- [GSAP Components](https://github.com/NetPranav/Gsap-Components): An open-source UI component library built on GSAP.
+- [Autonomous YouTube](https://github.com/NetPranav/Auto-Youtbe-App): Foundation for an autonomous AI YouTube pipeline.
+
+</details>

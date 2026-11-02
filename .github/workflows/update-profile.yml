@@ -1,21 +1,27 @@
-name: Update Profile Stats
+name: Update Profile
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Run daily at midnight
-  workflow_dispatch: # Allow manual trigger
+    - cron: '17 0 * * *' # daily, a little after midnight UTC (GitHub delays jobs queued on the hour)
+  workflow_dispatch:
   push:
     branches:
       - main
+    paths:
+      - 'scripts/**'
+      - 'package*.json'
+      - '.github/workflows/update-profile.yml'
 
 permissions:
   contents: write
 
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
+
 jobs:
-  generate-stats:
+  render:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,18 +30,31 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: npm
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: npm ci
 
-      - name: Generate Bento Tiles
-        run: node scripts/generate_bento.js
+      - name: Check the daily schedule rules
+        run: npm test
+
+      - name: Cache Chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Render today's profile
+        run: node scripts/daily/render.js
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
 
-      - name: Commit & Push Generated SVGs
+      - name: Commit and push
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add generated/ README.md
-          git diff --staged --quiet || (git commit -m "Auto-update profile SVGs [skip ci]" && git push)
+          git add README.md generated/
+          git diff --staged --quiet || (git commit -m "Daily profile update [skip ci]" && git pull --rebase && git push)

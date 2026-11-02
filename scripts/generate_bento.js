@@ -549,7 +549,18 @@ async function main() {
   console.log(`Bento tiles written to ${path.relative(process.cwd(), OUT_DIR)} (${data.publicRepos} repos). Today: ${entry.name}.`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Mockup-only SVG for one showcase project (the app window, cropped from the showcase tile).
+async function renderMockup(entry) {
+  const tile = showcaseTile(THEMES.light, { accent: config.accent }, entry, 0, config.showcase.length);
+  const svg = await tile.render();
+  return svg.replace('width="840" height="336" viewBox="0 0 840 336"', 'width="500" height="290" viewBox="26 23 500 290"');
+}
+
+module.exports = { renderMockup };
+
+if (require.main === module) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}
