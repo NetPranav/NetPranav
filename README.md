@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://github.com/NetPranav"><img alt="Pranav Dubey's profile in the Material 3 Expressive design. Today's UI: SkyRiseFPV. Also today: LazyLayout." src="./generated/daily/2026-11-02-material3.webp" width="100%"></a>
+<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-02-material3-dark.webp"><img alt="Pranav Dubey's profile in the Material 3 Expressive design. Today's UI: SkyRiseFPV. Also today: LazyLayout." src="./generated/daily/2026-11-02-material3-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">

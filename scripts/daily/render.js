@@ -48,28 +48,35 @@ async function main() {
 
   const browser = await chromium.launch({ args: ['--no-sandbox'] });
   try {
-    const ctx = await browser.newContext({ viewport: { width: 880, height: 1000 }, deviceScaleFactor: 2, reducedMotion: 'reduce' });
-    const page = await ctx.newPage();
-    await page.setContent(html, { waitUntil: 'networkidle' });
-    await page.evaluate(() => document.fonts.ready);
-    await page.waitForTimeout(400);
-    const height = await page.evaluate(() => Math.ceil(document.querySelector('.page').getBoundingClientRect().height));
-    const png = await page.screenshot({ fullPage: true, clip: { x: 0, y: 0, width: 880, height } });
-    const meta = await sharp(png).metadata();
-    const w = meta.width, h = meta.height, r = 36;
-    const mask = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><rect width="${w}" height="${h}" rx="${r}" ry="${r}" fill="#fff"/></svg>`);
-    const webp = await sharp(png).ensureAlpha().composite([{ input: mask, blend: 'dest-in' }]).webp({ quality: 88, effort: 5 }).toBuffer();
+    const NATIVE = { swiss: 'light', material3: 'light', minimal: 'light', neobrutal: 'light', aurora: 'dark', terminal: 'dark', blueprint: 'dark' };
+    const flip = '.page{filter:invert(1) hue-rotate(180deg)}.page img{filter:invert(1) hue-rotate(180deg)}';
     fs.mkdirSync(OUT, { recursive: true });
-    const file = `${plan.date}-${plan.design}.webp`;
-    fs.writeFileSync(path.join(OUT, file), webp);
-    for (const f of fs.readdirSync(OUT)) if (f.endsWith('.webp') && f !== file) fs.unlinkSync(path.join(OUT, f));
-    console.log(`${file}: ${Math.round(webp.length / 1024)} KB, ${880}x${height} css px`);
+    const files = {};
+    for (const scheme of ['light', 'dark']) {
+      const ctx = await browser.newContext({ viewport: { width: 880, height: 1000 }, deviceScaleFactor: 2, reducedMotion: 'reduce' });
+      const page = await ctx.newPage();
+      await page.setContent(html, { waitUntil: 'networkidle' });
+      if (NATIVE[plan.design] !== scheme) await page.addStyleTag({ content: flip });
+      await page.evaluate(() => document.fonts.ready);
+      await page.waitForTimeout(400);
+      const height = await page.evaluate(() => Math.ceil(document.querySelector('.page').getBoundingClientRect().height));
+      const png = await page.screenshot({ fullPage: true, clip: { x: 0, y: 0, width: 880, height } });
+      const meta = await sharp(png).metadata();
+      const w = meta.width, h = meta.height, r = 36;
+      const mask = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><rect width="${w}" height="${h}" rx="${r}" ry="${r}" fill="#fff"/></svg>`);
+      const webp = await sharp(png).ensureAlpha().composite([{ input: mask, blend: 'dest-in' }]).webp({ quality: 86, effort: 5 }).toBuffer();
+      files[scheme] = `${plan.date}-${plan.design}-${scheme}.webp`;
+      fs.writeFileSync(path.join(OUT, files[scheme]), webp);
+      console.log(`${files[scheme]}: ${Math.round(webp.length / 1024)} KB, ${880}x${height} css px`);
+      await ctx.close();
+    }
+    for (const f of fs.readdirSync(OUT)) if (f.endsWith('.webp') && !Object.values(files).includes(f)) fs.unlinkSync(path.join(OUT, f));
 
     // README is written last, so a failed render never leaves it pointing at a missing file.
     const link = (e) => (e.url ? `[${e.name}](${e.url})` : e.name);
     const alt = `Pranav Dubey's profile in the ${NAMES[plan.design]} design. Today's UI: ${p.name}. Also today: ${s.name}.`;
     const md = `<div align="center">
-<a href="${p.url || C.profile}"><img alt="${alt}" src="./generated/daily/${file}" width="100%"></a>
+<a href="${p.url || C.profile}"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/${files.dark}"><img alt="${alt}" src="./generated/daily/${files.light}" width="100%"></picture></a>
 </div>
 
 <div align="center">
