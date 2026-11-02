@@ -7,7 +7,7 @@
 .bn .meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:26px 0 0;padding-top:16px;border-top:1px solid var(--line)}
 .bn .meta dt{font:500 10.5px var(--bm);letter-spacing:.07em;text-transform:uppercase;opacity:.65}.bn .meta dd{margin:4px 0 0;font-weight:600;font-size:14px}
 .bn .show{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:26px;align-items:stretch}
-.bn .win{margin:0;border-radius:10px;overflow:hidden;line-height:0;align-self:center}.bn .win img{width:100%;height:auto}
+.bn .win{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;line-height:0;align-self:center}.bn .win img{width:100%;height:auto}
 .bn .txt{display:flex;flex-direction:column;min-width:0}.bn .txt h2{margin:0;font-size:34px;letter-spacing:-.04em;line-height:1;font-weight:800}
 .bn .bl{margin:12px 0;font-size:14px;line-height:1.5;opacity:.75}.bn .tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
 .bn .tags li{font:400 11.5px var(--bm);padding:3px 9px;border:1px solid var(--line);border-radius:999px}

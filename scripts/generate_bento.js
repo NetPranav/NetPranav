@@ -553,7 +553,12 @@ async function main() {
 async function renderMockup(entry) {
   const tile = showcaseTile(THEMES.light, { accent: config.accent }, entry, 0, config.showcase.length);
   const svg = await tile.render();
-  return svg.replace('width="840" height="336" viewBox="0 0 840 336"', 'width="500" height="290" viewBox="26 23 500 290"');
+  // The page's CSS rounds and clips the window, so drop the SVG's own rounded clip and hairline frame
+  // (they would not line up with the CSS corner radius).
+  return svg
+    .replace('width="840" height="336" viewBox="0 0 840 336"', 'width="500" height="290" viewBox="26 23 500 290"')
+    .replace('<rect x="26" y="23" width="500" height="290" rx="8"/></clipPath>', '<rect x="26" y="23" width="500" height="290"/></clipPath>')
+    .replace(/<rect x="26\.5" y="23\.5"[^>]*\/>/, '');
 }
 
 module.exports = { renderMockup };
