@@ -3,6 +3,7 @@ const path = require('path');
 const fontkit = require('fontkit');
 const subsetFont = require('subset-font');
 const config = require('./bento.config');
+const { makeDrawers, WINDOW } = require('./showcase');
 
 const GITHUB_TOKEN = process.env.PAT_TOKEN || process.env.GITHUB_TOKEN;
 const OUT_DIR = path.join(__dirname, '..', 'generated', 'bento');
@@ -14,7 +15,7 @@ const COLS = 6;
 const COL = 140;
 const GX = 6;
 const GY = 3;
-const ROW = { hero: 270, mid: 190, work: 214, stack: 170, contact: 72 };
+const ROW = { hero: 270, show: 330, mid: 190, work: 214, stack: 170, contact: 72 };
 
 const THEMES = {
   dark: { card: '#151515', ink: '#f2f0eb', muted: '#a8a59d', line: '#2e2c29' },
@@ -218,43 +219,6 @@ function reposTile(t, d) {
   return tile;
 }
 
-const ABBR = { TypeScript: 'TS', JavaScript: 'JS', Python: 'PY', 'C++': 'C++', 'C#': 'C#', Go: 'GO', Rust: 'RS', Java: 'JAVA', HTML: 'HTML', CSS: 'CSS', Shell: 'SH', 'Jupyter Notebook': 'NB', Kotlin: 'KT', Swift: 'SWIFT', Dart: 'DART' };
-
-function langsTile(t, d) {
-  const segs = d.languages.slice(0, 3).map((l) => ({ name: l.name, short: ABBR[l.name] || l.name.slice(0, 3).toUpperCase(), pct: l.percent }));
-  const other = 100 - segs.reduce((s, l) => s + l.pct, 0);
-  if (other > 0) segs.push({ name: 'other', short: '+', pct: other, other: true });
-  segs.sort((a, b) => b.pct - a.pct);
-
-  const tile = new Tile(t, 3, ROW.mid, `Language share: ${segs.map((s) => `${s.name} ${s.pct}%`).join(', ')}`);
-  tile.card();
-  const x0 = GX + 20;
-  tile.label(x0, 33, 'Language share', t.muted);
-
-  const fills = [t.ink, d.accent, t.line, t.muted];
-  const labelFills = [t.card, ON_ACCENT, t.ink, t.card];
-  const heights = [1, 0.62, 0.4, 0.22];
-  const gap = 6;
-  const avail = tile.cw - 40 - gap * (segs.length - 1);
-  const bottom = 150;
-  const fullH = 92;
-  const total = segs.reduce((s, l) => s + l.pct, 0);
-  tile.css.push('@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}.bar{transform-box:fill-box;transform-origin:50% 100%;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}');
-  let x = x0;
-  segs.forEach((s, i) => {
-    const w = (s.pct / total) * avail;
-    const h = fullH * heights[i];
-    tile.body.push(`<rect class="bar" style="animation-delay:${i * 0.08}s" x="${round(x)}" y="${round(bottom - h)}" width="${round(w)}" height="${round(h)}" rx="3" fill="${fills[i]}"/>`);
-    const text = s.other ? `+${s.pct}` : `${s.short} ${s.pct}`;
-    const ls = { size: 12, weight: 600, fill: labelFills[i] };
-    if (h >= 26 && measure(text, ls) + 16 <= w) tile.text(x + 8, bottom - 8, text, ls);
-    x += w + gap;
-  });
-  const cs = { size: 12, weight: 500, fill: t.muted };
-  tile.text(x0, 170, ellipsize(`${segs.map((s) => s.name).join(', ')} (%)`, tile.cw - 40, cs), cs);
-  return tile;
-}
-
 function workTile(t) {
   const tile = new Tile(t, 4, ROW.work, `Selected work: ${config.projects.map((p) => `${p.name}, ${p.blurb}`).join('; ')}`);
   tile.card();
@@ -277,20 +241,99 @@ function workTile(t) {
   return tile;
 }
 
+// Which project is on show today. Rotates once per UTC day, in config order.
+function pickShowcase(override) {
+  const list = config.showcase;
+  const day = Math.floor(Date.now() / 86400000);
+  const idx = override !== undefined ? Number(override) : day;
+  return { index: ((idx % list.length) + list.length) % list.length, total: list.length };
+}
+
+function showcaseTile(t, d, entry, index, total) {
+  const tile = new Tile(t, 6, ROW.show, `Today's UI: ${entry.name}. ${entry.blurb}`);
+  tile.card();
+  const wx = GX + 20;
+  const wy = GY + 20;
+  const winH = ROW.show - 40;
+  const bodyY = winH - WINDOW.h; // chrome bar height
+  tile.defs.push(`<clipPath id="win"><rect x="${wx}" y="${wy}" width="${WINDOW.w}" height="${winH}" rx="8"/></clipPath>`);
+  tile.body.push(`<g clip-path="url(#win)">`);
+  tile.body.push(`<rect x="${wx}" y="${wy}" width="${WINDOW.w}" height="${winH}" fill="#16161a"/>`);
+  [0, 1, 2].forEach((i) => tile.body.push(`<circle cx="${wx + 14 + i * 14}" cy="${wy + bodyY / 2}" r="4" fill="${['#ff5f57', '#febc2e', '#28c840'][i]}" opacity=".9"/>`));
+  tile.text(wx + WINDOW.w / 2, wy + bodyY / 2 + 3.5, entry.name.toLowerCase(), { font: 'mono', size: 10, fill: '#8b90a0', anchor: 'middle' });
+  makeDrawers(tile, wx, wy + bodyY)[entry.id]();
+  tile.body.push('</g>');
+  tile.body.push(`<rect x="${wx + 0.5}" y="${wy + 0.5}" width="${WINDOW.w - 1}" height="${winH - 1}" rx="8" fill="none" stroke="${t.line}"/>`);
+
+  const px = wx + WINDOW.w + 28;
+  const pw = GX + tile.cw - 24 - px;
+  const lw = tile.label(px, wy + 12, "Today's UI", t.muted);
+  tile.body.push(`<circle cx="${round(px + lw + 10)}" cy="${wy + 8.5}" r="3.5" fill="${d.accent}"/>`);
+
+  const ns = { size: 34, weight: 800, ls: -0.04, fill: t.ink };
+  ns.size = fitSize(entry.name, pw, ns, 20);
+  tile.text(px, wy + 62, entry.name, ns);
+
+  const bs = { size: 13, weight: 500, fill: t.muted };
+  const lines = wrap(entry.blurb, pw, bs, 5);
+  lines.forEach((l, i) => tile.text(px, wy + 92 + i * 19, l, bs));
+
+  const ts = { font: 'mono', size: 11, fill: t.ink };
+  let ty = wy + 92 + lines.length * 19 + 14;
+  entry.tags.forEach((tag) => {
+    tile.text(px, ty, `/ ${tag}`, ts);
+    ty += 17;
+  });
+
+  const bottom = wy + winH;
+  tile.body.push(`<path d="M${px} ${bottom - 40.5}H${px + pw}" stroke="${t.line}"/>`);
+  const status = entry.status || (entry.url ? 'Open source' : 'Private repo');
+  tile.label(px, bottom - 17, status, t.muted);
+  const dotGap = 12;
+  const dotsW = (total - 1) * dotGap;
+  for (let i = 0; i < total; i++) {
+    const on = i === index;
+    tile.body.push(`<circle cx="${round(px + pw - dotsW + i * dotGap)}" cy="${bottom - 21}" r="${on ? 4 : 2.5}" fill="${on ? d.accent : t.line}"/>`);
+  }
+  return tile;
+}
+
+function freelanceTile(t, d) {
+  const f = config.freelance;
+  const tile = new Tile(t, 3, ROW.mid, `${f.status}. ${f.note} Shipped for ${f.clients.join(', ')}.`);
+  tile.card();
+  const x0 = GX + 22;
+  tile.label(x0, 33, 'Freelance', t.muted);
+  tile.body.push(`<circle cx="${x0 + 6}" cy="${GY + 66}" r="5" fill="${d.accent}"/>`);
+  tile.css.push('@keyframes ping{0%{transform:scale(1);opacity:.5}100%{transform:scale(2.6);opacity:0}}.ping{transform-box:fill-box;transform-origin:center;animation:ping 2s ease-out infinite}');
+  tile.body.push(`<circle class="ping" cx="${x0 + 6}" cy="${GY + 66}" r="5" fill="${d.accent}"/>`);
+  const ss = { size: 24, weight: 800, ls: -0.03, fill: t.ink };
+  ss.size = fitSize(f.status, tile.cw - 44 - 22, ss, 15);
+  tile.text(x0 + 22, GY + 74, f.status, ss);
+  const ns = { size: 13, weight: 500, fill: t.muted };
+  tile.text(x0, GY + 102, ellipsize(f.note, tile.cw - 44, ns), ns);
+  tile.body.push(`<path d="M${x0} ${GY + 128.5}H${GX + tile.cw - 22}" stroke="${t.line}"/>`);
+  tile.label(x0, GY + 150, 'Shipped for', t.muted);
+  const cs = { size: 14, weight: 700, ls: -0.01, fill: t.ink };
+  tile.text(x0, GY + 172, ellipsize(f.clients.join('  /  '), tile.cw - 44, cs), cs);
+  return tile;
+}
+
 function hackathonTile(t, d) {
   const hk = config.hackathons;
-  const tile = new Tile(t, 2, ROW.work, `Hackathons: ${hk.headline.text}; ${hk.second.title}, ${hk.second.text}`);
+  const tile = new Tile(t, 2, ROW.work, `Hackathons: ${hk.awards.map((a) => `${a.award}, ${a.event}`).join('; ')}`);
   tile.card(t.ink, t.ink);
   const x0 = GX + 20;
+  const xr = GX + tile.cw - 20;
   tile.label(x0, 31, 'Hackathons', t.card, 0.75);
-  const bottom = GY + ROW.work - 23;
-  tile.text(x0, bottom, hk.second.text, { size: 13, weight: 500, fill: t.card, opacity: 0.8 });
-  tile.text(x0, bottom - 19, hk.second.title, { size: 17, weight: 700, fill: t.card });
-  const hs = { size: 13, weight: 500, fill: t.card };
-  const lines = wrap(hk.headline.text, tile.cw - 40, hs, 2);
-  const lastHead = bottom - 19 - 31;
-  lines.forEach((l, i) => tile.text(x0, lastHead - (lines.length - 1 - i) * 18, l, hs));
-  tile.text(x0, lastHead - (lines.length - 1) * 18 - 20, hk.headline.big, { size: 28, weight: 800, ls: -0.04, fill: d.accent });
+  const as = { size: 18, weight: 800, ls: -0.02, fill: d.accent };
+  const es = { size: 13, weight: 500, fill: t.card, opacity: 0.8 };
+  hk.awards.slice(0, 3).forEach((a, i) => {
+    const ly = 46 + i * 56;
+    tile.body.push(`<path d="M${x0} ${ly + 0.5}H${xr}" stroke="${t.card}" stroke-opacity=".22"/>`);
+    tile.text(x0, ly + 26, ellipsize(a.award, xr - x0, as), as);
+    tile.text(x0, ly + 44, ellipsize(a.event, xr - x0, es), es);
+  });
   return tile;
 }
 
@@ -452,15 +495,21 @@ async function main() {
   const nowBuilding =
     nb.repo === 'auto' && data.latest
       ? { name: data.latest.name, blurb: data.latest.blurb, url: data.latest.url }
-      : { name: nb.repo, blurb: nb.blurb, url: repoUrl(nb.repo) };
+      : { name: nb.repo, blurb: nb.blurb, url: nb.url === null ? profile : nb.url || repoUrl(nb.repo) };
   const d = { ...data, nowBuilding, accent: config.accent };
+
+  const pick = pickShowcase(process.env.SHOWCASE_INDEX);
+  const entry = config.showcase[pick.index];
+  const showName = `showcase-${entry.id}`;
+  const showHref = entry.url || profile;
 
   const layout = (t) => [
     [{ name: 'hero', cols: 6, href: profile, tile: heroTile(t, d) }],
+    [{ name: showName, cols: 6, href: showHref, tile: showcaseTile(t, d, entry, pick.index, pick.total) }],
     [
       { name: 'now', cols: 2, href: nowBuilding.url, tile: nowTile(t, d) },
+      { name: 'freelance', cols: 3, href: profile, tile: freelanceTile(t, d) },
       { name: 'repos', cols: 1, href: `${profile}?tab=repositories`, tile: reposTile(t, d) },
-      { name: 'languages', cols: 3, href: `${profile}?tab=repositories`, tile: langsTile(t, d) },
     ],
     [
       { name: 'work', cols: 4, href: `${profile}?tab=repositories`, tile: workTile(t, d) },
@@ -473,6 +522,21 @@ async function main() {
     contactTiles(t),
   ];
 
+  // Drop yesterday's showcase files and any retired tiles, so only today's image is in the repo.
+  for (const f of fs.readdirSync(OUT_DIR)) if (/^(showcase-|languages-)/.test(f)) fs.unlinkSync(path.join(OUT_DIR, f));
+
+  if (process.env.PREVIEW_ALL) {
+    const dir = process.env.PREVIEW_ALL;
+    fs.mkdirSync(dir, { recursive: true });
+    for (const [i, e] of config.showcase.entries()) {
+      for (const [mode, theme] of Object.entries(THEMES)) {
+        fs.writeFileSync(path.join(dir, `${e.id}-${mode}.svg`), await showcaseTile(theme, d, e, i, pick.total).render());
+      }
+    }
+    console.log(`Previews written to ${dir}`);
+    return;
+  }
+
   let rows;
   for (const [mode, theme] of Object.entries(THEMES)) {
     rows = layout(theme);
@@ -482,7 +546,7 @@ async function main() {
     }
   }
   writeReadme(rows);
-  console.log(`Bento tiles written to ${path.relative(process.cwd(), OUT_DIR)} (${data.publicRepos} repos).`);
+  console.log(`Bento tiles written to ${path.relative(process.cwd(), OUT_DIR)} (${data.publicRepos} repos). Today: ${entry.name}.`);
 }
 
 main().catch((e) => {
