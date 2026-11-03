@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-02-material3-dark.webp"><img alt="Pranav Dubey's profile in the Material 3 Expressive design. Today's UI: SkyRiseFPV. Also today: LazyLayout." src="./generated/daily/2026-11-02-material3-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav/WebGen"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-03-terminal-dark.webp"><img alt="Pranav Dubey's profile in the Terminal IDE design. Today's UI: LazyLayout. Also today: OncoPattern." src="./generated/daily/2026-11-03-terminal-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** SkyRiseFPV · **Also today** [LazyLayout](https://github.com/NetPranav/WebGen) · **Design** Material 3 Expressive · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** [LazyLayout](https://github.com/NetPranav/WebGen) · **Also today** [OncoPattern](https://github.com/NetPranav/Cancer-classification-) · **Design** Terminal IDE · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
