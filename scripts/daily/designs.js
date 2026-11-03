@@ -101,28 +101,30 @@ function minimal(x) {
   ];
 }
 
-// ---------------------------------------------------------------- terminal / IDE
-function terminal(x) {
-  const { p, s, data: d } = x;
-  let n = 0;
-  const L = (h) => `<div class="ln"><s>${++n}</s><code>${h || ' '}</code></div>`;
-  const dash = '<span class="a">-</span>';
-  const h2 = (t) => `<span class="h2">## ${t}</span>`;
-  const band = (id, href, html, cls = '') => ({ id, href, html: `<div class="tm ${cls}">${html}</div>` });
-  const ed = (inner) => `<div class="ed">${inner}</div>`;
-  return [
-    band('top', C.profile, `<div class="tbar"><i></i><i></i><i></i><span>NetPranav, README.md</span></div><div class="tabs"><span class="on">README.md</span><span>${p.id}.ui</span><span>status.md</span></div>` +
-      ed([L(`<span class="h1"># ${C.name.join(' ')}</span>`), L(`${esc(C.meta[0][1])} · ${esc(C.meta[1][1])}`), L(`<span class="c">// ${esc(C.meta[2][1])} · ${esc(C.meta[3][1])}</span>`), L(''), L(h2('Status')),
-        ...statusParts(x).map((t) => L(`${dash} ${t}`)), L('')].join(''))),
-    band('today', p.url || C.profile, ed(L(h2("Today's UI")) + `<div class="prev"><img alt="" src="${p.uri}"></div>` + L(`<span class="c">&gt;</span> <span class="b">${esc(p.name)}</span>: ${esc(p.blurb)}`) + L(`<span class="c">&gt;</span> also today: <span class="b">${esc(s.name)}</span>, ${esc(s.blurb)}`) + L(''))),
-    band('now', C.now.url, ed(L(h2('Now building')) + L(`${dash} <span class="b">${C.now.name}</span> ${esc(C.now.blurb)}`) + L('') + L(h2('Freelance')) + L(`${dash} <span class="k">"${esc(C.free.status)}"</span>`) + L(`${dash} ${esc(C.free.note)} Shipped for ${C.free.clients.join(', ')}.`) + L(''))),
-    band('research', C.research[0].url, ed(L(h2('Research')) + C.research.map((r) => L(`${dash} <span class="b">${esc(r.name)}</span>: ${esc(r.line)}`) + r.facts.map((f) => L(`    <span class="c">${esc(f)}</span>`)).join('')).join('') + L(''))),
-    band('work', C.profile + '?tab=repositories', ed(L(h2('Selected work')) + C.work.map((k) => L(`${dash} <span class="b">${esc(k[0])}</span> ${esc(k[1])}`)).join('') + L('') + L(h2('Hackathons')) + C.awards.map((a) => L(`${dash} <span class="b">${a[0]}</span> at ${a[1]}`)).join('') + L(''))),
-    band('projects', C.profile + '?tab=repositories', ed(L(h2('More projects')) + C.projects.map((j) => L(`${dash} <span class="b">${esc(j.name)}</span> ${esc(j.blurb)} <span class="c">[${esc(j.tag)}]</span>`)).join('') + L(''))),
-    band('stats', C.profile, ed(L(h2('Contributions, last 12 months')) + `<div class="hmw">${heat(d.days)}</div>` + L(`${fmt(d.contributionsYear)} contributions · ${fmt(d.commitsYear)} commits · ${d.publicRepos} public repos`) + L('') + L(h2('Languages <span class="c">// public repos, by code size</span>')) + `${langBarPlain(d, 'bar2')}` + L(d.languages.map((l) => `${esc(l.name)} ${l.pct}%`).join(' · ')) + L(''))),
-    band('journey', C.profile, ed(L(h2('Journey <span class="c">// first commits</span>')) + C.timeline.map((t) => L(`${dash} <span class="k">${t[0]}</span> <span class="b">${esc(t[1])}</span> <span class="c">${esc(t[2])}</span>`)).join('') + L(''))),
-    band('stack', C.profile, ed(L(h2('Stack')) + L(`<span class="k">${C.stack.join(' · ')}</span>`) + L(`<span class="c">// ${esc(C.also)}</span>`) + L('') + L(h2('Education')) + C.edu.map((e) => L(`${dash} ${e[0]} <span class="c">(${e[1]})</span>`)).join('')) + `<div class="sbar"><span>main · ${esc(C.meta[1][1])}</span><span>${esc(C.free.status)} · ${d.publicRepos} repos</span></div>`, 'last'),
-  ];
+// ---------------------------------------------------------------- now playing
+function nowplaying(x) {
+  const { p, s, data: d, projects } = x;
+  const idx = projects.findIndex((q) => q.id === p.id);
+  const sec = (t, inner) => `<section><h2>${t}</h2>${inner}</section>`;
+  const track = (n, name, blurb, tag, on) => `<div class="tr${on ? ' on' : ''}"><span>${n}</span><div><b>${esc(name)}</b><span class="d">${esc(blurb)}</span></div><em>${esc(tag)}</em></div>`;
+  const nav = ['Home', 'Projects', 'Research', 'Journey', 'Stats'].map((t, i) => `<a${i === 0 ? ' class="on"' : ''}>${t}</a>`).join('');
+  const side = `<aside><div class="logo">pranav</div>${nav}<div class="lib">Library</div><a>Hackathons</a><a>Freelance</a><a>Stack</a><div class="foot">${esc(C.meta[1][1])}<br>${statusParts(x)[0]}<br><b>${esc(C.free.status)}</b></div></aside>`;
+  const html = `<div class="np">${side}<main>
+<div class="hero"><div class="top"><div class="cover"><img alt="" src="${p.uri}"></div><div><small>Now playing · Today's UI</small><h1 style="font-size:${Math.max(28, Math.min(52, Math.floor(300 / (p.name.length * 0.7))))}px">${esc(p.name)}</h1><div class="sub">${esc(C.name.join(' '))} · ${esc(C.meta[0][1])}<br>${esc(p.blurb)}</div></div></div>
+<div class="ctl"><div class="play">&#9654;</div><div class="chips">${statusParts(x).map((t) => `<span><i></i>${t}</span>`).join('')}</div></div></div>
+${sec('Up next', `<div class="q"><img alt="" src="${s.uri}"><div><small>Also today</small><br><b>${esc(s.name)}</b><p>${esc(s.blurb)}</p></div></div>`)}
+${sec('Selected work', C.work.map((k, i) => track(i + 1, k[0], k[1], k[2], k[0] === p.name)).join(''))}
+${sec('More projects', C.projects.map((j, i) => track(i + 1, j.name, j.blurb, j.tag, j.name === p.name)).join(''))}
+${sec('Research', `<div class="alb">${C.research.map((r) => `<article><h3>${esc(r.name)}</h3><p>${esc(r.line)}</p><ul>${r.facts.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></article>`).join('')}</div>`)}
+${sec('Hackathon charts', `<div class="chart">${C.awards.map((a) => `<div><span>${esc(a[1])}</span><b>${esc(a[0])}</b></div>`).join('')}</div>`)}
+${sec('Contributions, last 12 months', `<div class="two"><div class="box">${heat(d.days)}<div class="note2" style="font-size:11.5px;color:var(--mu);margin-top:8px">Includes private repos.</div></div><div class="box nums"><div class="row"><b>${fmt(d.contributionsYear)}</b><span>contributions</span></div><div class="row"><b>${fmt(d.commitsYear)}</b><span>commits</span></div><div class="row"><b>${d.publicRepos}</b><span>public repos</span></div></div></div>`)}
+${sec('Top genres, by code size', `<div class="box">${langBar(d)}<div class="lg">${langLegend(d)}</div></div>`)}
+${sec('Discography, first commits', `<div class="disc">${C.timeline.map((t) => `<div><time>${esc(t[0])}</time><b>${esc(t[1])}</b><span>${esc(t[2])}</span></div>`).join('')}</div>`)}
+<div class="tour"><b>${esc(C.free.status)}</b><span>${esc(C.free.note)}<br>Shipped for ${C.free.clients.join(', ')}</span></div>
+${sec('Stack', `<div class="stackl">${C.stack.join(' · ')}</div><div class="also">${esc(C.also)}<br>${C.edu.map((e) => `${esc(e[0])} (${esc(e[1])})`).join(' · ')}</div>`)}
+<div class="pl"><div class="th"><img alt="" src="${p.uri}"></div><div><b>${esc(p.name)}</b> <span style="color:var(--mu)">· ${esc(C.name.join(' '))}</span></div><div class="pr"><i></i></div><span style="color:var(--mu)">${idx + 1} / ${projects.length}</span></div>
+</main></div>`;
+  return [{ id: 'page', href: p.url || C.profile, html }];
 }
 
 // ---------------------------------------------------------------- blueprint
@@ -152,12 +154,12 @@ const DESIGNS = {
   neobrutal: (x) => bento('nb', x),
   aurora: (x) => bento('ag', x),
   minimal,
-  terminal,
+  nowplaying,
   blueprint,
 };
 
-const FONTS = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Mono:wght@400;500&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Roboto+Flex:opsz,wght@8..144,400;8..144,600;8..144,800&family=Sora:wght@400;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap';
-const CSS = fs.readFileSync(path.join(__dirname, 'base.css'), 'utf8') + fs.readFileSync(path.join(__dirname, 'extra.css'), 'utf8');
+const FONTS = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Mono:wght@400;500&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Roboto+Flex:opsz,wght@8..144,400;8..144,600;8..144,800&family=Sora:wght@400;600;700&family=Barlow+Condensed:wght@500;600;700&family=Unbounded:wght@500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap';
+const CSS = fs.readFileSync(path.join(__dirname, 'base.css'), 'utf8') + fs.readFileSync(path.join(__dirname, 'extra.css'), 'utf8') + fs.readFileSync(path.join(__dirname, 'np.css'), 'utf8');
 
 function renderPage(design, x) {
   const bands = DESIGNS[design](x);

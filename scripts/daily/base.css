@@ -94,19 +94,6 @@
 .mf .pick{display:flex;gap:6px;margin-top:12px}.mf .pick i{width:5px;height:5px;border-radius:50%;background:var(--line)}.mf .pick i.on{background:var(--acc)}
 @media (max-width:640px){.mf figcaption,.mf .two{grid-template-columns:1fr}.mf ul.l li{grid-template-columns:1fr auto}.mf ul.l span{grid-column:1/-1;order:3}}
 
-/* ---------- 6 Terminal / IDE ---------- */
-.tm{background:#1e1e1e;color:#d4d4d4;font:400 13px/1.7 'JetBrains Mono',monospace}
-.tm .tbar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#2b2b2b;color:#9a9a9a;font-size:12px}.tm .tbar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.tm .tbar i:nth-child(2){background:#febc2e}.tm .tbar i:nth-child(3){background:#28c840}.tm .tbar span{margin:0 auto;padding-right:40px}
-.tm .tbody{display:grid;grid-template-columns:210px minmax(0,1fr)}
-.tm aside{background:#252526;padding:12px 0;border-right:1px solid #333;min-width:0}.tm aside .h{padding:0 14px;font-size:11px;letter-spacing:.08em;color:#8b8b8b;margin:0 0 6px}.tm aside .d{padding:0 14px;font-size:12px;color:#ccc;margin:6px 0 2px}
-.tm aside button{all:unset;box-sizing:border-box;display:block;width:100%;padding:3px 14px 3px 30px;cursor:pointer;font-size:12.5px;color:#cfcfcf;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tm aside button:hover{background:#2a2d2e}.tm aside button[aria-current="true"]{background:#37373d;color:#fff}.tm aside button:focus-visible{outline:1px solid #007acc;outline-offset:-1px}
-.tm .tabs{display:flex;background:#252526;font-size:12.5px}.tm .tabs span{padding:8px 16px;color:#8b8b8b;border-right:1px solid #1e1e1e}.tm .tabs span.on{background:#1e1e1e;color:#fff;border-top:1px solid #007acc}
-.tm main{min-width:0}.tm .ed{padding:14px 0 10px}.tm .ln{display:grid;grid-template-columns:44px minmax(0,1fr);}.tm .ln s{text-decoration:none;color:#5a5a5a;text-align:right;padding-right:16px;user-select:none}.tm .ln code{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere}
-.tm .h1{color:#569cd6;font-weight:500}.tm .h2{color:#4ec9b0}.tm .k{color:#ce9178}.tm .b{color:#d7ba7d}.tm .c{color:#6a9955}.tm .a{color:#ff6a30}
-.tm .prev{margin:6px 16px 6px 44px;border:1px solid #3a3a3a;border-radius:6px;overflow:hidden;line-height:0;max-width:560px}.tm .prev img{width:100%;height:auto}
-.tm .sbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#007acc;color:#fff;padding:3px 14px;font-size:12px}
-@media (max-width:720px){.tm .tbody{grid-template-columns:1fr}.tm aside{display:flex;overflow-x:auto;padding:8px;border-right:0;border-bottom:1px solid #333}.tm aside .h,.tm aside .d{display:none}.tm aside button{width:auto;padding:5px 10px}}
 
 /* ---------- 7 Blueprint ---------- */
 .bp{--ln:rgba(255,255,255,.88);--dim:rgba(255,255,255,.55);--hl:#ffd23f;background:#0d3f94;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:80px 80px,80px 80px,16px 16px,16px 16px;color:var(--ln);font:400 12.5px/1.6 'IBM Plex Mono',monospace;padding:clamp(14px,3vw,26px)}

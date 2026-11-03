@@ -8,7 +8,7 @@
 //  - a design never gets the same main project two weeks in a row (and avoids repeats from the last 6 weeks when possible)
 //  - the main project never repeats on consecutive days, including across the week boundary
 
-const DESIGNS = ['swiss', 'material3', 'minimal', 'neobrutal', 'aurora', 'terminal', 'blueprint'];
+const DESIGNS = ['swiss', 'material3', 'minimal', 'neobrutal', 'aurora', 'nowplaying', 'blueprint'];
 const ANCHOR = Date.UTC(2026, 10, 2); // Monday 2 Nov 2026
 const DAY = 86400000;
 

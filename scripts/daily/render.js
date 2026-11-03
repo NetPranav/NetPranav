@@ -17,7 +17,7 @@ const ROOT = path.join(__dirname, '..', '..');
 const OUT = path.join(ROOT, 'generated', 'daily');
 const README = path.join(ROOT, 'README.md');
 const IDS = config.showcase.map((p) => p.id);
-const NAMES = { swiss: 'Swiss bento', material3: 'Material 3 Expressive', minimal: 'Minimal editorial', neobrutal: 'Neo-brutalist', aurora: 'Aurora glass', terminal: 'Terminal IDE', blueprint: 'Blueprint' };
+const NAMES = { swiss: 'Swiss bento', material3: 'Material 3 Expressive', minimal: 'Minimal editorial', neobrutal: 'Neo-brutalist', aurora: 'Aurora glass', nowplaying: 'Now playing', blueprint: 'Blueprint' };
 
 function dayStr(offset, from) {
   const base = from ? Date.parse(`${from}T00:00:00Z`) : Math.floor(Date.now() / 86400000) * 86400000;
@@ -48,7 +48,7 @@ async function main() {
 
   const browser = await chromium.launch({ args: ['--no-sandbox'] });
   try {
-    const NATIVE = { swiss: 'light', material3: 'light', minimal: 'light', neobrutal: 'light', aurora: 'dark', terminal: 'dark', blueprint: 'dark' };
+    const NATIVE = { swiss: 'light', material3: 'light', minimal: 'light', neobrutal: 'light', aurora: 'dark', nowplaying: 'dark', blueprint: 'dark' };
     const flip = '.page{filter:invert(1) hue-rotate(180deg)}.page img{filter:invert(1) hue-rotate(180deg)}';
     fs.mkdirSync(OUT, { recursive: true });
     const files = {};
