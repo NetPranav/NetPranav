@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav/WebGen"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-03-nowplaying-dark.webp"><img alt="Pranav Dubey's profile in the Now playing design. Today's UI: LazyLayout. Also today: OncoPattern." src="./generated/daily/2026-11-03-nowplaying-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav/Cancer-classification-"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-04-blueprint-dark.webp"><img alt="Pranav Dubey's profile in the Blueprint design. Today's UI: OncoPattern. Also today: Humanoid-Face-3D." src="./generated/daily/2026-11-04-blueprint-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** [LazyLayout](https://github.com/NetPranav/WebGen) · **Also today** [OncoPattern](https://github.com/NetPranav/Cancer-classification-) · **Design** Now playing · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** [OncoPattern](https://github.com/NetPranav/Cancer-classification-) · **Also today** [Humanoid-Face-3D](https://github.com/NetPranav/Humanoid-Face-3D) · **Design** Blueprint · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
