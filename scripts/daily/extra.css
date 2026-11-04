@@ -51,3 +51,4 @@ body{width:880px;font-family:system-ui,sans-serif;-webkit-font-smoothing:antiali
 .bp .stl{display:flex;flex-wrap:wrap;gap:6px 22px;color:var(--dim);margin-top:12px;text-transform:uppercase;font-size:11px;letter-spacing:.06em}.bp .stl b{color:var(--hl);font-weight:500}
 .bp .bar3{display:flex;height:10px;gap:2px;margin:6px 0 8px}.bp .bar3 i{display:block;background:#fff}.bp .bar3 i:nth-child(1){background:var(--hl)}.bp .bar3 i:nth-child(n+2){opacity:.6}
 .pg-minimal{background:#fff}
+.page{box-sizing:border-box}
