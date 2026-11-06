@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav/Humanoid-Face-3D"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-05-neobrutal-dark.webp"><img alt="Pranav Dubey's profile in the Neo-brutalist design. Today's UI: Humanoid-Face-3D. Also today: Mahaurja." src="./generated/daily/2026-11-05-neobrutal-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-06-minimal-dark.webp"><img alt="Pranav Dubey's profile in the Minimal editorial design. Today's UI: Mahaurja. Also today: Cero Terminal." src="./generated/daily/2026-11-06-minimal-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** [Humanoid-Face-3D](https://github.com/NetPranav/Humanoid-Face-3D) · **Also today** Mahaurja · **Design** Neo-brutalist · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** Mahaurja · **Also today** [Cero Terminal](https://github.com/NetPranav/Cero-Terminal) · **Design** Minimal editorial · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
