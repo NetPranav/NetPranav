@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-06-minimal-dark.webp"><img alt="Pranav Dubey's profile in the Minimal editorial design. Today's UI: Mahaurja. Also today: Cero Terminal." src="./generated/daily/2026-11-06-minimal-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav/Cero-Terminal"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-07-swiss-dark.webp"><img alt="Pranav Dubey's profile in the Swiss bento design. Today's UI: Cero Terminal. Also today: Magnm Build Planner." src="./generated/daily/2026-11-07-swiss-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** Mahaurja · **Also today** [Cero Terminal](https://github.com/NetPranav/Cero-Terminal) · **Design** Minimal editorial · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** [Cero Terminal](https://github.com/NetPranav/Cero-Terminal) · **Also today** [Magnm Build Planner](https://github.com/NetPranav/Magnm-Pitch) · **Design** Swiss bento · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
