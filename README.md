@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav/Cero-Terminal"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-09-neobrutal-dark.webp"><img alt="Pranav Dubey's profile in the Neo-brutalist design. Today's UI: Cero Terminal. Also today: LazyLayout." src="./generated/daily/2026-11-09-neobrutal-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav/WebGen"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-10-swiss-dark.webp"><img alt="Pranav Dubey's profile in the Swiss bento design. Today's UI: LazyLayout. Also today: SkyRiseFPV." src="./generated/daily/2026-11-10-swiss-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** [Cero Terminal](https://github.com/NetPranav/Cero-Terminal) · **Also today** [LazyLayout](https://github.com/NetPranav/WebGen) · **Design** Neo-brutalist · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** [LazyLayout](https://github.com/NetPranav/WebGen) · **Also today** SkyRiseFPV · **Design** Swiss bento · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
