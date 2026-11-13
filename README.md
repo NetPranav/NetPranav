@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-12-aurora-dark.webp"><img alt="Pranav Dubey's profile in the Aurora glass design. Today's UI: Mahaurja. Also today: OncoPattern." src="./generated/daily/2026-11-12-aurora-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav/Cancer-classification-"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-13-material3-dark.webp"><img alt="Pranav Dubey's profile in the Material 3 Expressive design. Today's UI: OncoPattern. Also today: Smart Cursor." src="./generated/daily/2026-11-13-material3-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** Mahaurja · **Also today** [OncoPattern](https://github.com/NetPranav/Cancer-classification-) · **Design** Aurora glass · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** [OncoPattern](https://github.com/NetPranav/Cancer-classification-) · **Also today** Smart Cursor · **Design** Material 3 Expressive · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
