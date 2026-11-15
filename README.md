@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-14-nowplaying-dark.webp"><img alt="Pranav Dubey's profile in the Now playing design. Today's UI: Smart Cursor. Also today: Magnm Build Planner." src="./generated/daily/2026-11-14-nowplaying-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav/Magnm-Pitch"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-15-minimal-dark.webp"><img alt="Pranav Dubey's profile in the Minimal editorial design. Today's UI: Magnm Build Planner. Also today: Humanoid-Face-3D." src="./generated/daily/2026-11-15-minimal-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** Smart Cursor · **Also today** [Magnm Build Planner](https://github.com/NetPranav/Magnm-Pitch) · **Design** Now playing · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** [Magnm Build Planner](https://github.com/NetPranav/Magnm-Pitch) · **Also today** [Humanoid-Face-3D](https://github.com/NetPranav/Humanoid-Face-3D) · **Design** Minimal editorial · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
