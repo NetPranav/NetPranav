@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav/Humanoid-Face-3D"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-16-nowplaying-dark.webp"><img alt="Pranav Dubey's profile in the Now playing design. Today's UI: Humanoid-Face-3D. Also today: OncoPattern." src="./generated/daily/2026-11-16-nowplaying-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav/Cancer-classification-"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-17-aurora-dark.webp"><img alt="Pranav Dubey's profile in the Aurora glass design. Today's UI: OncoPattern. Also today: Magnm Build Planner." src="./generated/daily/2026-11-17-aurora-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** [Humanoid-Face-3D](https://github.com/NetPranav/Humanoid-Face-3D) · **Also today** [OncoPattern](https://github.com/NetPranav/Cancer-classification-) · **Design** Now playing · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** [OncoPattern](https://github.com/NetPranav/Cancer-classification-) · **Also today** [Magnm Build Planner](https://github.com/NetPranav/Magnm-Pitch) · **Design** Aurora glass · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
