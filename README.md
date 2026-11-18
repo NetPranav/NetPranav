@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav/Cancer-classification-"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-17-aurora-dark.webp"><img alt="Pranav Dubey's profile in the Aurora glass design. Today's UI: OncoPattern. Also today: Magnm Build Planner." src="./generated/daily/2026-11-17-aurora-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav/Magnm-Pitch"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-18-material3-dark.webp"><img alt="Pranav Dubey's profile in the Material 3 Expressive design. Today's UI: Magnm Build Planner. Also today: Cero Terminal." src="./generated/daily/2026-11-18-material3-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** [OncoPattern](https://github.com/NetPranav/Cancer-classification-) · **Also today** [Magnm Build Planner](https://github.com/NetPranav/Magnm-Pitch) · **Design** Aurora glass · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** [Magnm Build Planner](https://github.com/NetPranav/Magnm-Pitch) · **Also today** [Cero Terminal](https://github.com/NetPranav/Cero-Terminal) · **Design** Material 3 Expressive · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
