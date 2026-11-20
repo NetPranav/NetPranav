@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav/Cero-Terminal"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-19-blueprint-dark.webp"><img alt="Pranav Dubey's profile in the Blueprint design. Today's UI: Cero Terminal. Also today: Smart Cursor." src="./generated/daily/2026-11-19-blueprint-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-20-minimal-dark.webp"><img alt="Pranav Dubey's profile in the Minimal editorial design. Today's UI: Smart Cursor. Also today: Mahaurja." src="./generated/daily/2026-11-20-minimal-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** [Cero Terminal](https://github.com/NetPranav/Cero-Terminal) · **Also today** Smart Cursor · **Design** Blueprint · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** Smart Cursor · **Also today** Mahaurja · **Design** Minimal editorial · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
