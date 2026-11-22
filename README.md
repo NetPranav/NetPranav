@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-21-neobrutal-dark.webp"><img alt="Pranav Dubey's profile in the Neo-brutalist design. Today's UI: Mahaurja. Also today: SkyRiseFPV." src="./generated/daily/2026-11-21-neobrutal-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-22-swiss-dark.webp"><img alt="Pranav Dubey's profile in the Swiss bento design. Today's UI: SkyRiseFPV. Also today: LazyLayout." src="./generated/daily/2026-11-22-swiss-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** Mahaurja · **Also today** SkyRiseFPV · **Design** Neo-brutalist · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** SkyRiseFPV · **Also today** [LazyLayout](https://github.com/NetPranav/WebGen) · **Design** Swiss bento · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
