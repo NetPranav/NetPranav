@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav/Magnm-Pitch"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-24-swiss-dark.webp"><img alt="Pranav Dubey's profile in the Swiss bento design. Today's UI: Magnm Build Planner. Also today: Cero Terminal." src="./generated/daily/2026-11-24-swiss-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav/Cero-Terminal"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-25-material3-dark.webp"><img alt="Pranav Dubey's profile in the Material 3 Expressive design. Today's UI: Cero Terminal. Also today: Mahaurja." src="./generated/daily/2026-11-25-material3-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** [Magnm Build Planner](https://github.com/NetPranav/Magnm-Pitch) · **Also today** [Cero Terminal](https://github.com/NetPranav/Cero-Terminal) · **Design** Swiss bento · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** [Cero Terminal](https://github.com/NetPranav/Cero-Terminal) · **Also today** Mahaurja · **Design** Material 3 Expressive · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
