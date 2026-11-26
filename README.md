@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav/Cero-Terminal"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-25-material3-dark.webp"><img alt="Pranav Dubey's profile in the Material 3 Expressive design. Today's UI: Cero Terminal. Also today: Mahaurja." src="./generated/daily/2026-11-25-material3-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-26-nowplaying-dark.webp"><img alt="Pranav Dubey's profile in the Now playing design. Today's UI: Mahaurja. Also today: Smart Cursor." src="./generated/daily/2026-11-26-nowplaying-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** [Cero Terminal](https://github.com/NetPranav/Cero-Terminal) · **Also today** Mahaurja · **Design** Material 3 Expressive · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** Mahaurja · **Also today** Smart Cursor · **Design** Now playing · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
