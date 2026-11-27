@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-26-nowplaying-dark.webp"><img alt="Pranav Dubey's profile in the Now playing design. Today's UI: Mahaurja. Also today: Smart Cursor." src="./generated/daily/2026-11-26-nowplaying-light.webp" width="100%"></picture></a>
+<a href="https://github.com/NetPranav"><picture><source media="(prefers-color-scheme: dark)" srcset="./generated/daily/2026-11-27-neobrutal-dark.webp"><img alt="Pranav Dubey's profile in the Neo-brutalist design. Today's UI: Smart Cursor. Also today: Humanoid-Face-3D." src="./generated/daily/2026-11-27-neobrutal-light.webp" width="100%"></picture></a>
 </div>
 
 <div align="center">
 
-**Today** Mahaurja · **Also today** Smart Cursor · **Design** Now playing · [All repositories](https://github.com/NetPranav?tab=repositories)
+**Today** Smart Cursor · **Also today** [Humanoid-Face-3D](https://github.com/NetPranav/Humanoid-Face-3D) · **Design** Neo-brutalist · [All repositories](https://github.com/NetPranav?tab=repositories)
 
 </div>
 
